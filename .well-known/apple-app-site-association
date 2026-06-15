@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["4GV79H7R7Q.com.bytehood.disconnect"],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Matches buddy invite links"
+          }
+        ]
+      }
+    ]
+  }
+}
