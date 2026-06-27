@@ -367,8 +367,10 @@
     background: #fff; color: var(--ink);
     border: 0.5px solid var(--hair);
     border-radius: 14px; padding: 13px 16px;
+    height: 50px; min-height: 0;
     outline: none; transition: border-color .18s, box-shadow .18s;
     box-shadow: 0 1px 2px rgba(11,11,12,0.04);
+    -webkit-appearance: none; appearance: none;
   }
   .notify-form input[type="email"]::placeholder { color: var(--ter); }
   .notify-form input[type="email"]:focus {
@@ -403,7 +405,8 @@
   .appstore-secondary svg { width: 13px; height: 13px; opacity: 0.5; }
   @media (max-width: 560px) {
     .notify-form { flex-direction: column; }
-    .notify-form input[type="email"], .notify-form button[type="submit"] { width: 100%; }
+    .notify-form input[type="email"] { width: 100%; flex: 0 0 50px; }
+    .notify-form button[type="submit"] { width: 100%; }
   }
 
   @media (prefers-reduced-motion: no-preference) {
