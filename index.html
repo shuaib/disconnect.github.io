@@ -316,6 +316,57 @@
     .appstore .txt b { font-size: 17px; }
   }
 
+  /* ── Email capture form ── */
+  .notify-form-wrap .notify-heading {
+    font-size: clamp(18px, 1.8vw, 22px); font-weight: 600;
+    letter-spacing: -0.01em; margin-bottom: 14px;
+  }
+  .notify-form { display: flex; gap: 10px; flex-wrap: wrap; }
+  .notify-form input[type="email"] {
+    flex: 1 1 220px; min-width: 0;
+    font-family: var(--font); font-size: 16px;
+    background: #fff; color: var(--ink);
+    border: 0.5px solid var(--hair);
+    border-radius: 14px; padding: 13px 16px;
+    outline: none; transition: border-color .18s, box-shadow .18s;
+    box-shadow: 0 1px 2px rgba(11,11,12,0.04);
+  }
+  .notify-form input[type="email"]::placeholder { color: var(--ter); }
+  .notify-form input[type="email"]:focus {
+    border-color: rgba(11,11,12,0.32);
+    box-shadow: 0 0 0 3px rgba(11,11,12,0.06);
+  }
+  .notify-form button[type="submit"] {
+    font-family: var(--font); font-size: 16px; font-weight: 600;
+    letter-spacing: -0.01em; white-space: nowrap;
+    background: var(--ink); color: #fff;
+    border: none; border-radius: 14px; padding: 13px 22px;
+    cursor: pointer; transition: transform .18s ease, box-shadow .18s ease;
+    box-shadow: 0 1px 2px rgba(11,11,12,0.18);
+  }
+  .notify-form button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(11,11,12,0.22); }
+  .notify-form button[type="submit"]:active { transform: translateY(0); }
+  .notify-microcopy { margin-top: 12px; font-size: 13px; color: var(--ter); }
+  .notify-success { display: none; font-size: 15px; font-weight: 500; color: var(--sage); margin-top: 4px; }
+  .notify-form-wrap.submitted .notify-form { display: none; }
+  .notify-form-wrap.submitted .notify-success { display: block; }
+  /* closer form — centered */
+  .closer .notify-form-wrap { margin-top: clamp(34px, 4vw, 46px); display: inline-block; text-align: left; }
+  .closer .notify-form { justify-content: center; }
+  .closer .notify-microcopy { text-align: center; }
+  /* secondary muted App Store link */
+  .appstore-secondary {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 13px; color: var(--ter);
+    transition: color .2s; margin-top: 18px;
+  }
+  .appstore-secondary:hover { color: var(--sec); }
+  .appstore-secondary svg { width: 13px; height: 13px; opacity: 0.5; }
+  @media (max-width: 560px) {
+    .notify-form { flex-direction: column; }
+    .notify-form input[type="email"], .notify-form button[type="submit"] { width: 100%; }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
     .reveal.in { opacity: 1; transform: none; }
@@ -333,10 +384,11 @@
         </svg>
         <span class="wordmark">Disconnect</span>
       </a>
-      <a class="appstore compact header-cta" href="https://apps.apple.com/app/id6743134572">
+      <!-- LAUNCH: restore App Store button as primary, remove email form -->
+      <!-- <a class="appstore compact header-cta" href="https://apps.apple.com/app/id6743134572">
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M16.365 1.43c0 1.14-.49 2.27-1.17 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.04.28.04.43zm4.57 15.71c-.03.07-.46 1.58-1.52 3.12-.95 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8-1.29-1.82-2.32-4.63-2.32-7.28 0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.68.95 3.6.95.87 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.38 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45z"/></svg>
         <span class="txt"><small>Download on the</small><b>App Store</b></span>
-      </a>
+      </a> -->
     </div>
   </header>
 
@@ -354,12 +406,24 @@
             </div>
             <h1 class="hero-title">Less Screen.<br>More Life.</h1>
             <p class="hero-sub">Block distracting apps. Hand the key to a friend.</p>
-            <div class="hero-actions">
-              <a class="appstore" href="https://apps.apple.com/app/id6743134572">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M16.365 1.43c0 1.14-.49 2.27-1.17 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.04.28.04.43zm4.57 15.71c-.03.07-.46 1.58-1.52 3.12-.95 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8-1.29-1.82-2.32-4.63-2.32-7.28 0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.68.95 3.6.95.87 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.38 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45z"/></svg>
-                <span class="txt"><small>Download on the</small><b>App Store</b></span>
+            <div class="hero-actions" style="display:block;">
+              <!-- LAUNCH: restore App Store button as primary, remove email form -->
+              <div class="notify-form-wrap" id="heroFormWrap">
+                <p class="notify-heading">Get notified at launch</p>
+                <form class="notify-form" id="heroForm"
+                      action="https://buttondown.com/api/emails/embed-subscribe/shuaib"
+                      method="POST">
+                  <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                  <button type="submit">Notify me</button>
+                </form>
+                <p class="notify-microcopy">No spam. One email when Disconnect goes live.</p>
+                <p class="notify-success">You're on the list. We'll be in touch at launch.</p>
+              </div>
+              <!-- secondary muted App Store link (re-enable as primary at launch) -->
+              <a class="appstore-secondary" href="https://apps.apple.com/app/id6743134572">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.49 2.27-1.17 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.04.28.04.43zm4.57 15.71c-.03.07-.46 1.58-1.52 3.12-.95 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8-1.29-1.82-2.32-4.63-2.32-7.28 0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.68.95 3.6.95.87 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.38 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45z"/></svg>
+                Available on the App Store
               </a>
-              <span class="hero-note">Free to download.</span>
             </div>
           </div>
 
@@ -458,7 +522,7 @@
           <div class="step reveal">
             <div class="num"><span class="n">01</span><span class="rule"></span></div>
             <h3>Choose which apps distract you most</h3>
-            <p>Instagram, TikTok, whatever pulls you in. Pick the ones that eat your day.</p>
+            <p>The apps that pull you in. Pick the ones that eat your day.</p>
           </div>
           <div class="step reveal">
             <div class="num"><span class="n">02</span><span class="rule"></span></div>
@@ -516,11 +580,23 @@
           <svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true" style="display:block"><path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="#0B0B0C" stroke-width="10.5" stroke-linecap="butt"/></svg>
         </span>
         <h2>Ready to take back your time?</h2>
-        <a class="appstore" href="https://apps.apple.com/app/id6743134572">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M16.365 1.43c0 1.14-.49 2.27-1.17 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.04.28.04.43zm4.57 15.71c-.03.07-.46 1.58-1.52 3.12-.95 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8-1.29-1.82-2.32-4.63-2.32-7.28 0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.68.95 3.6.95.87 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.38 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45z"/></svg>
-          <span class="txt"><small>Download on the</small><b>App Store</b></span>
+        <!-- LAUNCH: restore App Store button as primary, remove email form -->
+        <div class="notify-form-wrap" id="closerFormWrap">
+          <p class="notify-heading">Get notified at launch</p>
+          <form class="notify-form" id="closerForm"
+                action="https://buttondown.com/api/emails/embed-subscribe/shuaib"
+                method="POST">
+            <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit">Notify me</button>
+          </form>
+          <p class="notify-microcopy">No spam. One email when Disconnect goes live.</p>
+          <p class="notify-success">You're on the list. We'll be in touch at launch.</p>
+        </div>
+        <!-- secondary muted App Store link (re-enable as primary at launch) -->
+        <a class="appstore-secondary" style="justify-content:center;" href="https://apps.apple.com/app/id6743134572">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.49 2.27-1.17 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.04.28.04.43zm4.57 15.71c-.03.07-.46 1.58-1.52 3.12-.95 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8-1.29-1.82-2.32-4.63-2.32-7.28 0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.68.95 3.6.95.87 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.38 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45z"/></svg>
+          Available on the App Store
         </a>
-        <p class="fine">Free to download.</p>
       </div>
     </section>
 
@@ -556,6 +632,20 @@
       });
     }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Email capture forms — inline success state
+    ['heroForm', 'closerForm'].forEach(function(id) {
+      const form = document.getElementById(id);
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const wrap = form.closest('.notify-form-wrap');
+        const data = new FormData(form);
+        fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+          .then(function() { wrap.classList.add('submitted'); })
+          .catch(function() { wrap.classList.add('submitted'); }); // show success even on network quirks
+      });
+    });
 
     // Screenshot carousel
     (function () {
