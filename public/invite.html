@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You've been invited to be a Disconnect buddy</title>
+<meta name="description" content="Someone wants you as their accountability buddy on Disconnect — the iOS app that helps people stick to their screen-time goals with a little help from a friend.">
+<meta name="robots" content="noindex">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="You've been invited to be a Disconnect buddy">
+<meta property="og:description" content="Someone wants your help sticking to their screen-time goals. It only takes a tap — download Disconnect to accept.">
+<meta property="og:image"       content="https://disconnectapp.co/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="You've been invited to be a Disconnect buddy">
+<meta name="twitter:description" content="Someone wants your help sticking to their screen-time goals. It only takes a tap — download Disconnect to accept.">
+<meta name="twitter:image"       content="https://disconnectapp.co/og-image.png">
+
+<style>
+  :root {
+    --bone:   #F5F4F1;
+    --bone-2: #ECEAE3;
+    --ink:    #0B0B0C;
+    --sec:    rgba(60,60,67,0.62);
+    --ter:    rgba(60,60,67,0.32);
+    --hair:   rgba(11,11,12,0.12);
+    --sage:   #2DAB57;
+    --font: -apple-system, "SF Pro Display", "SF Pro Text", system-ui, "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body {
+    font-family: var(--font);
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.4;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Header ── */
+  .site-header {
+    border-bottom: 0.5px solid var(--hair);
+    background: rgba(245,244,241,0.92);
+    backdrop-filter: saturate(180%) blur(18px);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding-inline: clamp(20px, 5vw, 64px);
+    height: 64px; display: flex; align-items: center;
+  }
+  .lockup { display: inline-flex; align-items: center; gap: 9px; }
+  .lockup .wordmark { font-size: 19px; font-weight: 600; letter-spacing: -0.018em; }
+
+  /* ── Main content ── */
+  main {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px);
+    position: relative; overflow: hidden;
+  }
+  .wm {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: min(140vw, 900px); color: var(--ink); opacity: 0.035;
+    z-index: 0; pointer-events: none;
+  }
+
+  .invite-card {
+    width: 100%; max-width: 480px;
+    text-align: center;
+  }
+
+  /* Glyph mark */
+  .invite-glyph {
+    display: flex; justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  /* Badge pill below logo */
+  .invite-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(45,171,87,0.1);
+    border: 1px solid rgba(45,171,87,0.22);
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 12px; font-weight: 600; color: var(--sage);
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: clamp(20px, 3vw, 28px);
+  }
+  .invite-pill::before {
+    content: ''; display: block;
+    width: 6px; height: 6px;
+    background: var(--sage); border-radius: 50%;
+  }
+
+  /* Headline */
+  .invite-title {
+    font-size: clamp(28px, 6vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    text-wrap: balance;
+    margin-bottom: clamp(18px, 3vw, 26px);
+  }
+
+  /* Body copy */
+  .invite-body {
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--sec);
+    text-wrap: pretty;
+    margin-bottom: clamp(10px, 2vw, 16px);
+  }
+
+  /* What being a buddy means */
+  .buddy-details {
+    background: #fff;
+    border: 0.5px solid var(--hair);
+    border-radius: 18px;
+    padding: clamp(20px, 3vw, 28px);
+    margin: clamp(24px, 4vw, 36px) 0;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(11,11,12,0.05);
+  }
+  .buddy-details ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .buddy-details li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 1.45;
+    color: var(--sec);
+  }
+  .buddy-details li .icon {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    background: rgba(45,171,87,0.1);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+  .buddy-details li .icon svg { width: 11px; height: 11px; }
+
+  /* Divider */
+  .divider {
+    height: 0.5px; background: var(--hair);
+    margin: clamp(28px, 4vw, 40px) 0;
+  }
+
+  /* CTA */
+  .invite-cta-label {
+    font-size: 13px; font-weight: 600;
+    color: var(--sec); letter-spacing: 0.01em;
+    margin-bottom: 14px;
+  }
+
+  .appstore-badge {
+    display: inline-block;
+    transition: transform .18s ease, box-shadow .18s ease;
+    border-radius: 10px;
+  }
+  .appstore-badge:hover { transform: translateY(-1px); }
+  .appstore-badge:active { transform: translateY(0); }
+  .appstore-badge img { display: block; height: 44px; width: auto; }
+
+  .invite-after {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--ter);
+    line-height: 1.5;
+  }
+  .invite-after strong {
+    color: var(--sec); font-weight: 500;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 0.5px solid var(--hair);
+    padding: 28px 0;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding-inline: clamp(20px, 5vw, 64px);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+  }
+  .footer .links { display: flex; gap: 22px; }
+  .footer .links a { font-size: 13px; color: var(--sec); transition: color .2s; }
+  .footer .links a:hover { color: var(--ink); }
+  .footer .copy { font-size: 12px; color: var(--ter); }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="lockup" href="https://disconnectapp.co/" aria-label="Disconnect home">
+        <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true" style="display:block">
+          <path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="#0B0B0C" stroke-width="10.5" stroke-linecap="butt"/>
+        </svg>
+        <span class="wordmark">Disconnect</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="#0B0B0C" stroke-width="10.5" stroke-linecap="butt"/></svg>
+    <div class="invite-card" style="position:relative;z-index:1;">
+
+      <div class="invite-glyph" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 100 100">
+          <path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="#0B0B0C" stroke-width="10.5" stroke-linecap="butt"/>
+        </svg>
+      </div>
+
+      <div class="invite-pill">Buddy invite</div>
+
+      <h1 class="invite-title">You've been invited to be someone's Disconnect buddy.</h1>
+
+      <p class="invite-body">
+        A friend is trying to spend less time on distracting apps — and they'd like you to be their accountability partner.
+      </p>
+
+      <div class="buddy-details">
+        <ul>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#2DAB57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="2,6 5,9 10,3"/>
+              </svg>
+            </span>
+            <span>When they try to unlock a blocked app, you get a quick tap-to-approve notification. That's it.</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#2DAB57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="2,6 5,9 10,3"/>
+              </svg>
+            </span>
+            <span>Being a buddy is free and changes nothing about your own phone or screen time.</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#2DAB57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="2,6 5,9 10,3"/>
+              </svg>
+            </span>
+            <span>You approve or deny — one tap. No account required beyond the app.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="invite-cta-label">Step 1 — Download Disconnect</p>
+
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6743134572" aria-label="Download Disconnect on the App Store">
+        <img src="/badge-app-store.svg" alt="Download on the App Store" width="148" height="44">
+      </a>
+
+      <p class="invite-after">
+        <strong>Step 2</strong> — After installing, open this link again to accept the invite.
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="lockup" href="https://disconnectapp.co/" aria-label="Disconnect">
+        <svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true" style="display:block">
+          <path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="#0B0B0C" stroke-width="10.5" stroke-linecap="butt"/>
+        </svg>
+        <span class="wordmark" style="font-size:15px;">Disconnect</span>
+      </a>
+      <nav class="links" aria-label="Footer">
+        <a href="https://disconnectapp.co/privacy.html">Privacy</a>
+        <a href="https://disconnectapp.co/terms.html">Terms</a>
+        <a href="mailto:support@bytehood.com?subject=%5BDisconnect%5D%20Feedback">Support</a>
+      </nav>
+      <span class="copy">© 2026–present Bytehood Ltd.</span>
+    </div>
+  </footer>
+
+<script>
+  // Capture invite ID from path for future use (analytics, personalization)
+  var inviteId = location.pathname.split('/').filter(Boolean)[1] || null;
+</script>
+</body>
+</html>
