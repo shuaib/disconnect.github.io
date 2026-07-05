@@ -395,6 +395,11 @@
   .closer .notify-form-wrap { margin-top: clamp(34px, 4vw, 46px); display: inline-block; text-align: left; }
   .closer .notify-form { justify-content: center; }
   .closer .notify-microcopy { text-align: center; }
+  /* App Store badge link */
+  .appstore-badge-link { display: inline-block; transition: transform .18s ease, opacity .18s ease; }
+  .appstore-badge-link:hover { transform: translateY(-1px); opacity: 0.85; }
+  .appstore-badge-link:active { transform: translateY(0); }
+  .appstore-badge-link img { display: block; height: 44px; width: auto; }
   /* Coming Soon App Store badge */
   .coming-soon-wrap {
     display: inline-flex; flex-direction: column; align-items: flex-start;
@@ -468,25 +473,11 @@
             </div>
             <h1 class="hero-title">Less Screen.<br>More Life.</h1>
             <p class="hero-sub">Block distracting apps. Hand the key to a friend.</p>
-            <div class="hero-actions" style="display:block;">
-              <!-- LAUNCH: restore App Store button as primary, remove email form -->
-              <div class="notify-form-wrap" id="heroFormWrap">
-                <div class="coming-soon-wrap">
-                  <span class="coming-soon-pill">Coming soon</span>
-                  <div class="coming-soon-badge"><img src="/badge-app-store.svg" alt="Download on the App Store" width="120" height="40"></div>
-                </div>
-                <p class="notify-heading">Get notified at launch</p>
-                <form class="notify-form" id="heroForm"
-                      action="https://buttondown.com/api/emails/embed-subscribe/disconnect"
-                      method="POST">
-                  <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
-                  <button type="submit">Notify me</button>
-                </form>
-                <p class="notify-microcopy">No spam. One email when Disconnect goes live.</p>
-                <p class="notify-success">You're on the list. We'll be in touch at launch.</p>
-              </div>
-              <!-- LAUNCH: restore App Store secondary link -->
-              <!-- <a class="appstore-secondary" href="https://apps.apple.com/app/id6743134572">Available on the App Store</a> -->
+            <div class="hero-actions">
+              <a class="appstore-badge-link" href="https://apps.apple.com/app/id6743134572" aria-label="Pre-order Disconnect on the App Store">
+                <img src="/badge-pre-order.svg" alt="Pre-Order on the App Store" height="44">
+              </a>
+              <p class="hero-note">Free · Available on iPhone</p>
             </div>
           </div>
 
@@ -603,24 +594,10 @@
           <svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true" style="display:block"><path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="#0B0B0C" stroke-width="10.5" stroke-linecap="butt"/></svg>
         </span>
         <h2>Ready to take back your time?</h2>
-        <!-- LAUNCH: restore App Store button as primary, remove email form -->
-        <div class="notify-form-wrap" id="closerFormWrap">
-          <div class="coming-soon-wrap">
-            <span class="coming-soon-pill">Coming soon</span>
-            <div class="coming-soon-badge"><img src="/badge-app-store.svg" alt="Download on the App Store" width="120" height="40"></div>
-          </div>
-          <p class="notify-heading">Get notified at launch</p>
-          <form class="notify-form" id="closerForm"
-                action="https://buttondown.com/api/emails/embed-subscribe/disconnect"
-                method="POST">
-            <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
-            <button type="submit">Notify me</button>
-          </form>
-          <p class="notify-microcopy">No spam. One email when Disconnect goes live.</p>
-          <p class="notify-success">You're on the list. We'll be in touch at launch.</p>
-        </div>
-        <!-- LAUNCH: restore App Store secondary link -->
-        <!-- <a class="appstore-secondary" style="justify-content:center;" href="https://apps.apple.com/app/id6743134572">Available on the App Store</a> -->
+        <a class="appstore-badge-link" style="margin-top:clamp(34px,4vw,46px);display:inline-block;" href="https://apps.apple.com/app/id6743134572" aria-label="Pre-order Disconnect on the App Store">
+          <img src="/badge-pre-order.svg" alt="Pre-Order on the App Store" height="44">
+        </a>
+        <p class="fine">Free · Available on iPhone</p>
       </div>
     </section>
 
