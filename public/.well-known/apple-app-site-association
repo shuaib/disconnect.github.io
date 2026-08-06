@@ -8,6 +8,10 @@
           {
             "/": "/invite/*",
             "comment": "Matches buddy invite links"
+          },
+          {
+            "/": "/event",
+            "comment": "App Store in-app event deep link"
           }
         ]
       }
