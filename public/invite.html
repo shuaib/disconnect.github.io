@@ -7,6 +7,23 @@
 <meta name="description" content="Someone wants you as their accountability buddy on Disconnect — the iOS app that helps people stick to their screen-time goals with a little help from a friend.">
 <meta name="robots" content="noindex">
 
+<!-- Smart App Banner. iOS knows the install state and renders "Open" (installed) or "Get" (not),
+     so we don't have to detect it. app-argument carries the invite deep link (disconnect://invite/{id})
+     so tapping "Open" hands the invite straight to the app. The id is only in the URL at runtime, so
+     an inline script below rewrites app-argument during parse, before Safari renders the banner. -->
+<meta name="apple-itunes-app" id="smart-app-banner" content="app-id=6743134572">
+<script>
+  (function () {
+    var id = location.pathname.split('/').filter(Boolean)[1];
+    if (id) {
+      document.getElementById('smart-app-banner').setAttribute(
+        'content',
+        'app-id=6743134572, app-argument=disconnect://invite/' + encodeURIComponent(id)
+      );
+    }
+  })();
+</script>
+
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -175,6 +192,17 @@
   .appstore-badge:active { transform: translateY(0); }
   .appstore-badge img { display: block; height: 44px; width: auto; }
 
+  /* Primary CTA — open the installed app via the custom scheme */
+  .open-app-btn {
+    display: inline-block;
+    background: var(--ink); color: var(--bone);
+    font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+    padding: 14px 28px; border-radius: 12px;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+  .open-app-btn:hover { transform: translateY(-1px); }
+  .open-app-btn:active { transform: translateY(0); opacity: .9; }
+
   .invite-after {
     margin-top: 14px;
     font-size: 13px;
@@ -264,14 +292,21 @@
 
       <div class="divider"></div>
 
-      <p class="invite-cta-label">Step 1 — Download Disconnect</p>
+      <!-- Primary: open the installed app directly via the custom scheme. Shown only when the URL
+           carries an invite id. The custom scheme sidesteps the universal-link limitation where a
+           link opened from a .webloc / direct Safari load (e.g. AirDropped from an older iOS) never
+           routes into the app. -->
+      <a id="openApp" class="open-app-btn" href="#" style="display:none" aria-label="Open in Disconnect">Open in Disconnect</a>
+      <p class="invite-after" id="openAppHint" style="display:none">Already have Disconnect? This opens the app to accept.</p>
+
+      <p class="invite-cta-label" style="margin-top: clamp(24px, 4vw, 32px)">Don't have Disconnect yet?</p>
 
       <a class="appstore-badge" href="https://apps.apple.com/app/id6743134572" aria-label="Download Disconnect on the App Store">
         <img src="/badge-app-store.svg" alt="Download on the App Store" width="148" height="44">
       </a>
 
       <p class="invite-after">
-        <strong>Step 2</strong> — After installing, open this link again to accept the invite.
+        <strong>After installing</strong> — open this link again to accept the invite.
       </p>
 
     </div>
@@ -295,8 +330,19 @@
   </footer>
 
 <script>
-  // Capture invite ID from path for future use (analytics, personalization)
+  // Capture invite ID from path: /invite/{id}
   var inviteId = location.pathname.split('/').filter(Boolean)[1] || null;
+
+  // Point the "Open in Disconnect" button at the app's custom scheme so an installed recipient can
+  // jump straight into the invite — this is the reliable path when the link was opened from a
+  // .webloc / direct Safari load (universal links don't fire there). No auto-redirect: recipients
+  // without the app would otherwise get a "cannot open page" alert; they use the App Store CTA.
+  if (inviteId) {
+    var openBtn = document.getElementById('openApp');
+    openBtn.setAttribute('href', 'disconnect://invite/' + encodeURIComponent(inviteId));
+    openBtn.style.display = 'inline-block';
+    document.getElementById('openAppHint').style.display = 'block';
+  }
 </script>
 </body>
 </html>
