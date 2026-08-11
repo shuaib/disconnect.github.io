@@ -10,7 +10,8 @@
 <!-- Smart App Banner. iOS knows the install state and renders "Open" (installed) or "Get" (not),
      so we don't have to detect it. app-argument carries the invite deep link (disconnect://invite/{id})
      so tapping "Open" hands the invite straight to the app. The id is only in the URL at runtime, so
-     an inline script below rewrites app-argument during parse, before Safari renders the banner. -->
+     an inline script below rewrites app-argument during parse, before Safari renders the banner.
+     Note: this banner is Safari-controlled — it can't be pinned/styled and scrolls with the page. -->
 <meta name="apple-itunes-app" id="smart-app-banner" content="app-id=6743134572">
 <script>
   (function () {
