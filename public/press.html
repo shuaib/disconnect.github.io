@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press — Disconnect</title>
+<meta name="description" content="Press kit and media resources for Disconnect, the iOS app for buddy-accountability screen time control.">
+<link rel="canonical" href="https://disconnectapp.co/press.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://disconnectapp.co/press.html">
+<meta property="og:title"       content="Press — Disconnect">
+<meta property="og:description" content="Press kit and media resources for Disconnect.">
+<meta property="og:image"       content="https://disconnectapp.co/og-image.png">
+
+<style>
+  :root {
+    --bone:   #F5F4F1;
+    --bone-2: #ECEAE3;
+    --ink:    #0B0B0C;
+    --sec:    rgba(60,60,67,0.62);
+    --ter:    rgba(60,60,67,0.32);
+    --hair:   rgba(11,11,12,0.12);
+    --sage:   #2DAB57;
+    --font: -apple-system, "SF Pro Display", "SF Pro Text", system-ui, "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body { font-family: var(--font); background: var(--bone); color: var(--ink); line-height: 1.5; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; max-width: 800px; margin: 0 auto; padding-inline: clamp(20px, 5vw, 48px); }
+
+  /* ── Header ── */
+  .site-header { border-bottom: 0.5px solid var(--hair); padding: 20px 0; }
+  .site-header .wrap { display: flex; align-items: center; }
+
+  /* ── Page title ── */
+  .page-hero { padding: clamp(48px, 7vw, 80px) 0 clamp(32px, 5vw, 56px); }
+  .page-hero .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--sec); margin-bottom: 14px;
+  }
+  .page-hero h1 {
+    font-size: clamp(36px, 6vw, 60px); font-weight: 700;
+    letter-spacing: -0.03em; line-height: 1.04;
+  }
+  .page-hero p {
+    margin-top: 16px; font-size: clamp(17px, 2vw, 20px);
+    color: var(--sec); line-height: 1.5; max-width: 36em;
+  }
+
+  /* ── Sections ── */
+  .section { padding: clamp(32px, 5vw, 56px) 0; border-top: 0.5px solid var(--hair); }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ter); margin-bottom: 20px;
+  }
+
+  /* ── Quick facts ── */
+  .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+  .fact {
+    background: #fff; border: 0.5px solid var(--hair);
+    border-radius: 16px; padding: 20px;
+    box-shadow: 0 1px 2px rgba(11,11,12,0.04);
+  }
+  .fact .label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ter); margin-bottom: 6px; }
+  .fact .value { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+
+  /* ── About / boilerplate ── */
+  .prose p { font-size: clamp(16px, 1.6vw, 18px); color: var(--sec); line-height: 1.65; }
+  .prose p + p { margin-top: 16px; }
+
+  .copy-block {
+    background: var(--bone-2); border: 0.5px solid var(--hair);
+    border-radius: 14px; padding: 20px 22px; position: relative;
+    margin-top: 20px;
+  }
+  .copy-block p { font-size: 15px; color: var(--sec); line-height: 1.6; font-style: italic; }
+  .copy-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 14px; font-size: 13px; font-weight: 600;
+    color: var(--ink); background: #fff;
+    border: 0.5px solid var(--hair); border-radius: 8px;
+    padding: 7px 12px; cursor: pointer;
+    transition: box-shadow .15s;
+    font-family: var(--font);
+  }
+  .copy-btn:hover { box-shadow: 0 2px 8px rgba(11,11,12,0.1); }
+  .copy-btn.copied { color: var(--sage); }
+
+  /* ── Features ── */
+  .features { display: flex; flex-direction: column; gap: 14px; }
+  .feature { display: flex; align-items: flex-start; gap: 14px; }
+  .feature .pip {
+    flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--sage); margin-top: 7px;
+  }
+  .feature p { font-size: clamp(15px, 1.5vw, 17px); color: var(--sec); line-height: 1.5; }
+  .feature p strong { color: var(--ink); }
+
+  /* ── Screenshots ── */
+  .screenshots { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+  .screenshot-thumb {
+    aspect-ratio: 9/19.5;
+    border-radius: 14px; overflow: hidden;
+    border: 0.5px solid var(--hair);
+    box-shadow: 0 2px 8px rgba(11,11,12,0.08);
+  }
+  .screenshot-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ── App icon download ── */
+  .asset-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .icon-preview {
+    width: 72px; height: 72px; border-radius: 16px;
+    overflow: hidden; border: 0.5px solid var(--hair);
+    flex-shrink: 0;
+  }
+  .icon-preview img { width: 100%; height: 100%; display: block; }
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font); font-size: 14px; font-weight: 600;
+    color: var(--ink); background: #fff;
+    border: 0.5px solid var(--hair); border-radius: 10px;
+    padding: 10px 16px; cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow .15s;
+  }
+  .download-btn:hover { box-shadow: 0 2px 8px rgba(11,11,12,0.1); }
+  .download-btn svg { width: 15px; height: 15px; opacity: 0.5; }
+
+  /* ── Contact ── */
+  .contact-card {
+    background: var(--ink); color: #fff;
+    border-radius: 20px; padding: clamp(24px, 3vw, 36px);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+  }
+  .contact-card .label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-bottom: 6px; }
+  .contact-card .name { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+  .contact-card .role { font-size: 14px; opacity: 0.6; margin-top: 2px; }
+  .contact-card a {
+    display: inline-flex; align-items: center;
+    background: #fff; color: var(--ink);
+    font-family: var(--font); font-size: 14px; font-weight: 600;
+    border-radius: 10px; padding: 10px 18px;
+    text-decoration: none; white-space: nowrap;
+    transition: opacity .15s;
+  }
+  .contact-card a:hover { opacity: 0.85; }
+
+  /* ── App Store badge ── */
+  .badge-row { margin-top: 20px; }
+  .badge-row img { height: 40px; width: auto; display: block; }
+
+  /* ── Footer ── */
+  .footer { border-top: 0.5px solid var(--hair); padding: 28px 0; margin-top: clamp(48px, 7vw, 80px); }
+  .footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .footer .links { display: flex; gap: 22px; }
+  .footer .links a { font-size: 13px; color: var(--sec); transition: color .2s; }
+  .footer .links a:hover { color: var(--ink); }
+  .footer .copy { font-size: 12px; color: var(--ter); }
+
+  @media (max-width: 560px) {
+    .contact-card { flex-direction: column; align-items: flex-start; }
+    .facts { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" aria-label="Disconnect home" style="display:inline-block;">
+      <img src="/favicon.svg" width="36" height="36" alt="Disconnect" style="border-radius:8px;display:block;">
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- Page hero -->
+    <div class="page-hero">
+      <div class="eyebrow">Press</div>
+      <h1>Media kit</h1>
+      <p>Everything you need to cover Disconnect. Screenshots, copy, and contact details — all in one place.</p>
+    </div>
+
+    <!-- Quick facts -->
+    <div class="section">
+      <div class="section-label">Quick facts</div>
+      <div class="facts">
+        <div class="fact"><div class="label">App name</div><div class="value">Disconnect</div></div>
+        <div class="fact"><div class="label">Platform</div><div class="value">iOS</div></div>
+        <div class="fact"><div class="label">Price</div><div class="value">Free + IAP</div></div>
+        <div class="fact"><div class="label">Developer</div><div class="value">Bytehood Ltd.</div></div>
+        <div class="fact"><div class="label">Category</div><div class="value">Productivity</div></div>
+        <div class="fact"><div class="label">Requires</div><div class="value">iOS 16+</div></div>
+      </div>
+      <div class="badge-row">
+        <a href="https://apps.apple.com/app/id6743134572" aria-label="Download on the App Store">
+          <img src="/badge-app-store.svg" alt="Download on the App Store">
+        </a>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="section">
+      <div class="section-label">About</div>
+      <div class="prose">
+        <p>Disconnect is an iOS app that helps people use their phone less — not through willpower alone, but through accountability. Setup takes under two minutes: pick the apps you want to block, choose a lock level, and you're done. There's no dashboard to check, no streaks to maintain. It just runs quietly in the background and keeps distracting apps out of reach.</p>
+        <p>Soft and Medium locks work without a buddy — a gentle reminder or a 5-minute wait is often enough. For the times when those aren't enough, Hard lock hands control to a trusted person. Only they can approve an early unlock, with a single tap. Disconnect is free to download, with in-app purchase for the full feature set.</p>
+      </div>
+
+      <div class="copy-block" id="boilerplate">
+        <p id="boilerplate-text">Disconnect is an iOS app that helps people use their phone less. Setup takes under two minutes — pick the apps to block, choose a lock level, and it runs quietly from there. No dashboard to manage, no streaks, no ongoing attention required. It uses a three-tier lock system: Soft lock offers a gentle reminder; Medium lock adds a 5-minute cooldown; Hard lock hands control to a trusted buddy, who approves or denies any early unlock with a single tap. Soft and Medium locks work independently — no buddy needed. Disconnect is free to download, with in-app purchase for the full feature set. It is made by Bytehood Ltd. and available on the App Store.</p>
+        <button class="copy-btn" id="copyBtn" onclick="copyBoilerplate()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="9" height="9" rx="2"/><path d="M11 5V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/></svg>
+          Copy boilerplate
+        </button>
+      </div>
+    </div>
+
+    <!-- Key features -->
+    <div class="section">
+      <div class="section-label">Key features</div>
+      <div class="features">
+        <div class="feature">
+          <div class="pip"></div>
+          <p><strong>Three lock levels</strong> — Soft (instant unlock with a reminder), Medium (5-minute cooldown), and Hard (only a buddy can approve the unlock). Soft and Medium work without a buddy — Hard lock is where accountability kicks in.</p>
+        </div>
+        <div class="feature">
+          <div class="pip"></div>
+          <p><strong>Buddy accountability</strong> — On Hard lock, a trusted friend receives a push notification and approves or denies the unlock request with one tap. No willpower required.</p>
+        </div>
+        <div class="feature">
+          <div class="pip"></div>
+          <p><strong>Scheduled blocking</strong> — Set rules that activate automatically on a schedule, so focus time runs without manual setup each day.</p>
+        </div>
+        <div class="feature">
+          <div class="pip"></div>
+          <p><strong>Set up in under 2 minutes</strong> — No ongoing attention required. Disconnect runs quietly in the background. There's no dashboard to check, no streaks to maintain.</p>
+        </div>
+        <div class="feature">
+          <div class="pip"></div>
+          <p><strong>Privacy first</strong> — No ads, no selling of user data. Sign in with Apple. Screen time data stays on device.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screenshots -->
+    <div class="section">
+      <div class="section-label">Screenshots</div>
+      <div class="screenshots">
+        <div class="screenshot-thumb"><img src="/screenshots/disconnect-home.png" alt="Disconnect home screen"></div>
+        <div class="screenshot-thumb"><img src="/screenshots/lock-level.png" alt="Lock level picker"></div>
+        <div class="screenshot-thumb"><img src="/screenshots/hard-lock-request.PNG" alt="Hard lock unblock request"></div>
+        <div class="screenshot-thumb"><img src="/screenshots/hard-lock-approval.png" alt="Buddy approving unblock"></div>
+      </div>
+    </div>
+
+    <!-- App icon -->
+    <div class="section">
+      <div class="section-label">App icon</div>
+      <div class="asset-row">
+        <div class="icon-preview"><img src="/favicon.svg" alt="Disconnect app icon"></div>
+        <div>
+          <p style="font-size:14px;color:var(--sec);margin-bottom:12px;">Use on white or light backgrounds. Do not modify or recolour.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="download-btn" href="/disconnect-icon-1024.png" download="disconnect-icon.png">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3"/><rect x="2" y="12" width="12" height="2" rx="1"/></svg>
+              Download PNG
+            </a>
+            <a class="download-btn" href="/favicon.svg" download="disconnect-icon.svg">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3"/><rect x="2" y="12" width="12" height="2" rx="1"/></svg>
+              Download SVG
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Press contact -->
+    <div class="section">
+      <div class="section-label">Press contact</div>
+      <div class="contact-card">
+        <div>
+          <div class="label">Media enquiries</div>
+          <div class="name">Shuaib Khan</div>
+          <div class="role">Founder, Bytehood Ltd.</div>
+        </div>
+        <a href="mailto:shuaib@bytehood.com?subject=[Press]%20Disconnect">Email us</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a href="/" aria-label="Disconnect" style="display:inline-block;">
+      <img src="/favicon.svg" width="32" height="32" alt="Disconnect" style="border-radius:7px;display:block;">
+    </a>
+    <nav class="links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:support@bytehood.com?subject=%5BDisconnect%5D%20Feedback">Support</a>
+    </nav>
+    <span class="copy">© 2026–present Bytehood Ltd.</span>
+  </div>
+</footer>
+
+<script>
+function copyBoilerplate() {
+  const text = document.getElementById('boilerplate-text').innerText;
+  const btn = document.getElementById('copyBtn');
+  navigator.clipboard.writeText(text).then(function() {
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,8 6,12 14,4"/></svg> Copied';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="9" height="9" rx="2"/><path d="M11 5V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/></svg> Copy boilerplate';
+    }, 2500);
+  });
+}
+</script>
+</body>
+</html>
