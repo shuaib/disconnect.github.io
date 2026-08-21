@@ -4,7 +4,13 @@
     {
       "name": "disconnect-site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "3458"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3458",
+        "--directory",
+        "public"
+      ],
       "port": 3458
     }
   ]

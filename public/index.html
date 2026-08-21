@@ -57,6 +57,10 @@
   :root {
     --bone:    #F5F4F1;
     --bone-2:  #ECEAE3;
+    /* Icon field. The app icon's own canvas is #F5F4F1 — exactly --bone — so
+       anywhere the icon appears the page must step down to this deeper bone,
+       or the tile dissolves into the background. */
+    --bone-deep: #E9E5DB;
     --ink:     #0B0B0C;
     --sec:     rgba(60,60,67,0.62);
     --ter:     rgba(60,60,67,0.32);
@@ -146,7 +150,23 @@
   .appstore.compact .txt small { font-size: 9.5px; }
 
   /* ── Hero ── */
-  .hero { padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(48px, 7vw, 96px); }
+  .hero {
+    padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(48px, 7vw, 96px);
+    background: linear-gradient(180deg, var(--bone-deep) 0%, var(--bone-deep) 58%, var(--bone) 100%);
+  }
+
+  /* ── App icon ── */
+  .app-icon {
+    display: block;
+    width: clamp(116px, 13.5vw, 176px);
+    height: auto;
+    border-radius: 22.37%;            /* iOS squircle approximation */
+    border: 0.5px solid rgba(11,11,12,0.10);
+    box-shadow:
+      0 1px 1px rgba(11,11,12,0.05),
+      0 8px 20px rgba(11,11,12,0.09),
+      0 26px 48px rgba(11,11,12,0.10);
+  }
   .hero-grid {
     display: grid; grid-template-columns: 1.05fr 0.95fr;
     gap: clamp(32px, 5vw, 72px); align-items: center;
@@ -442,6 +462,7 @@
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
+            <img class="app-icon" src="/app-icon.svg" width="1024" height="1024" alt="Disconnect app icon">
             <h1 class="hero-title">Less Screen.<br>More Life.</h1>
             <p class="hero-sub">Block distracting apps. Hand the key to a friend.</p>
             <div class="hero-actions">
