@@ -172,6 +172,13 @@ table.cmp tr.is-us td:first-child .cmp-app { font-weight: 700; }
   .header-cta { margin-left: auto; }
 }
 
+/* ── Homepage guides teaser ── */
+.from-guides { padding: clamp(48px, 5.6vw, 76px) 0; background: var(--bone-2); }
+.from-guides .head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: clamp(26px, 3vw, 36px); }
+.from-guides .head h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 700; letter-spacing: -0.022em; }
+.from-guides .all { font-size: 15px; font-weight: 600; color: var(--sage); white-space: nowrap; }
+.from-guides .all:hover { text-decoration: underline; text-underline-offset: 3px; }
+
 /* ── Guides: index + article ── */
 .guide-hero { padding: clamp(52px, 7vw, 96px) 0 clamp(30px, 4vw, 48px); background: linear-gradient(180deg, var(--bone-deep) 0%, var(--bone-deep) 55%, var(--bone) 100%); }
 .guide-hero .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--sec); margin-bottom: 20px; }

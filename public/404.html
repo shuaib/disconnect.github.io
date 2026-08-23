@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Disconnect</title>
+<meta name="description" content="That page does not exist. Here is the way back.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  .nf { padding: clamp(70px, 12vw, 150px) 0 clamp(60px, 9vw, 110px);
+        background: linear-gradient(180deg, var(--bone-deep) 0%, var(--bone) 82%); }
+  .nf .wrap { max-width: 720px; }
+  .nf .code { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ter); }
+  .nf h1 { font-size: clamp(34px, 5.4vw, 62px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.02; margin-top: 18px; text-wrap: balance; }
+  .nf p.lead-copy { margin-top: 20px; font-size: clamp(17px, 1.8vw, 21px); line-height: 1.5; color: var(--sec); max-width: 30em; }
+  .nf .go { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(30px, 4vw, 42px); }
+  .nf .go a { display: inline-flex; align-items: center; padding: 11px 18px; border-radius: 12px;
+              border: 0.5px solid var(--hair); background: #fff; font-size: 15px; font-weight: 600;
+              transition: transform .18s ease, box-shadow .18s ease; }
+  .nf .go a:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(11,11,12,0.09); }
+  .nf .go a.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+</style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="lockup" href="/" aria-label="Disconnect home">
+        <img src="/app-icon.svg" width="26" height="26" alt="">
+        <span class="wordmark">Disconnect</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#how">How it works</a>
+        <a href="/#locks">Lock levels</a>
+        <a href="/#compare">Compare</a>
+        <a href="/guides/">Guides</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href="https://apps.apple.com/app/id6743134572">Get the app</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="nf">
+      <div class="wrap">
+        <p class="code">Error 404</p>
+        <h1>This page has been blocked. Permanently.</h1>
+        <p class="lead-copy">Not by your buddy &mdash; it simply is not here. Try one of these instead.</p>
+        <div class="go">
+          <a class="primary" href="/">Home</a>
+          <a href="/guides/">Guides</a>
+          <a href="/#compare">Compare</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/press">Press</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="footer-mark" href="/" aria-label="Disconnect home">
+      <img src="/app-icon.svg" width="44" height="44" alt="">
+    </a>
+    <nav class="links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#compare">Compare</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/press">Press</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:support@bytehood.com">Support</a>
+    </nav>
+    <p class="copy">&copy; 2026&ndash;present Bytehood Ltd.</p>
+  </div>
+</footer>
+
+  <script>
+    (function () {
+      var h = document.getElementById('siteHeader');
+      if (!h) return;
+      var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+</body>
+</html>

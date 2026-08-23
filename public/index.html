@@ -11,6 +11,222 @@
      homepage has no deep link; tapping just launches/installs the app. -->
 <meta name="apple-itunes-app" content="app-id=6743134572">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://disconnectapp.co/#organization",
+      "name": "Bytehood",
+      "legalName": "Bytehood Ltd.",
+      "url": "https://bytehood.com",
+      "email": "support@bytehood.com",
+      "sameAs": [
+        "https://apps.apple.com/app/id6743134572"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://disconnectapp.co/disconnect-icon-1024.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "founder": {
+        "@id": "https://disconnectapp.co/#shuaib"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://disconnectapp.co/#shuaib",
+      "name": "Shuaib Khan",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "url": "https://disconnectapp.co/press"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://disconnectapp.co/#website",
+      "url": "https://disconnectapp.co/",
+      "name": "Disconnect",
+      "alternateName": "Disconnect app",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "about": {
+        "@id": "https://disconnectapp.co/#app"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Disconnect",
+      "alternateName": "Disconnect: Screen Time Buddy",
+      "description": "Disconnect is an iOS app that blocks distracting apps and hands the unlock key to a trusted friend. It uses three lock levels: Soft lock shows a reminder and unlocks instantly, Medium lock enforces a five-minute cooldown, and Hard lock can only be opened by your buddy approving the request. Soft and Medium locks work without a buddy. The apps you block and your schedule stay on your device.",
+      "applicationCategory": "ProductivityApplication",
+      "applicationSubCategory": "Screen Time and App Blocker",
+      "operatingSystem": "iOS 16.0 or later",
+      "installUrl": "https://apps.apple.com/app/id6743134572",
+      "downloadUrl": "https://apps.apple.com/app/id6743134572",
+      "url": "https://disconnectapp.co/",
+      "inLanguage": "en",
+      "image": "https://disconnectapp.co/disconnect-icon-1024.png",
+      "screenshot": "https://disconnectapp.co/screenshots/disconnect-home.png",
+      "featureList": [
+        "Three lock levels: Soft lock (instant unlock with a reminder), Medium lock (five-minute cooldown), Hard lock (only a buddy can approve)",
+        "Free tier includes one rule, one buddy, and all three lock levels",
+        "Buddy accountability: a trusted friend approves or denies unlock requests with one tap",
+        "Approvals open an app for a set window, then re-lock automatically",
+        "Scheduled blocking that activates automatically",
+        "Setup in under two minutes with no dashboard and no streaks",
+        "Blocked app list and schedule never leave the device",
+        "No ads and no selling of user data; Sign in with Apple"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "Free to download, including one rule, one buddy and all three lock levels. Disconnect Pro is available as a monthly subscription, a yearly subscription, or a one-time purchase."
+      },
+      "author": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "@id": "https://disconnectapp.co/#app"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://disconnectapp.co/#webpage",
+      "url": "https://disconnectapp.co/",
+      "name": "Disconnect — Less Screen. More Life.",
+      "isPartOf": {
+        "@id": "https://disconnectapp.co/#website"
+      },
+      "about": {
+        "@id": "https://disconnectapp.co/#app"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I cheat Disconnect or bypass the block?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the lock level you chose, which is the point. Soft lock you can open instantly — it only shows you a reminder of why you blocked the app in the first place. Medium lock makes you wait five minutes, and cancelling restarts the timer rather than skipping it. Hard lock has no override and no backdoor: the only way back in is your buddy approving the request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a buddy to use Disconnect?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Soft lock and Medium lock work entirely on their own, with no buddy and no pairing. For a lot of people a gentle reminder or a five-minute cooldown is enough on its own. A buddy is only required for Hard lock, which is the level where someone else holds the key."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can my buddy actually see?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Very little, by design. When you ask to unlock something, your buddy sees the name of the rule you are trying to open and any optional reason you choose to write. That is all.They do not see which apps you have blocked, your schedule, your screen time statistics, or your usage history. The list of apps you block never leaves your device at all."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my buddy doesn't respond?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nothing unlocks. An unlock request stays pending until your buddy actively approves or denies it — there is no timeout that quietly lets you back in. If they are asleep or busy, the block simply holds, which is the behaviour Hard lock exists to guarantee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from Apple's built-in Screen Time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Screen Time limits are enforced by a passcode you hold yourself, so in a weak moment you are asking yourself for permission — and you always say yes. Disconnect's Hard lock moves that decision to another person, so getting back in takes someone else's deliberate approval rather than your own tap.Soft and Medium locks work more like Screen Time, with a reminder or a cooldown, for the times you don't need the stronger version."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my buddy need the app? Does being a buddy change their phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your buddy does need Disconnect installed to receive and answer requests, and being a buddy is free. It changes nothing about their own phone, their own apps, or their own screen time — they simply get a notification and approve or deny it with one tap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When my buddy approves, am I unlocked forever?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. An approval opens the app for a set window, and when that window expires the block goes back on automatically. Your buddy can also deny a request outright, and add a short reason when they do."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Disconnect free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and the free version is genuinely usable rather than a trial. It includes one blocking rule, one buddy, and all three lock levels — so Hard lock, the buddy accountability that makes Disconnect different, works without paying anything.Disconnect Pro lifts the limits on rules and buddies. It is available as a monthly or yearly subscription, or as a one-time lifetime purchase. Being someone else's buddy is always free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I get in the free version versus Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free gives you one rule, one buddy, and every lock level including Hard lock. That is enough to block your single worst app and hand the key to a friend, which is the core of how Disconnect works.Pro is for people who want several rules running at once — a work schedule, a sleep schedule, a weekend rule — or more than one buddy. Nothing about the blocking itself gets stronger with Pro; you just get more of it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there an Android version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not currently. Disconnect is an iPhone app and requires iOS 16 or later. Because both people need the app, you and your buddy both need to be on iPhone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data does Disconnect collect?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The apps you block and the schedule you set are stored only on your device and never sent to a server. Disconnect does not collect Screen Time statistics, usage data, or your location.What is stored is what the accountability system needs to work: your name and email from Sign in with Apple, who you are paired with, the unlock requests passing between you, and a push token to deliver notifications. Data is processed by Firebase, with RevenueCat handling subscriptions and Apple handling payments. Nothing is sold or used for advertising."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does setup take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under two minutes. Pick the apps you want blocked, choose a lock level and a schedule, and it runs quietly in the background from there. There is no dashboard to check and no streak to maintain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I delete my account and my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the app, under Settings → Delete account. That permanently removes your user record, your buddy relationships and your unlock request history within 30 days. You can also email support@bytehood.com to access, port, or restrict your data."
+          }
+        }
+      ],
+      "@id": "https://disconnectapp.co/#faq"
+    }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="/styles.css">
 
 <!-- Favicon -->
@@ -31,163 +247,7 @@
 <meta name="twitter:image" content="https://disconnectapp.co/og-image.png">
 
 <!-- JSON-LD structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Disconnect",
-  "alternateName": "Disconnect: Screen Time Buddy",
-  "description": "Disconnect is an iOS app that blocks distracting apps and hands the unlock key to a trusted friend. It uses three lock levels: Soft lock shows a reminder and unlocks instantly, Medium lock enforces a five-minute cooldown, and Hard lock can only be opened by your buddy approving the request. Soft and Medium locks work without a buddy. The apps you block and your schedule stay on your device.",
-  "applicationCategory": "ProductivityApplication",
-  "applicationSubCategory": "Screen Time and App Blocker",
-  "operatingSystem": "iOS 16.0 or later",
-  "installUrl": "https://apps.apple.com/app/id6743134572",
-  "downloadUrl": "https://apps.apple.com/app/id6743134572",
-  "url": "https://disconnectapp.co/",
-  "inLanguage": "en",
-  "image": "https://disconnectapp.co/disconnect-icon-1024.png",
-  "screenshot": "https://disconnectapp.co/screenshots/disconnect-home.png",
-  "featureList": [
-    "Three lock levels: Soft lock (instant unlock with a reminder), Medium lock (five-minute cooldown), Hard lock (only a buddy can approve)",
-    "Free tier includes one rule, one buddy, and all three lock levels",
-    "Buddy accountability: a trusted friend approves or denies unlock requests with one tap",
-    "Approvals open an app for a set window, then re-lock automatically",
-    "Scheduled blocking that activates automatically",
-    "Setup in under two minutes with no dashboard and no streaks",
-    "Blocked app list and schedule never leave the device",
-    "No ads and no selling of user data; Sign in with Apple"
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "description": "Free to download, including one rule, one buddy and all three lock levels. Disconnect Pro is available as a monthly subscription, a yearly subscription, or a one-time purchase."
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Bytehood Ltd.",
-    "url": "https://bytehood.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bytehood Ltd.",
-    "url": "https://bytehood.com"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I cheat Disconnect or bypass the block?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on the lock level you chose, which is the point. Soft lock you can open instantly — it only shows you a reminder of why you blocked the app in the first place. Medium lock makes you wait five minutes, and cancelling restarts the timer rather than skipping it. Hard lock has no override and no backdoor: the only way back in is your buddy approving the request."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a buddy to use Disconnect?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Soft lock and Medium lock work entirely on their own, with no buddy and no pairing. For a lot of people a gentle reminder or a five-minute cooldown is enough on its own. A buddy is only required for Hard lock, which is the level where someone else holds the key."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What can my buddy actually see?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Very little, by design. When you ask to unlock something, your buddy sees the name of the rule you are trying to open and any optional reason you choose to write. That is all.They do not see which apps you have blocked, your schedule, your screen time statistics, or your usage history. The list of apps you block never leaves your device at all."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens if my buddy doesn't respond?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nothing unlocks. An unlock request stays pending until your buddy actively approves or denies it — there is no timeout that quietly lets you back in. If they are asleep or busy, the block simply holds, which is the behaviour Hard lock exists to guarantee."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is this different from Apple's built-in Screen Time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Screen Time limits are enforced by a passcode you hold yourself, so in a weak moment you are asking yourself for permission — and you always say yes. Disconnect's Hard lock moves that decision to another person, so getting back in takes someone else's deliberate approval rather than your own tap.Soft and Medium locks work more like Screen Time, with a reminder or a cooldown, for the times you don't need the stronger version."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does my buddy need the app? Does being a buddy change their phone?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Your buddy does need Disconnect installed to receive and answer requests, and being a buddy is free. It changes nothing about their own phone, their own apps, or their own screen time — they simply get a notification and approve or deny it with one tap."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When my buddy approves, am I unlocked forever?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. An approval opens the app for a set window, and when that window expires the block goes back on automatically. Your buddy can also deny a request outright, and add a short reason when they do."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Disconnect free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, and the free version is genuinely usable rather than a trial. It includes one blocking rule, one buddy, and all three lock levels — so Hard lock, the buddy accountability that makes Disconnect different, works without paying anything.Disconnect Pro lifts the limits on rules and buddies. It is available as a monthly or yearly subscription, or as a one-time lifetime purchase. Being someone else's buddy is always free."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What do I get in the free version versus Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Free gives you one rule, one buddy, and every lock level including Hard lock. That is enough to block your single worst app and hand the key to a friend, which is the core of how Disconnect works.Pro is for people who want several rules running at once — a work schedule, a sleep schedule, a weekend rule — or more than one buddy. Nothing about the blocking itself gets stronger with Pro; you just get more of it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there an Android version?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not currently. Disconnect is an iPhone app and requires iOS 16 or later. Because both people need the app, you and your buddy both need to be on iPhone."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What data does Disconnect collect?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The apps you block and the schedule you set are stored only on your device and never sent to a server. Disconnect does not collect Screen Time statistics, usage data, or your location.What is stored is what the accountability system needs to work: your name and email from Sign in with Apple, who you are paired with, the unlock requests passing between you, and a push token to deliver notifications. Data is processed by Firebase, with RevenueCat handling subscriptions and Apple handling payments. Nothing is sold or used for advertising."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does setup take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Under two minutes. Pick the apps you want blocked, choose a lock level and a schedule, and it runs quietly in the background from there. There is no dashboard to check and no streak to maintain."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I delete my account and my data?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In the app, under Settings → Delete account. That permanently removes your user record, your buddy relationships and your unlock request history within 30 days. You can also email support@bytehood.com to access, port, or restrict your data."
-      }
-    }
-  ]
-}
-</script>
+
 <style>
   /* ──────────────────────────────────────────────────────────
      Disconnect · disconnectapp.co
@@ -843,7 +903,23 @@
       </div>
     </section>
 
-    <!-- 7 · Closing CTA -->
+    <!-- 7 · From the guides -->
+    <section class="from-guides" id="guides-teaser">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2>From the guides</h2>
+          <a class="all" href="/guides/">All guides &rarr;</a>
+        </div>
+        <div class="guide-grid reveal">
+          <a class="guide-card" href="/guides/why-screen-time-limits-fail"><h2>Why You Keep Turning Off Screen Time</h2><p>You set the limit while thinking clearly. You removed it while you weren't. That is a design problem, not a discipline one.</p><span class="more">Read guide &rarr;</span></a>
+          <a class="guide-card" href="/guides/block-apps-you-cant-unblock"><h2>How to Block Apps You Can't Unblock Yourself</h2><p>One question predicts whether a blocker survives a real craving: at the moment it fires, can you undo it alone?</p><span class="more">Read guide &rarr;</span></a>
+          <a class="guide-card" href="/guides/accountability-partner-screen-time"><h2>How to Use an Accountability Partner</h2><p>Accountability works. Most people set it up in a way that quietly guarantees it stops working by the end of the month.</p><span class="more">Read guide &rarr;</span></a>
+          <a class="guide-card" href="/guides/stop-scrolling-in-bed"><h2>How to Stop Scrolling in Bed</h2><p>Every defence you have is weakest at exactly the hour you need it most. Here is a setup that works anyway.</p><span class="more">Read guide &rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · Closing CTA -->
     <section class="closer">
       <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="currentColor" stroke-width="10.5" stroke-linecap="butt"/></svg>
       <div class="wrap">
