@@ -11,6 +11,8 @@
      homepage has no deep link; tapping just launches/installs the app. -->
 <meta name="apple-itunes-app" content="app-id=6743134572">
 
+<link rel="stylesheet" href="/styles.css">
+
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -47,6 +49,7 @@
   "screenshot": "https://disconnectapp.co/screenshots/disconnect-home.png",
   "featureList": [
     "Three lock levels: Soft lock (instant unlock with a reminder), Medium lock (five-minute cooldown), Hard lock (only a buddy can approve)",
+    "Free tier includes one rule, one buddy, and all three lock levels",
     "Buddy accountability: a trusted friend approves or denies unlock requests with one tap",
     "Approvals open an app for a set window, then re-lock automatically",
     "Scheduled blocking that activates automatically",
@@ -58,7 +61,8 @@
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD",
-    "description": "Free to download, with an in-app purchase for the full feature set."
+    "availability": "https://schema.org/InStock",
+    "description": "Free to download, including one rule, one buddy and all three lock levels. Disconnect Pro is available as a monthly subscription, a yearly subscription, or a one-time purchase."
   },
   "author": {
     "@type": "Organization",
@@ -138,7 +142,15 @@
       "name": "Is Disconnect free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Disconnect is free to download and free to use as a buddy, with an in-app purchase that unlocks the full feature set."
+        "text": "Yes, and the free version is genuinely usable rather than a trial. It includes one blocking rule, one buddy, and all three lock levels — so Hard lock, the buddy accountability that makes Disconnect different, works without paying anything.Disconnect Pro lifts the limits on rules and buddies. It is available as a monthly or yearly subscription, or as a one-time lifetime purchase. Being someone else's buddy is always free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get in the free version versus Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free gives you one rule, one buddy, and every lock level including Hard lock. That is enough to block your single worst app and hand the key to a friend, which is the core of how Disconnect works.Pro is for people who want several rules running at once — a work schedule, a sleep schedule, a weekend rule — or more than one buddy. Nothing about the blocking itself gets stronger with Pro; you just get more of it."
       }
     },
     {
@@ -305,102 +317,6 @@
   .hero-actions { margin-top: clamp(28px, 3.5vw, 40px); display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
   .hero-note { font-size: 14px; color: var(--ter); }
 
-  .hero-phone { display: flex; justify-content: center; align-items: center; position: relative; }
-  .hero-phone::before {
-    content: ""; position: absolute; width: 118%; height: 118%;
-    background: radial-gradient(closest-side, rgba(45,171,87,0.10), transparent 72%);
-    z-index: 0;
-  }
-
-  /* ── iPhone mockup (pure CSS) ── */
-  .phone {
-    --w: 300px;
-    width: var(--w); height: calc(var(--w) * 2.165);
-    border-radius: calc(var(--w) * 0.155);
-    background: #0b0b0c;
-    padding: calc(var(--w) * 0.035);
-    box-shadow: 0 2px 0 rgba(255,255,255,0.04) inset, 0 40px 80px rgba(11,11,12,0.22), 0 8px 24px rgba(11,11,12,0.12);
-    position: relative; z-index: 1; flex-shrink: 0;
-  }
-  .phone-screen {
-    width: 100%; height: 100%; border-radius: calc(var(--w) * 0.122);
-    background: var(--bone); overflow: hidden; position: relative;
-    display: flex; flex-direction: column;
-  }
-  .phone .island {
-    position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
-    width: 92px; height: 27px; border-radius: 16px; background: #0b0b0c; z-index: 10;
-  }
-  .phone .statusbar {
-    position: absolute; top: 14px; left: 20px; right: 20px; z-index: 9;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 13px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em;
-  }
-  .phone .statusbar .icons { display: flex; gap: 5px; align-items: center; }
-  .phone .home-ind {
-    position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%);
-    width: 110px; height: 4.5px; border-radius: 3px; background: rgba(11,11,12,0.32); z-index: 10;
-  }
-  /* welcome screen content */
-  .ws { flex: 1; display: flex; flex-direction: column; padding: 58px 22px 30px; }
-  .ws .glyph { color: var(--ink); }
-  .ws .ws-title { font-size: 27px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; margin-top: 22px; }
-  .ws .ws-ghost { font-size: 16px; font-weight: 400; line-height: 1.25; color: rgba(11,11,12,0.35); margin-top: 9px; }
-  .ws .ws-hair { height: 0.5px; background: var(--hair); margin: 24px 0; }
-  .ws .ws-anchor { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
-  .ws .ws-lines { display: flex; flex-direction: column; gap: 10px; margin-top: 13px; }
-  .ws .ws-lines p { font-size: 13.5px; line-height: 1.32; color: var(--sec); }
-  .ws .ws-cta {
-    margin-top: auto; height: 46px; border-radius: 13px; background: var(--ink);
-    color: #fff; display: flex; align-items: center; justify-content: center;
-    font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
-  }
-  .ws .ws-legal { font-size: 10px; color: var(--ter); text-align: center; margin-top: 9px; line-height: 1.3; }
-
-  /* ── Screenshot carousel ── */
-  .screen-carousel {
-    position: absolute; inset: 0; z-index: 2;
-  }
-  .screen-carousel .slide {
-    position: absolute; inset: 0;
-    opacity: 0; transition: opacity .5s ease;
-    pointer-events: none;
-  }
-  .screen-carousel .slide.active {
-    opacity: 1; pointer-events: auto;
-  }
-  /* placeholder slide style — remove once real screenshots are swapped in */
-  .screen-carousel .slide .ph {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 10px;
-  }
-  .screen-carousel .slide img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-  .ph-label {
-    font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
-    text-transform: uppercase; color: rgba(255,255,255,0.6);
-  }
-  .ph-num {
-    font-size: 48px; font-weight: 700; color: rgba(255,255,255,0.15);
-    letter-spacing: -0.04em;
-  }
-  /* dots overlay */
-  .carousel-dots {
-    position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 6px; z-index: 20;
-  }
-  .carousel-dots button {
-    width: 6px; height: 6px; border-radius: 50%;
-    border: none; padding: 0; cursor: pointer;
-    background: rgba(255,255,255,0.35);
-    transition: background .25s, transform .25s;
-  }
-  .carousel-dots button.active {
-    background: #fff; transform: scale(1.25);
-  }
-
   /* ── Problem ── */
   .problem { padding: clamp(72px, 11vw, 150px) 0; }
   .problem .wrap { max-width: 1000px; }
@@ -503,10 +419,39 @@
   .faq-answer p + p { margin-top: 12px; }
   .faq-answer strong { color: var(--ink); font-weight: 600; }
 
+  /* ── Hero screenshot carousel ── */
+  /* min-width:0 is load-bearing: without it the grid item takes the track's ~1000px
+     min-content width and squeezes the copy column, wrapping the headline. */
+  .hero-shots { position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .hero-shots::before {
+    content: ""; position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%);
+    width: 120%; height: 90%; pointer-events: none;
+    background: radial-gradient(closest-side, rgba(45,171,87,0.13), transparent 72%);
+  }
+  .shots-viewport { width: 100%; min-width: 0; overflow: hidden; position: relative; z-index: 1;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+  .shots-track { display: flex; align-items: flex-start; gap: clamp(14px, 1.8vw, 22px);
+    transition: transform .62s cubic-bezier(.3,.8,.25,1); will-change: transform; }
+  .shot { flex: 0 0 clamp(168px, 20vw, 232px); margin: 0; text-align: center;
+    opacity: .42; transform: scale(.93); transition: opacity .5s ease, transform .5s ease; }
+  .shot.is-current { opacity: 1; transform: scale(1); }
+  .shot img { width: 100%; height: auto; display: block; border-radius: clamp(20px, 2.4vw, 30px);
+    border: 0.5px solid rgba(11,11,12,0.10); background: var(--bone);
+    box-shadow: 0 2px 4px rgba(11,11,12,0.05), 0 18px 40px rgba(11,11,12,0.13), 0 40px 80px rgba(11,11,12,0.10); }
+  .shot figcaption { margin-top: 14px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em;
+    color: var(--ter); transition: color .5s ease; }
+  .shot.is-current figcaption { color: var(--sec); }
+  .shots-dots { display: flex; gap: 7px; justify-content: center; position: relative; z-index: 1; }
+  .shots-dots button { width: 7px; height: 7px; padding: 0; border: none; border-radius: 50%; cursor: pointer;
+    background: rgba(11,11,12,0.18); transition: background .25s ease, transform .25s ease; }
+  .shots-dots button.active { background: var(--ink); transform: scale(1.3); }
+  .shots-dots button:hover { background: rgba(11,11,12,0.4); }
+
   /* ── Responsive ── */
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; min-height: 0; gap: 8px; }
-    .hero-phone { display: none; }
+    .hero-shots { margin-top: 34px; }
     .hero { min-height: calc(100vh - 64px); display: flex; align-items: center; }
     .hero .wrap { width: 100%; }
     .hero-sub { max-width: 24em; }
@@ -514,7 +459,6 @@
     .step .num .rule { max-width: 60px; }
     .lock-grid { grid-template-columns: 1fr; }
     .lock-card { min-height: 0; }
-    .header-cta { display: none; }
   }
   @media (max-width: 560px) {
     .appstore .txt b { font-size: 17px; }
@@ -607,6 +551,23 @@
 </head>
 <body>
 
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="lockup" href="/" aria-label="Disconnect home">
+        <img src="/app-icon.svg" width="26" height="26" alt="">
+        <span class="wordmark">Disconnect</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#how">How it works</a>
+        <a href="/#locks">Lock levels</a>
+        <a href="/#compare">Compare</a>
+        <a href="/guides/">Guides</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href="https://apps.apple.com/app/id6743134572">Get the app</a>
+    </div>
+  </header>
 
   <main id="top">
 
@@ -626,34 +587,32 @@
             </div>
           </div>
 
-          <div class="hero-phone">
-            <div class="phone" role="img" aria-label="Disconnect app screenshots">
-              <div class="phone-screen">
-                <div class="screen-carousel" id="phoneCarousel">
-                  <div class="slide active" data-index="0">
-                    <img src="screenshots/disconnect-home.png" alt="Disconnect app home screen showing active blocking rules">
-                  </div>
-                  <div class="slide" data-index="1">
-                    <img src="screenshots/lock-level.png" alt="Lock level picker — Soft, Medium, and Hard options" loading="lazy">
-                  </div>
-                  <div class="slide" data-index="2">
-                    <img src="screenshots/hard-lock-request.PNG" alt="Hard lock unblock request sent to a buddy for approval" loading="lazy">
-                  </div>
-                  <div class="slide" data-index="3">
-                    <img src="screenshots/hard-lock-approval.png" alt="Buddy approving a hard lock unblock request" loading="lazy">
-                  </div>
-                </div>
-
-                <!-- Dot indicators -->
-                <div class="carousel-dots" id="carouselDots" aria-label="Screenshot navigation">
-                  <button class="active" aria-label="Slide 1" data-dot="0"></button>
-                  <button aria-label="Slide 2" data-dot="1"></button>
-                  <button aria-label="Slide 3" data-dot="2"></button>
-                  <button aria-label="Slide 4" data-dot="3"></button>
-                </div>
-
-                <div class="home-ind"></div>
+          <div class="hero-shots">
+            <div class="shots-viewport">
+              <div class="shots-track" id="shotsTrack">
+              <figure class="shot" data-index="0">
+                <img src="screenshots/disconnect-home.png" alt="Disconnect home screen showing active blocking rules" width="1179" height="2556">
+                <figcaption>Your rules, running</figcaption>
+              </figure>
+              <figure class="shot" data-index="1">
+                <img src="screenshots/lock-level.png" alt="Choosing between Soft, Medium and Hard lock levels" loading="lazy" width="1179" height="2556">
+                <figcaption>Pick a lock level</figcaption>
+              </figure>
+              <figure class="shot" data-index="2">
+                <img src="screenshots/hard-lock-request.PNG" alt="Sending a Hard lock unlock request to a buddy" loading="lazy" width="1179" height="2556">
+                <figcaption>Ask your buddy</figcaption>
+              </figure>
+              <figure class="shot" data-index="3">
+                <img src="screenshots/hard-lock-approval.png" alt="A buddy approving or denying an unlock request" loading="lazy" width="1179" height="2556">
+                <figcaption>They decide</figcaption>
+              </figure>
               </div>
+            </div>
+            <div class="shots-dots" id="shotsDots" aria-label="Screenshot navigation">
+              <button class="active" aria-label="Show screenshot 1: Your rules, running" data-dot="0"></button>
+              <button aria-label="Show screenshot 2: Pick a lock level" data-dot="1"></button>
+              <button aria-label="Show screenshot 3: Ask your buddy" data-dot="2"></button>
+              <button aria-label="Show screenshot 4: They decide" data-dot="3"></button>
             </div>
           </div>
         </div>
@@ -671,7 +630,7 @@
     </section>
 
     <!-- 3 · How it works -->
-    <section class="how">
+    <section class="how" id="how">
       <div class="wrap">
         <div class="head reveal">
           <div class="eyebrow">How it works</div>
@@ -698,7 +657,7 @@
     </section>
 
     <!-- 4 · The lock levels -->
-    <section class="locks">
+    <section class="locks" id="locks">
       <div class="wrap">
         <div class="head reveal">
           <div class="eyebrow">The lock levels</div>
@@ -731,7 +690,80 @@
       </div>
     </section>
 
-    <!-- 5 · FAQ -->
+    <!-- 5 · Comparison -->
+    <section class="compare" id="compare">
+      <div class="wrap">
+        <svg class="cmp-sprite" aria-hidden="true" focusable="false">
+          <symbol id="ic-yes" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.13"/><path d="M5.8 10.3l2.7 2.7 5.7-5.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+          <symbol id="ic-no" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.13"/><path d="M6.9 6.9l6.2 6.2M13.1 6.9l-6.2 6.2" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></symbol>
+          <symbol id="ic-partial" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.13"/><path d="M6.4 10h7.2" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></symbol>
+        </svg>
+        <div class="head reveal">
+          <div class="eyebrow">How Disconnect compares</div>
+          <h2 class="section-title" style="margin-top:16px;">Most blockers ask you for permission.</h2>
+          <p class="body">Nearly every screen time app leaves the off switch in your hands &mdash; a pause you can skip, a timer you can end, a passcode you already know. That works right up until the moment it matters.</p>
+        </div>
+        <div class="table-scroll reveal">
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th scope="col">App</th>
+                <th scope="col">A person approves each unlock</th>
+                <th scope="col">Holds when you try to override it</th>
+                <th scope="col">Strongest lock free</th>
+                <th scope="col">Platform</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr class="is-us">
+              <td><span class="cmp-app">Disconnect</span></td>
+              <td><span class="mark yes"><svg aria-hidden="true"><use href="#ic-yes"/></svg>Yes</span><span class="micro">Your buddy approves or denies, built in</span></td>
+              <td><span class="mark yes"><svg aria-hidden="true"><use href="#ic-yes"/></svg>Yes</span><span class="micro">Hard lock has no override or backdoor</span></td>
+              <td><span class="mark yes"><svg aria-hidden="true"><use href="#ic-yes"/></svg>Yes</span><span class="micro">All three lock levels, buddy included</span></td>
+              <td><span class="micro">iPhone</span></td>
+            </tr>
+            <tr>
+              <td><span class="cmp-app">Apple Screen Time</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">No approval flow outside Family Sharing</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">You hold the passcode</span></td>
+              <td><span class="mark yes"><svg aria-hidden="true"><use href="#ic-yes"/></svg>Yes</span><span class="micro">Built into iOS</span></td>
+              <td><span class="micro">iPhone, iPad, Mac</span></td>
+            </tr>
+            <tr>
+              <td><span class="cmp-app">Opal</span></td>
+              <td><span class="mark partial"><svg aria-hidden="true"><use href="#ic-partial"/></svg>Partial</span><span class="micro">Only by letting someone else set your passcode</span></td>
+              <td><span class="mark partial"><svg aria-hidden="true"><use href="#ic-partial"/></svg>Partial</span><span class="micro">Deep Focus resists changes</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">Strongest modes are paid</span></td>
+              <td><span class="micro">iPhone, Android, Mac</span></td>
+            </tr>
+            <tr>
+              <td><span class="cmp-app">one sec</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">No approval flow</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">Continuing is always your choice, by design</span></td>
+              <td><span class="mark partial"><svg aria-hidden="true"><use href="#ic-partial"/></svg>Partial</span><span class="micro">One app on the free tier</span></td>
+              <td><span class="micro">iPhone, Android</span></td>
+            </tr>
+            <tr>
+              <td><span class="cmp-app">ScreenZen</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">Shares stats with friends, not approvals</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">Pause then continue, by design</span></td>
+              <td><span class="mark yes"><svg aria-hidden="true"><use href="#ic-yes"/></svg>Yes</span><span class="micro">Fully free, no paid tier</span></td>
+              <td><span class="micro">iPhone, Android</span></td>
+            </tr>
+            <tr>
+              <td><span class="cmp-app">Forest</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">Shared sessions, not approvals</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">You can end the session</span></td>
+              <td><span class="mark no"><svg aria-hidden="true"><use href="#ic-no"/></svg>No</span><span class="micro">Limited on the free tier</span></td>
+              <td><span class="micro">iPhone, Android</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · FAQ -->
     <section class="faq" id="faq">
       <div class="wrap">
         <div class="head reveal">
@@ -777,7 +809,12 @@
 
           <details class="faq-item">
             <summary>Is Disconnect free?</summary>
-            <div class="faq-answer"><p>Disconnect is free to download and free to use as a buddy, with an in-app purchase that unlocks the full feature set.</p></div>
+            <div class="faq-answer"><p>Yes, and the free version is genuinely usable rather than a trial. It includes <strong>one blocking rule, one buddy, and all three lock levels</strong> &mdash; so Hard lock, the buddy accountability that makes Disconnect different, works without paying anything.</p><p>Disconnect Pro lifts the limits on rules and buddies. It is available as a monthly or yearly subscription, or as a one-time lifetime purchase. Being someone else's buddy is always free.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What do I get in the free version versus Pro?</summary>
+            <div class="faq-answer"><p>Free gives you one rule, one buddy, and every lock level including Hard lock. That is enough to block your single worst app and hand the key to a friend, which is the core of how Disconnect works.</p><p>Pro is for people who want several rules running at once &mdash; a work schedule, a sleep schedule, a weekend rule &mdash; or more than one buddy. Nothing about the blocking itself gets stronger with Pro; you just get more of it.</p></div>
           </details>
 
           <details class="faq-item">
@@ -804,7 +841,7 @@
       </div>
     </section>
 
-    <!-- 6 · Closing CTA -->
+    <!-- 7 · Closing CTA -->
     <section class="closer">
       <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="currentColor" stroke-width="10.5" stroke-linecap="butt"/></svg>
       <div class="wrap">
@@ -825,10 +862,14 @@
         <img src="/favicon.svg" width="44" height="44" alt="Disconnect" style="border-radius:10px;display:block;box-shadow:0 0 0 1px rgba(11,11,12,0.12);">
       </a>
       <nav class="links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/guides/">Guides</a>
+        <a href="/#compare">Compare</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/press.html">Press</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
-        <a href="/press.html">Press</a>
-        <a href="mailto:support@bytehood.com?subject=%5BDisconnect%5D%20Feedback">Support</a>
+        <a href="mailto:support@bytehood.com">Support</a>
       </nav>
       <span class="copy">© 2026–present Bytehood Ltd.</span>
     </div>
@@ -857,46 +898,58 @@
       });
     });
 
-    // Screenshot carousel
+    // Header hairline once scrolled off the top
     (function () {
-      const slides = document.querySelectorAll('#phoneCarousel .slide');
-      const dots = document.querySelectorAll('#carouselDots button');
-      let current = 0;
-      let timer;
+      const h = document.getElementById('siteHeader');
+      if (!h) return;
+      const onScroll = () => h.classList.toggle('scrolled', window.scrollY > 8);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
 
-      function goTo(index) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
+    // Screenshot carousel — centres the active shot in the viewport
+    (function () {
+      const track = document.getElementById('shotsTrack');
+      const dots  = document.querySelectorAll('#shotsDots button');
+      if (!track) return;
+      const shots = track.querySelectorAll('.shot');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let current = 0, timer;
+
+      function layout() {
+        const shot = shots[current];
+        const offset = shot.offsetLeft + shot.offsetWidth / 2 - track.parentElement.offsetWidth / 2;
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+        shots.forEach((s, i) => s.classList.toggle('is-current', i === current));
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
       }
-
-      function next() { goTo(current + 1); }
-
+      function goTo(i) { current = (i + shots.length) % shots.length; layout(); }
       function startAuto() {
+        if (reduce) return;
         clearInterval(timer);
-        timer = setInterval(next, 3000);
+        timer = setInterval(() => goTo(current + 1), 3600);
       }
 
-      // Dot tap — restart auto timer so it doesn't jump immediately after tap
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          goTo(parseInt(dot.dataset.dot, 10));
-          startAuto();
-        });
-      });
+      dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.dot, 10)); startAuto(); }));
+      shots.forEach((s, i) => s.addEventListener('click', () => { goTo(i); startAuto(); }));
 
-      // Touch swipe support
-      let touchStartX = 0;
-      const carousel = document.getElementById('phoneCarousel');
-      carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-      carousel.addEventListener('touchend', e => {
-        const dx = e.changedTouches[0].clientX - touchStartX;
+      let x0 = 0;
+      track.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - x0;
         if (Math.abs(dx) > 30) { goTo(current + (dx < 0 ? 1 : -1)); startAuto(); }
       }, { passive: true });
 
+      // Pause while the tab is hidden so it isn't racing in the background
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) clearInterval(timer); else startAuto();
+      });
+      window.addEventListener('resize', layout);
+      // Lay out immediately rather than in rAF: rAF does not fire while the tab is
+      // hidden, which would leave the track untransformed on a background-tab load.
+      layout();
       startAuto();
+      window.addEventListener('load', layout);
     })();
   </script>
 </body>

@@ -6,6 +6,31 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://disconnectapp.co/guides/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/why-screen-time-limits-fail.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/accountability-partner-screen-time.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/block-apps-you-cant-unblock.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/ask-a-friend-to-be-your-buddy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://disconnectapp.co/press.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
