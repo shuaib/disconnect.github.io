@@ -109,7 +109,28 @@ section { position: relative; }
 .compare { padding: clamp(48px, 5.6vw, 76px) 0; }
 .compare .head { max-width: 26em; margin-bottom: clamp(36px, 4.5vw, 56px); }
 .compare .head .body { margin-top: 16px; max-width: 34em; }
-.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px; border: 0.5px solid var(--hair); background: #fff; }
+/* The table is wider than a phone. The fade and hint exist so that is legible as
+   "there is more to the right" rather than as a cropped table. */
+.cmp-scroller { position: relative; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px; border: 0.5px solid var(--hair); background: #fff;
+  scroll-snap-type: x proximity; overscroll-behavior-x: contain; }
+.cmp-fade {
+  position: absolute; top: 0.5px; right: 0.5px; bottom: 0.5px; width: 64px;
+  pointer-events: none; border-radius: 0 20px 20px 0;
+  background: linear-gradient(270deg, #fff 22%, rgba(255,255,255,0.85) 55%, rgba(255,255,255,0));
+  opacity: 1; transition: opacity .28s ease;
+}
+.cmp-scroller.at-end .cmp-fade { opacity: 0; }
+.cmp-hint {
+  margin-bottom: 14px; font-size: 13.5px; font-weight: 500; color: var(--sec);
+  display: flex; align-items: center; gap: 6px;
+  transition: opacity .3s ease;
+}
+.cmp-hint[hidden] { display: none; }
+.cmp-hint.dismissed { opacity: 0; }
+.cmp-hint span { animation: cmp-nudge 1.7s ease-in-out infinite; }
+@keyframes cmp-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .cmp-hint span { animation: none; } }
 table.cmp { width: 100%; border-collapse: collapse; min-width: 660px; font-size: 15px; }
 table.cmp th, table.cmp td { padding: 16px 18px; text-align: left; border-bottom: 0.5px solid var(--hair); vertical-align: middle; }
 table.cmp thead th { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ter); background: var(--bone); white-space: nowrap; }
@@ -139,6 +160,10 @@ table.cmp tr.is-us td:first-child .cmp-app { font-weight: 700; }
 }
 
 @media (max-width: 760px) {
+  table.cmp { min-width: 560px; font-size: 14px; }
+  table.cmp th, table.cmp td { padding: 13px 12px; }
+  .cmp .mark { font-size: 13.5px; gap: 6px; }
+  .cmp-fade { width: 44px; }
   .site-nav { display: none; }
   .header-inner { justify-content: space-between; }
   .header-cta { margin-left: auto; }

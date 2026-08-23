@@ -701,7 +701,9 @@
           <h2 class="section-title" style="margin-top:16px;">Most blockers ask you for permission.</h2>
           <p class="body">Nearly every screen time app leaves the off switch in your hands &mdash; a pause you can skip, a timer you can end, a passcode you already know. That works right up until the moment it matters.</p>
         </div>
-        <div class="table-scroll reveal">
+        <p class="cmp-hint" id="cmpHint" hidden>Swipe the table to compare all five columns <span aria-hidden="true">&rarr;</span></p>
+        <div class="cmp-scroller reveal" id="cmpScroller">
+          <div class="table-scroll" id="cmpScroll">
           <table class="cmp">
             <thead>
               <tr>
@@ -757,6 +759,8 @@
             </tr>
             </tbody>
           </table>
+          </div>
+          <div class="cmp-fade" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -864,9 +868,9 @@
         <a href="/guides/">Guides</a>
         <a href="/#compare">Compare</a>
         <a href="/#faq">FAQ</a>
-        <a href="/press.html">Press</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
+        <a href="/press">Press</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
         <a href="mailto:support@bytehood.com">Support</a>
       </nav>
       <span class="copy">© 2026–present Bytehood Ltd.</span>
@@ -903,6 +907,36 @@
       const onScroll = () => h.classList.toggle('scrolled', window.scrollY > 8);
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // Comparison table — the fade and hint only appear when it actually overflows,
+    // so on a wide screen where nothing is cut off neither shows.
+    (function () {
+      const box = document.getElementById('cmpScroll');
+      const wrap = document.getElementById('cmpScroller');
+      const hint = document.getElementById('cmpHint');
+      if (!box || !wrap) return;
+      let dismissed = false;
+
+      function sync() {
+        const overflows = box.scrollWidth > box.clientWidth + 1;
+        wrap.classList.toggle('has-overflow', overflows);
+        wrap.classList.toggle('at-end', !overflows || box.scrollLeft >= box.scrollWidth - box.clientWidth - 1);
+        if (hint) hint.hidden = !overflows || dismissed;
+      }
+
+      box.addEventListener('scroll', function () {
+        if (!dismissed && box.scrollLeft > 12 && hint) {
+          dismissed = true;
+          hint.classList.add('dismissed');
+          setTimeout(function () { hint.hidden = true; }, 320);
+        }
+        sync();
+      }, { passive: true });
+
+      window.addEventListener('resize', sync);
+      window.addEventListener('load', sync);
+      sync();
     })();
 
     // Screenshot carousel — user-driven. Scrolling is native (CSS scroll-snap);

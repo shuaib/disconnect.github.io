@@ -1,19 +1,31 @@
 {
   "hosting": {
     "public": "public",
+    "cleanUrls": true,
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
     "rewrites": [
-      { "source": "/invite/**", "destination": "/invite.html" },
-      { "source": "/event", "destination": "/index.html" }
+      {
+        "source": "/invite/**",
+        "destination": "/invite.html"
+      },
+      {
+        "source": "/event",
+        "destination": "/index.html"
+      }
     ],
     "headers": [
       {
         "source": "/.well-known/apple-app-site-association",
-        "headers": [{ "key": "Content-Type", "value": "application/json" }]
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
       }
     ]
   }
