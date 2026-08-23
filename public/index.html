@@ -374,6 +374,7 @@
   .shot { flex: 0 0 var(--shot-w); margin: 0; text-align: center; scroll-snap-align: center;
     opacity: .42; transform: scale(.93); transition: opacity .45s ease, transform .45s ease; }
   .shot.is-current { opacity: 1; transform: scale(1); }
+  .shot picture { display: block; }
   .shot img { width: 100%; height: auto; display: block; border-radius: clamp(20px, 2.4vw, 30px);
     border: 0.5px solid rgba(11,11,12,0.10); background: var(--bone); pointer-events: none;
     box-shadow: 0 2px 4px rgba(11,11,12,0.05), 0 18px 40px rgba(11,11,12,0.13), 0 40px 80px rgba(11,11,12,0.10); }
@@ -534,19 +535,31 @@
                  aria-label="Disconnect app screenshots — scroll or use arrow keys">
               <div class="shots-track" id="shotsTrack">
               <figure class="shot" data-index="0">
-                <img src="screenshots/disconnect-home.png" alt="Disconnect home screen showing active blocking rules" width="1179" height="2556">
+                <picture>
+                  <source type="image/webp" srcset="/shots/disconnect-home.webp">
+                  <img src="/shots/disconnect-home.jpg" alt="Disconnect home screen showing active blocking rules" decoding="async" width="700" height="1517">
+                </picture>
                 <figcaption>Your rules, running</figcaption>
               </figure>
               <figure class="shot" data-index="1">
-                <img src="screenshots/lock-level.png" alt="Choosing between Soft, Medium and Hard lock levels" loading="lazy" width="1179" height="2556">
+                <picture>
+                  <source type="image/webp" srcset="/shots/lock-level.webp">
+                  <img src="/shots/lock-level.jpg" alt="Choosing between Soft, Medium and Hard lock levels" loading="lazy" decoding="async" width="700" height="1521">
+                </picture>
                 <figcaption>Pick a lock level</figcaption>
               </figure>
               <figure class="shot" data-index="2">
-                <img src="screenshots/hard-lock-request.PNG" alt="Sending a Hard lock unlock request to a buddy" loading="lazy" width="1179" height="2556">
+                <picture>
+                  <source type="image/webp" srcset="/shots/hard-lock-request.webp">
+                  <img src="/shots/hard-lock-request.jpg" alt="Sending a Hard lock unlock request to a buddy" loading="lazy" decoding="async" width="700" height="1517">
+                </picture>
                 <figcaption>Ask your buddy</figcaption>
               </figure>
               <figure class="shot" data-index="3">
-                <img src="screenshots/hard-lock-approval.png" alt="A buddy approving or denying an unlock request" loading="lazy" width="1179" height="2556">
+                <picture>
+                  <source type="image/webp" srcset="/shots/hard-lock-approval.webp">
+                  <img src="/shots/hard-lock-approval.jpg" alt="A buddy approving or denying an unlock request" loading="lazy" decoding="async" width="700" height="1517">
+                </picture>
                 <figcaption>They decide</figcaption>
               </figure>
               </div>
@@ -578,10 +591,14 @@
 
     <section class="banner focus-key" aria-label="A couple walking a woodland path. One carries a phone locked away in their backpack while the other holds the key.">
       <div class="banner-media">
-        <img src="/img/banner-key-1600.jpg"
-             srcset="/img/banner-key-1600.jpg 1600w, /img/banner-key-2400.jpg 2400w"
-             sizes="100vw" width="2400" height="1350" loading="lazy" decoding="async"
-             alt="A couple walking a woodland path. One carries a phone locked away in their backpack while the other holds the key.">
+        <picture>
+          <source type="image/webp" sizes="100vw"
+                  srcset="/img/banner-key-1600.webp 1600w, /img/banner-key-2400.webp 2400w">
+          <img src="/img/banner-key-1600.jpg"
+               srcset="/img/banner-key-1600.jpg 1600w, /img/banner-key-2400.jpg 2400w"
+               sizes="100vw" width="2400" height="1350" loading="lazy" decoding="async"
+               alt="A couple walking a woodland path. One carries a phone locked away in their backpack while the other holds the key.">
+        </picture>
       </div>
       <div class="banner-copy">
         <div class="wrap">
@@ -654,10 +671,14 @@
 
     <section class="banner align-right focus-cafe" aria-label="Two friends at a cafe table. One slides her phone face down while the other holds up a finger to say no.">
       <div class="banner-media">
-        <img src="/img/banner-cafe-1600.jpg"
-             srcset="/img/banner-cafe-1600.jpg 1600w, /img/banner-cafe-2400.jpg 2400w"
-             sizes="100vw" width="2400" height="1350" loading="lazy" decoding="async"
-             alt="Two friends at a cafe table. One slides her phone face down while the other holds up a finger to say no.">
+        <picture>
+          <source type="image/webp" sizes="100vw"
+                  srcset="/img/banner-cafe-1600.webp 1600w, /img/banner-cafe-2400.webp 2400w">
+          <img src="/img/banner-cafe-1600.jpg"
+               srcset="/img/banner-cafe-1600.jpg 1600w, /img/banner-cafe-2400.jpg 2400w"
+               sizes="100vw" width="2400" height="1350" loading="lazy" decoding="async"
+               alt="Two friends at a cafe table. One slides her phone face down while the other holds up a finger to say no.">
+        </picture>
       </div>
       <div class="banner-copy">
         <div class="wrap">

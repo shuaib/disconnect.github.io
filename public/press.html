@@ -14,6 +14,7 @@
 <meta property="og:title"       content="Press — Disconnect">
 <meta property="og:description" content="Press kit and media resources for Disconnect.">
 <meta property="og:image"       content="https://disconnectapp.co/og-image.png">
+<link rel="stylesheet" href="/styles.css">
 
 <style>
   :root {
@@ -172,11 +173,20 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a href="/" aria-label="Disconnect home" style="display:inline-block;">
-      <img src="/favicon.svg" width="36" height="36" alt="Disconnect" style="border-radius:8px;display:block;box-shadow:0 0 0 1px rgba(11,11,12,0.12);">
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="lockup" href="/" aria-label="Disconnect home">
+      <img src="/app-icon.svg" width="26" height="26" alt="">
+      <span class="wordmark">Disconnect</span>
     </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/#how">How it works</a>
+      <a href="/#locks">Lock levels</a>
+      <a href="/#compare">Compare</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="https://apps.apple.com/app/id6743134572">Get the app</a>
   </div>
 </header>
 
@@ -301,17 +311,18 @@
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <a href="/" aria-label="Disconnect" style="display:inline-block;">
-      <img src="/favicon.svg" width="32" height="32" alt="Disconnect" style="border-radius:7px;display:block;box-shadow:0 0 0 1px rgba(11,11,12,0.12);">
-    </a>
-    <nav class="links">
+  <div class="wrap footer-inner">
+    <nav class="links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#compare">Compare</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/press.html">Press</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
-      <a href="/press.html">Press</a>
-      <a href="mailto:support@bytehood.com?subject=%5BDisconnect%5D%20Feedback">Support</a>
+      <a href="mailto:support@bytehood.com">Support</a>
     </nav>
-    <span class="copy">© 2026–present Bytehood Ltd.</span>
+    <p class="copy">&copy; 2026&ndash;present Bytehood Ltd.</p>
   </div>
 </footer>
 
@@ -328,6 +339,15 @@ function copyBoilerplate() {
     }, 2500);
   });
 }
+</script>
+<script>
+  (function () {
+    var h = document.getElementById('siteHeader');
+    if (!h) return;
+    var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
 </script>
 </body>
 </html>

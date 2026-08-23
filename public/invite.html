@@ -40,6 +40,7 @@
 <meta name="twitter:title"       content="You've been invited to be a Disconnect buddy">
 <meta name="twitter:description" content="Someone wants your help sticking to their screen-time goals. It only takes a tap — download Disconnect to accept.">
 <meta name="twitter:image"       content="https://disconnectapp.co/og-image.png">
+<link rel="stylesheet" href="/styles.css">
 
 <style>
   :root {
@@ -222,6 +223,23 @@
 </head>
 <body>
 
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="lockup" href="/" aria-label="Disconnect home">
+      <img src="/app-icon.svg" width="26" height="26" alt="">
+      <span class="wordmark">Disconnect</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/#how">How it works</a>
+      <a href="/#locks">Lock levels</a>
+      <a href="/#compare">Compare</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="https://apps.apple.com/app/id6743134572">Get the app</a>
+  </div>
+</header>
+
 
   <main>
     <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="currentColor" stroke-width="10.5" stroke-linecap="butt"/></svg>
@@ -291,19 +309,20 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <a href="/" aria-label="Disconnect" style="display:inline-block;">
-        <img src="/favicon.svg" width="44" height="44" alt="Disconnect" style="border-radius:10px;display:block;box-shadow:0 0 0 1px rgba(11,11,12,0.12);">
-      </a>
-      <nav class="links" aria-label="Footer">
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/press.html">Press</a>
-        <a href="mailto:support@bytehood.com?subject=%5BDisconnect%5D%20Feedback">Support</a>
-      </nav>
-      <span class="copy">© 2026–present Bytehood Ltd.</span>
-    </div>
-  </footer>
+  <div class="wrap footer-inner">
+    <nav class="links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#compare">Compare</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/press.html">Press</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:support@bytehood.com">Support</a>
+    </nav>
+    <p class="copy">&copy; 2026&ndash;present Bytehood Ltd.</p>
+  </div>
+</footer>
 
 <script>
   // Capture invite ID from path: /invite/{id}
@@ -319,6 +338,15 @@
     openBtn.style.display = 'inline-block';
     document.getElementById('openAppHint').style.display = 'block';
   }
+</script>
+<script>
+  (function () {
+    var h = document.getElementById('siteHeader');
+    if (!h) return;
+    var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
 </script>
 </body>
 </html>

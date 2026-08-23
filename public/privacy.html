@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Disconnect</title>
+<link rel="stylesheet" href="/styles.css">
     <style>
         * {
             margin: 0;
@@ -140,10 +141,21 @@
 </head>
 <body>
 
-<header>
-    <a href="/">
-        <img src="/favicon.svg" alt="Disconnect">
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="lockup" href="/" aria-label="Disconnect home">
+      <img src="/app-icon.svg" width="26" height="26" alt="">
+      <span class="wordmark">Disconnect</span>
     </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/#how">How it works</a>
+      <a href="/#locks">Lock levels</a>
+      <a href="/#compare">Compare</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="https://apps.apple.com/app/id6743134572">Get the app</a>
+  </div>
 </header>
 
 <main>
@@ -243,11 +255,30 @@
     <a href="mailto:support@bytehood.com">support@bytehood.com</a></p>
 </main>
 
-<footer>
-    © 2026 Bytehood Ltd ·
-    <a href="mailto:support@bytehood.com">support@bytehood.com</a> ·
-    <a href="/terms.html">Terms of Service</a>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <nav class="links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/guides/">Guides</a>
+      <a href="/#compare">Compare</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/press.html">Press</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:support@bytehood.com">Support</a>
+    </nav>
+    <p class="copy">&copy; 2026&ndash;present Bytehood Ltd.</p>
+  </div>
 </footer>
 
+<script>
+  (function () {
+    var h = document.getElementById('siteHeader');
+    if (!h) return;
+    var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
 </body>
 </html>

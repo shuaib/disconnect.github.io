@@ -51,6 +51,9 @@ section { position: relative; }
   position: sticky; top: 0; z-index: 60;
   backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px);
   background: rgba(233,229,219,0.78);
+  /* padding:0 defends against the bare `header {padding}` rules still living in
+     the legacy pages' inline CSS (privacy, terms, press). */
+  padding: 0; text-align: left;
   border-bottom: 0.5px solid transparent;
   transition: border-color .3s ease, background .3s ease;
 }
@@ -74,7 +77,7 @@ section { position: relative; }
 .appstore-badge-link:hover { transform: translateY(-1px); opacity: 0.85; }
 
 /* ── Footer ── */
-.footer { border-top: 0.5px solid var(--hair); padding: 40px 0; background: var(--bone); }
+.footer { border-top: 0.5px solid var(--hair); padding: 40px 0; background: var(--bone); text-align: left; font-size: inherit; color: inherit; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .footer .links { display: flex; gap: 26px; flex-wrap: wrap; }
 .footer .links a { font-size: 14px; color: var(--sec); transition: color .2s; }
