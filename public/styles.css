@@ -162,7 +162,10 @@ table.cmp tr.is-us td:first-child .cmp-app { font-weight: 700; }
 .article ul, .article ol { margin: 18px 0 0 1.15em; }
 .article li { font-size: clamp(16.5px, 1.55vw, 18.5px); line-height: 1.6; color: rgba(40,40,46,0.86); margin-top: 10px; padding-left: 4px; }
 .article strong { color: var(--ink); font-weight: 600; }
-.article a:not(.cta-inline) { color: var(--sage); text-decoration: underline; text-underline-offset: 3px; }
+/* Scope link styling to prose only. A bare `.article a` also catches card links,
+   and text-decoration propagates to descendants, underlining the whole card. */
+.article p a, .article li a, .article blockquote a { color: var(--sage); text-decoration: underline; text-underline-offset: 3px; }
+.article .callout p a { color: #fff; }
 .article blockquote { margin: clamp(26px, 3vw, 36px) 0 0; padding: 22px 26px; border-left: 3px solid var(--sage); background: var(--bone-2); border-radius: 0 14px 14px 0; }
 .article blockquote p { margin-top: 0; font-size: clamp(16px, 1.5vw, 18px); font-style: normal; }
 .article blockquote p + p { margin-top: 12px; }
@@ -172,6 +175,7 @@ table.cmp tr.is-us td:first-child .cmp-app { font-weight: 700; }
 .callout .cta-inline { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; background: #fff; color: var(--ink); padding: 11px 20px; border-radius: 11px; font-size: 15px; font-weight: 600; transition: transform .18s ease; }
 .callout .cta-inline:hover { transform: translateY(-1px); }
 
+.guide-index { padding: 0 0 clamp(70px, 9vw, 120px); }
 .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: clamp(16px, 2vw, 22px); }
 .guide-card { display: flex; flex-direction: column; padding: clamp(24px, 2.6vw, 32px); border-radius: 20px; border: 0.5px solid var(--hair); background: #fff; box-shadow: 0 1px 2px rgba(11,11,12,0.04); transition: transform .2s ease, box-shadow .2s ease; }
 .guide-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(11,11,12,0.09); }
