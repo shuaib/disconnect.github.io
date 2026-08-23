@@ -217,13 +217,14 @@
   .feature p strong { color: var(--ink); }
 
   /* ── Screenshots ── */
-  .screenshots { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
-  .screenshot-thumb {
+  .screenshots { display: grid; grid-template-columns: repeat(auto-fit, minmax(105px, 1fr)); gap: 12px; }
+  .screenshot-thumb { display: block; position: relative; transition: transform .18s ease, box-shadow .18s ease;
     aspect-ratio: 9/19.5;
     border-radius: 14px; overflow: hidden;
     border: 0.5px solid var(--hair);
-    box-shadow: 0 2px 8px rgba(11,11,12,0.08);
-  }
+    box-shadow: 0 2px 8px rgba(11,11,12,0.08); }
+  .screenshot-thumb:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(11,11,12,0.14); }
+  .screenshot-thumb picture { display: block; width: 100%; height: 100%; }
   .screenshot-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* ── App icon download ── */
@@ -378,11 +379,44 @@
     <!-- Screenshots -->
     <div class="section">
       <div class="section-label">Screenshots</div>
+      <p style="font-size:14px;color:var(--sec);margin-bottom:14px;">Click any screenshot to download it at full resolution (1179&nbsp;&times;&nbsp;2556).</p>
       <div class="screenshots">
-        <div class="screenshot-thumb"><img src="/screenshots/disconnect-home.png" alt="Disconnect home screen"></div>
-        <div class="screenshot-thumb"><img src="/screenshots/lock-level.png" alt="Lock level picker"></div>
-        <div class="screenshot-thumb"><img src="/screenshots/hard-lock-request.PNG" alt="Hard lock unblock request"></div>
-        <div class="screenshot-thumb"><img src="/screenshots/hard-lock-approval.png" alt="Buddy approving unblock"></div>
+        <a class="screenshot-thumb" href="/screenshots/disconnect-home.png" download title="Download full resolution">
+          <picture>
+            <source type="image/webp" srcset="/shots/disconnect-home.webp">
+            <img src="/shots/disconnect-home.jpg" alt="Home screen showing active blocking rules" loading="lazy" decoding="async" width="700" height="1517">
+          </picture>
+        </a>
+        <a class="screenshot-thumb" href="/screenshots/app-lock.png" download title="Download full resolution">
+          <picture>
+            <source type="image/webp" srcset="/shots/app-lock.webp">
+            <img src="/shots/app-lock.jpg" alt="A blocked app showing the Disconnect lock screen" loading="lazy" decoding="async" width="700" height="1517">
+          </picture>
+        </a>
+        <a class="screenshot-thumb" href="/screenshots/hard-lock-request.PNG" download title="Download full resolution">
+          <picture>
+            <source type="image/webp" srcset="/shots/hard-lock-request.webp">
+            <img src="/shots/hard-lock-request.jpg" alt="Sending a Hard lock unlock request to a buddy" loading="lazy" decoding="async" width="700" height="1517">
+          </picture>
+        </a>
+        <a class="screenshot-thumb" href="/screenshots/hard-lock-approval.png" download title="Download full resolution">
+          <picture>
+            <source type="image/webp" srcset="/shots/hard-lock-approval.webp">
+            <img src="/shots/hard-lock-approval.jpg" alt="A buddy approving or denying a request" loading="lazy" decoding="async" width="700" height="1517">
+          </picture>
+        </a>
+        <a class="screenshot-thumb" href="/screenshots/buddy-no.png" download title="Download full resolution">
+          <picture>
+            <source type="image/webp" srcset="/shots/buddy-no.webp">
+            <img src="/shots/buddy-no.jpg" alt="A buddy denying a request, with a note" loading="lazy" decoding="async" width="700" height="1517">
+          </picture>
+        </a>
+        <a class="screenshot-thumb" href="/screenshots/lock-level.png" download title="Download full resolution">
+          <picture>
+            <source type="image/webp" srcset="/shots/lock-level.webp">
+            <img src="/shots/lock-level.jpg" alt="Choosing between Soft, Medium and Hard lock levels" loading="lazy" decoding="async" width="700" height="1517">
+          </picture>
+        </a>
       </div>
     </div>
 
