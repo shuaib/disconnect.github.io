@@ -348,30 +348,47 @@
 
   /* ── FAQ ── */
 
-  /* ── Hero screenshot carousel ── */
+  /* ── Hero screenshot carousel ──
+     A native horizontal scroller with CSS scroll-snap: real trackpad and touch
+     momentum, keyboard arrows, and no timer moving things under the reader. */
   /* min-width:0 is load-bearing: without it the grid item takes the track's ~1000px
      min-content width and squeezes the copy column, wrapping the headline. */
-  .hero-shots { position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .hero-shots { --shot-w: clamp(168px, 20vw, 232px);
+    position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
   .hero-shots::before {
     content: ""; position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%);
     width: 120%; height: 90%; pointer-events: none;
     background: radial-gradient(closest-side, rgba(45,171,87,0.13), transparent 72%);
   }
-  .shots-viewport { width: 100%; min-width: 0; overflow: hidden; position: relative; z-index: 1;
+  .shots-viewport { width: 100%; min-width: 0; position: relative; z-index: 1;
+    overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    scrollbar-width: none; -ms-overflow-style: none;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
             mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+  .shots-viewport::-webkit-scrollbar { display: none; }
+  .shots-viewport:focus-visible { outline: 2px solid var(--sage); outline-offset: 4px; border-radius: 8px; }
+  /* Side padding lets the first and last shot reach the centre line. */
   .shots-track { display: flex; align-items: flex-start; gap: clamp(14px, 1.8vw, 22px);
-    transition: transform .62s cubic-bezier(.3,.8,.25,1); will-change: transform; }
-  .shot { flex: 0 0 clamp(168px, 20vw, 232px); margin: 0; text-align: center;
-    opacity: .42; transform: scale(.93); transition: opacity .5s ease, transform .5s ease; }
+    padding-inline: calc(50% - var(--shot-w) / 2); width: max-content; }
+  .shot { flex: 0 0 var(--shot-w); margin: 0; text-align: center; scroll-snap-align: center;
+    opacity: .42; transform: scale(.93); transition: opacity .45s ease, transform .45s ease; }
   .shot.is-current { opacity: 1; transform: scale(1); }
   .shot img { width: 100%; height: auto; display: block; border-radius: clamp(20px, 2.4vw, 30px);
-    border: 0.5px solid rgba(11,11,12,0.10); background: var(--bone);
+    border: 0.5px solid rgba(11,11,12,0.10); background: var(--bone); pointer-events: none;
     box-shadow: 0 2px 4px rgba(11,11,12,0.05), 0 18px 40px rgba(11,11,12,0.13), 0 40px 80px rgba(11,11,12,0.10); }
   .shot figcaption { margin-top: 14px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em;
-    color: var(--ter); transition: color .5s ease; }
+    color: var(--ter); transition: color .45s ease; }
   .shot.is-current figcaption { color: var(--sec); }
-  .shots-dots { display: flex; gap: 7px; justify-content: center; position: relative; z-index: 1; }
+
+  .shots-controls { display: flex; align-items: center; gap: 14px; position: relative; z-index: 1; }
+  .shots-arrow { width: 32px; height: 32px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+    border: 0.5px solid var(--hair); border-radius: 50%; background: rgba(255,255,255,0.7); cursor: pointer;
+    color: var(--ink); transition: background .2s ease, opacity .2s ease, transform .2s ease; }
+  .shots-arrow:hover:not(:disabled) { background: #fff; transform: translateY(-1px); }
+  .shots-arrow:disabled { opacity: 0.3; cursor: default; }
+  .shots-arrow svg { width: 14px; height: 14px; display: block; }
+  .shots-dots { display: flex; gap: 7px; justify-content: center; }
   .shots-dots button { width: 7px; height: 7px; padding: 0; border: none; border-radius: 50%; cursor: pointer;
     background: rgba(11,11,12,0.18); transition: background .25s ease, transform .25s ease; }
   .shots-dots button.active { background: var(--ink); transform: scale(1.3); }
@@ -513,7 +530,8 @@
           </div>
 
           <div class="hero-shots">
-            <div class="shots-viewport">
+            <div class="shots-viewport" id="shotsViewport" tabindex="0" role="group"
+                 aria-label="Disconnect app screenshots — scroll or use arrow keys">
               <div class="shots-track" id="shotsTrack">
               <figure class="shot" data-index="0">
                 <img src="screenshots/disconnect-home.png" alt="Disconnect home screen showing active blocking rules" width="1179" height="2556">
@@ -533,11 +551,15 @@
               </figure>
               </div>
             </div>
-            <div class="shots-dots" id="shotsDots" aria-label="Screenshot navigation">
+            <div class="shots-controls">
+              <button class="shots-arrow" id="shotsPrev" type="button" aria-label="Previous screenshot"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <div class="shots-dots" id="shotsDots" aria-label="Screenshot navigation">
               <button class="active" aria-label="Show screenshot 1: Your rules, running" data-dot="0"></button>
               <button aria-label="Show screenshot 2: Pick a lock level" data-dot="1"></button>
               <button aria-label="Show screenshot 3: Ask your buddy" data-dot="2"></button>
               <button aria-label="Show screenshot 4: They decide" data-dot="3"></button>
+              </div>
+              <button class="shots-arrow" id="shotsNext" type="button" aria-label="Next screenshot"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </div>
           </div>
         </div>
@@ -862,49 +884,64 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     })();
 
-    // Screenshot carousel — centres the active shot in the viewport
+    // Screenshot carousel — user-driven. Scrolling is native (CSS scroll-snap);
+    // this only mirrors scroll position into the dots, arrows and focus styling.
     (function () {
-      const track = document.getElementById('shotsTrack');
-      const dots  = document.querySelectorAll('#shotsDots button');
-      if (!track) return;
-      const shots = track.querySelectorAll('.shot');
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let current = 0, timer;
+      const view = document.getElementById('shotsViewport');
+      if (!view) return;
+      const shots = [...view.querySelectorAll('.shot')];
+      const dots  = [...document.querySelectorAll('#shotsDots button')];
+      const prev  = document.getElementById('shotsPrev');
+      const next  = document.getElementById('shotsNext');
+      const smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+      let current = 0;
 
-      function layout() {
-        const shot = shots[current];
-        const offset = shot.offsetLeft + shot.offsetWidth / 2 - track.parentElement.offsetWidth / 2;
-        track.style.transform = 'translateX(' + (-offset) + 'px)';
+      const nearest = () => {
+        const mid = view.scrollLeft + view.clientWidth / 2;
+        let best = 0, bestD = Infinity;
+        shots.forEach((s, i) => {
+          const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - mid);
+          if (d < bestD) { bestD = d; best = i; }
+        });
+        return best;
+      };
+
+      function sync() {
+        current = nearest();
         shots.forEach((s, i) => s.classList.toggle('is-current', i === current));
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        dots.forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+          d.setAttribute('aria-current', i === current ? 'true' : 'false');
+        });
+        // 1px tolerance: fractional scroll offsets never land exactly on the edge
+        prev.disabled = view.scrollLeft <= 1;
+        next.disabled = view.scrollLeft >= view.scrollWidth - view.clientWidth - 1;
       }
-      function goTo(i) { current = (i + shots.length) % shots.length; layout(); }
-      function startAuto() {
-        if (reduce) return;
-        clearInterval(timer);
-        timer = setInterval(() => goTo(current + 1), 3600);
+
+      function goTo(i) {
+        const t = shots[Math.max(0, Math.min(shots.length - 1, i))];
+        view.scrollTo({ left: t.offsetLeft + t.offsetWidth / 2 - view.clientWidth / 2, behavior: smooth });
       }
 
-      dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.dot, 10)); startAuto(); }));
-      shots.forEach((s, i) => s.addEventListener('click', () => { goTo(i); startAuto(); }));
+      // Called directly rather than rAF-throttled: with four shots sync() is trivial,
+      // and rAF is paused while the tab is hidden, which would leave state stale.
+      view.addEventListener('scroll', sync, { passive: true });
 
-      let x0 = 0;
-      track.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend', e => {
-        const dx = e.changedTouches[0].clientX - x0;
-        if (Math.abs(dx) > 30) { goTo(current + (dx < 0 ? 1 : -1)); startAuto(); }
-      }, { passive: true });
+      prev.addEventListener('click', () => goTo(current - 1));
+      next.addEventListener('click', () => goTo(current + 1));
+      dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+      shots.forEach((sh, i) => sh.addEventListener('click', () => goTo(i)));
 
-      // Pause while the tab is hidden so it isn't racing in the background
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) clearInterval(timer); else startAuto();
+      view.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+        if (e.key === 'Home')       { e.preventDefault(); goTo(0); }
+        if (e.key === 'End')        { e.preventDefault(); goTo(shots.length - 1); }
       });
-      window.addEventListener('resize', layout);
-      // Lay out immediately rather than in rAF: rAF does not fire while the tab is
-      // hidden, which would leave the track untransformed on a background-tab load.
-      layout();
-      startAuto();
-      window.addEventListener('load', layout);
+
+      window.addEventListener('resize', sync);
+      window.addEventListener('load', sync);
+      sync();
     })();
   </script>
 </body>
