@@ -71,7 +71,7 @@ section { position: relative; }
 
 /* ── App Store button ── */
 .appstore-badge-link { display: inline-block; transition: transform .18s ease; }
-.appstore-badge-link:hover { transform: translateY(-1px); }
+.appstore-badge-link:hover { transform: translateY(-1px); opacity: 0.85; }
 
 /* ── Footer ── */
 .footer { border-top: 0.5px solid var(--hair); padding: 40px 0; background: var(--bone); }
@@ -82,7 +82,7 @@ section { position: relative; }
 .footer .copy { font-size: 13px; color: var(--ter); }
 
 /* ── FAQ ── */
-.faq { padding: clamp(76px, 11vw, 140px) 0; background: var(--bone-2); }
+.faq { padding: clamp(48px, 5.6vw, 76px) 0; background: var(--bone-2); }
 .faq .head { max-width: 24em; margin-bottom: clamp(40px, 5vw, 64px); }
 .faq-list { display: grid; gap: 0; max-width: 860px; border-top: 0.5px solid var(--hair); }
 .faq-item { border-bottom: 0.5px solid var(--hair); }
@@ -103,7 +103,7 @@ section { position: relative; }
 .faq-answer strong { color: var(--ink); font-weight: 600; }
 
 /* ── Comparison table ── */
-.compare { padding: clamp(76px, 11vw, 140px) 0; }
+.compare { padding: clamp(48px, 5.6vw, 76px) 0; }
 .compare .head { max-width: 26em; margin-bottom: clamp(36px, 4.5vw, 56px); }
 .compare .head .body { margin-top: 16px; max-width: 34em; }
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px; border: 0.5px solid var(--hair); background: #fff; }
