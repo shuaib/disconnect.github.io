@@ -185,3 +185,60 @@ table.cmp tr.is-us td:first-child .cmp-app { font-weight: 700; }
 
 .next-guides { padding: clamp(60px, 8vw, 100px) 0; background: var(--bone-2); }
 .next-guides h2 { font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: clamp(24px, 3vw, 34px); }
+
+/* ── Full-bleed photo banner ──
+   Source photography is warm and golden; the site is cool bone/ink. The
+   saturate()/contrast() grade plus the bone-tinted scrim pulls the images
+   into the palette so they read as part of the system, not stock drop-ins. */
+.banner { position: relative; overflow: hidden; isolation: isolate; }
+.banner picture, .banner img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.banner .banner-media {
+  position: relative; width: 100%;
+  height: clamp(300px, 38vw, 520px);
+}
+.banner .banner-media img { filter: saturate(0.78) contrast(1.03) brightness(0.97); }
+/* Focal points: object-fit cover crops top and bottom, and the subject of each
+   photo (the key, the raised hand) sits below centre. Without these the crop
+   throws away the thing the image is there to show. */
+.banner.focus-key img  { object-position: 50% 60%; }
+.banner.focus-cafe img { object-position: 50% 44%; }
+.banner .banner-media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11,11,12,0.62) 0%, rgba(11,11,12,0.34) 42%, rgba(11,11,12,0.06) 72%),
+    linear-gradient(0deg, rgba(245,244,241,0.10), rgba(245,244,241,0.10));
+}
+.banner .banner-copy {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.banner .banner-copy .wrap { width: 100%; }
+.banner .banner-quote {
+  color: #fff; max-width: 15em;
+  font-size: clamp(26px, 3.6vw, 46px); font-weight: 700;
+  letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance;
+  text-shadow: 0 1px 24px rgba(11,11,12,0.35);
+}
+.banner .banner-sub {
+  margin-top: 14px; max-width: 26em;
+  color: rgba(255,255,255,0.82);
+  font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5;
+  text-shadow: 0 1px 18px rgba(11,11,12,0.4);
+}
+.banner.align-right .banner-media::after {
+  background:
+    linear-gradient(270deg, rgba(11,11,12,0.62) 0%, rgba(11,11,12,0.34) 42%, rgba(11,11,12,0.06) 72%),
+    linear-gradient(0deg, rgba(245,244,241,0.10), rgba(245,244,241,0.10));
+}
+.banner.align-right .banner-copy { align-items: flex-end; text-align: right; }
+.banner.align-right .banner-quote, .banner.align-right .banner-sub { margin-left: auto; }
+
+@media (max-width: 700px) {
+  .banner .banner-media { height: clamp(340px, 78vw, 420px); }
+  .banner .banner-media::after {
+    background: linear-gradient(0deg, rgba(11,11,12,0.78) 0%, rgba(11,11,12,0.42) 46%, rgba(11,11,12,0.18) 100%) !important;
+  }
+  .banner .banner-copy { justify-content: flex-end; padding-bottom: 30px; }
+  .banner.align-right .banner-copy { align-items: flex-start; text-align: left; }
+  .banner.align-right .banner-quote, .banner.align-right .banner-sub { margin-left: 0; }
+}
