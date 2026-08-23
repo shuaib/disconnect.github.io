@@ -7,7 +7,7 @@
   </url>
   <url>
     <loc>https://disconnectapp.co/guides/</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
@@ -27,6 +27,36 @@
   </url>
   <url>
     <loc>https://disconnectapp.co/guides/ask-a-friend-to-be-your-buddy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/block-social-media-iphone.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/screen-time-apps-you-cant-cheat.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/when-you-break-your-own-rules.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/stop-scrolling-in-bed.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/digital-detox-7-day-plan.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://disconnectapp.co/guides/help-someone-cut-screen-time.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
