@@ -1,0 +1,183 @@
+/* ──────────────────────────────────────────────────────────
+   Disconnect · disconnectapp.co · shared design system
+   Loaded by index.html and every /guides/ page.
+   Page-specific rules stay inline on their own page.
+   ────────────────────────────────────────────────────────── */
+:root {
+  --bone:    #F5F4F1;
+  --bone-2:  #ECEAE3;
+  /* Icon field. The app icon's own canvas is #F5F4F1 — exactly --bone — so
+     anywhere the icon appears the page must step down to this deeper bone,
+     or the tile dissolves into the background. */
+  --bone-deep: #E9E5DB;
+  --ink:     #0B0B0C;
+  --sec:     rgba(60,60,67,0.62);
+  --ter:     rgba(60,60,67,0.32);
+  --hair:    rgba(11,11,12,0.12);
+  --sage:    #2DAB57;
+  --amber:   #D9871E;
+  --rust:    #C0442E;
+  --font: -apple-system, "SF Pro Display", "SF Pro Text", system-ui, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--bone); color: var(--ink); line-height: 1.4; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── Type scale ── */
+.eyebrow { font-size: clamp(11px, 1vw, 13px); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sec); }
+.section-title { font-size: clamp(30px, 4.4vw, 56px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.04; text-wrap: balance; }
+.lead { font-size: clamp(26px, 3.9vw, 50px); font-weight: 500; letter-spacing: -0.022em; line-height: 1.18; text-wrap: balance; }
+.headline { font-size: clamp(20px, 2vw, 25px); font-weight: 600; letter-spacing: -0.01em; }
+.body { font-size: clamp(16px, 1.5vw, 19px); font-weight: 400; line-height: 1.5; color: var(--sec); }
+.micro { font-size: 13px; font-weight: 400; color: var(--ter); }
+
+/* ── Layout ── */
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: clamp(20px, 5vw, 64px); }
+section { position: relative; }
+
+/* ── App icon ── */
+.app-icon {
+  display: block; height: auto;
+  border-radius: 22.37%;            /* iOS squircle approximation */
+  border: 0.5px solid rgba(11,11,12,0.10);
+  box-shadow: 0 1px 1px rgba(11,11,12,0.05), 0 8px 20px rgba(11,11,12,0.09), 0 26px 48px rgba(11,11,12,0.10);
+}
+
+/* ── Site header ── */
+.site-header {
+  position: sticky; top: 0; z-index: 60;
+  backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px);
+  background: rgba(233,229,219,0.78);
+  border-bottom: 0.5px solid transparent;
+  transition: border-color .3s ease, background .3s ease;
+}
+.site-header.scrolled { border-bottom-color: var(--hair); background: rgba(245,244,241,0.82); }
+.header-inner { display: flex; align-items: center; gap: 20px; height: 62px; }
+.lockup { display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0; }
+.lockup img { width: 26px; height: 26px; border-radius: 22.37%; display: block; box-shadow: 0 0 0 0.5px rgba(11,11,12,0.10); }
+.lockup .wordmark { font-size: 17px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.site-nav { display: flex; align-items: center; gap: clamp(14px, 2vw, 30px); margin-left: auto; }
+.site-nav a { font-size: 14.5px; font-weight: 500; color: var(--sec); transition: color .2s ease; white-space: nowrap; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); }
+.header-cta {
+  display: inline-flex; align-items: center; background: var(--ink); color: #fff;
+  padding: 9px 16px; border-radius: 11px; font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+  box-shadow: 0 1px 2px rgba(11,11,12,0.18); transition: transform .18s ease, box-shadow .18s ease; white-space: nowrap;
+}
+.header-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(11,11,12,0.22); }
+
+/* ── App Store button ── */
+.appstore-badge-link { display: inline-block; transition: transform .18s ease; }
+.appstore-badge-link:hover { transform: translateY(-1px); }
+
+/* ── Footer ── */
+.footer { border-top: 0.5px solid var(--hair); padding: 40px 0; background: var(--bone); }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.footer .links { display: flex; gap: 26px; flex-wrap: wrap; }
+.footer .links a { font-size: 14px; color: var(--sec); transition: color .2s; }
+.footer .links a:hover { color: var(--ink); }
+.footer .copy { font-size: 13px; color: var(--ter); }
+
+/* ── FAQ ── */
+.faq { padding: clamp(76px, 11vw, 140px) 0; background: var(--bone-2); }
+.faq .head { max-width: 24em; margin-bottom: clamp(40px, 5vw, 64px); }
+.faq-list { display: grid; gap: 0; max-width: 860px; border-top: 0.5px solid var(--hair); }
+.faq-item { border-bottom: 0.5px solid var(--hair); }
+.faq-item summary {
+  list-style: none; cursor: pointer; padding: clamp(20px, 2.4vw, 28px) 44px clamp(20px, 2.4vw, 28px) 0;
+  position: relative; font-size: clamp(17px, 1.7vw, 20px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.3;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: ""; position: absolute; right: 8px; top: 50%; width: 11px; height: 11px;
+  border-right: 2px solid var(--ter); border-bottom: 2px solid var(--ter);
+  transform: translateY(-70%) rotate(45deg); transition: transform .25s ease;
+}
+.faq-item[open] summary::after { transform: translateY(-20%) rotate(225deg); }
+.faq-item summary:hover { color: var(--sage); }
+.faq-answer { padding: 0 44px clamp(22px, 2.4vw, 28px) 0; font-size: clamp(15px, 1.45vw, 17px); line-height: 1.6; color: var(--sec); }
+.faq-answer p + p { margin-top: 12px; }
+.faq-answer strong { color: var(--ink); font-weight: 600; }
+
+/* ── Comparison table ── */
+.compare { padding: clamp(76px, 11vw, 140px) 0; }
+.compare .head { max-width: 26em; margin-bottom: clamp(36px, 4.5vw, 56px); }
+.compare .head .body { margin-top: 16px; max-width: 34em; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 20px; border: 0.5px solid var(--hair); background: #fff; }
+table.cmp { width: 100%; border-collapse: collapse; min-width: 660px; font-size: 15px; }
+table.cmp th, table.cmp td { padding: 16px 18px; text-align: left; border-bottom: 0.5px solid var(--hair); vertical-align: middle; }
+table.cmp thead th { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ter); background: var(--bone); white-space: nowrap; }
+table.cmp thead th:first-child { border-top-left-radius: 20px; }
+table.cmp thead th:last-child { border-top-right-radius: 20px; }
+table.cmp tbody tr:last-child td { border-bottom: none; }
+table.cmp td:first-child, table.cmp th:first-child { font-weight: 600; color: var(--ink); position: sticky; left: 0; background: #fff; }
+table.cmp thead th:first-child { background: var(--bone); }
+table.cmp tr.is-us td { background: #EFF7F1; box-shadow: inset 0 0 0 0.5px rgba(45,171,87,0.18); }
+table.cmp tr.is-us td:first-child { background: #EFF7F1; color: var(--sage); border-left: 3px solid var(--sage); }
+table.cmp tr.is-us td:first-child .cmp-app { font-weight: 700; }
+
+/* Every column is phrased so "yes" is the good answer — that is what lets the
+   tick/cross colours stay literal instead of encoding a hidden judgement. */
+.cmp .mark { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14.5px; }
+.cmp .mark svg { width: 17px; height: 17px; flex-shrink: 0; display: block; }
+.cmp .mark.yes { color: var(--sage); }
+.cmp .mark.no { color: var(--rust); }
+.cmp .mark.partial { color: var(--amber); }
+.cmp td .micro { display: block; margin-top: 5px; line-height: 1.35; }
+.cmp-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ── Reveal ── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+}
+
+@media (max-width: 760px) {
+  .site-nav { display: none; }
+  .header-inner { justify-content: space-between; }
+  .header-cta { margin-left: auto; }
+}
+
+/* ── Guides: index + article ── */
+.guide-hero { padding: clamp(52px, 7vw, 96px) 0 clamp(30px, 4vw, 48px); background: linear-gradient(180deg, var(--bone-deep) 0%, var(--bone-deep) 55%, var(--bone) 100%); }
+.guide-hero .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--sec); margin-bottom: 20px; }
+.guide-hero .kicker a { color: var(--sec); }
+.guide-hero .kicker a:hover { color: var(--ink); }
+.guide-hero h1 { font-size: clamp(34px, 5.2vw, 62px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.02; text-wrap: balance; max-width: 16em; }
+.guide-hero .standfirst { margin-top: 20px; font-size: clamp(18px, 1.9vw, 23px); line-height: 1.45; color: var(--sec); max-width: 34em; text-wrap: pretty; }
+.guide-meta { margin-top: 22px; font-size: 13px; color: var(--ter); }
+
+.article { padding: clamp(20px, 3vw, 40px) 0 clamp(70px, 9vw, 120px); }
+.article .wrap { max-width: 860px; }
+/* Guide pages are a single reading column: every band shares one wrap width so
+   the hero, body, FAQ and footer all sit on the same left edge. */
+.guide-page .wrap { max-width: 860px; }
+.article h2 { font-size: clamp(24px, 2.9vw, 34px); font-weight: 700; letter-spacing: -0.022em; line-height: 1.12; margin-top: clamp(40px, 5vw, 64px); text-wrap: balance; }
+.article h3 { font-size: clamp(19px, 2vw, 23px); font-weight: 600; letter-spacing: -0.015em; margin-top: clamp(28px, 3vw, 38px); }
+.article p { font-size: clamp(16.5px, 1.55vw, 18.5px); line-height: 1.68; color: rgba(40,40,46,0.86); margin-top: 18px; }
+.article p:first-child { margin-top: 0; }
+.article ul, .article ol { margin: 18px 0 0 1.15em; }
+.article li { font-size: clamp(16.5px, 1.55vw, 18.5px); line-height: 1.6; color: rgba(40,40,46,0.86); margin-top: 10px; padding-left: 4px; }
+.article strong { color: var(--ink); font-weight: 600; }
+.article a:not(.cta-inline) { color: var(--sage); text-decoration: underline; text-underline-offset: 3px; }
+.article blockquote { margin: clamp(26px, 3vw, 36px) 0 0; padding: 22px 26px; border-left: 3px solid var(--sage); background: var(--bone-2); border-radius: 0 14px 14px 0; }
+.article blockquote p { margin-top: 0; font-size: clamp(16px, 1.5vw, 18px); font-style: normal; }
+.article blockquote p + p { margin-top: 12px; }
+.callout { margin-top: clamp(34px, 4vw, 48px); padding: clamp(24px, 3vw, 32px); border-radius: 20px; background: var(--ink); color: #fff; }
+.callout h3 { margin-top: 0; color: #fff; font-size: clamp(19px, 2vw, 24px); }
+.callout p { color: rgba(255,255,255,0.72); margin-top: 12px; }
+.callout .cta-inline { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; background: #fff; color: var(--ink); padding: 11px 20px; border-radius: 11px; font-size: 15px; font-weight: 600; transition: transform .18s ease; }
+.callout .cta-inline:hover { transform: translateY(-1px); }
+
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: clamp(16px, 2vw, 22px); }
+.guide-card { display: flex; flex-direction: column; padding: clamp(24px, 2.6vw, 32px); border-radius: 20px; border: 0.5px solid var(--hair); background: #fff; box-shadow: 0 1px 2px rgba(11,11,12,0.04); transition: transform .2s ease, box-shadow .2s ease; }
+.guide-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(11,11,12,0.09); }
+.guide-card h2 { font-size: clamp(19px, 1.9vw, 23px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.22; }
+.guide-card p { margin-top: 12px; font-size: 15.5px; line-height: 1.5; color: var(--sec); }
+.guide-card .more { margin-top: auto; padding-top: 20px; font-size: 14px; font-weight: 600; color: var(--sage); }
+
+.next-guides { padding: clamp(60px, 8vw, 100px) 0; background: var(--bone-2); }
+.next-guides h2 { font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: clamp(24px, 3vw, 34px); }
