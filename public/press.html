@@ -279,9 +279,33 @@
   .footer .links a:hover { color: var(--ink); }
   .footer .copy { font-size: 12px; color: var(--ter); }
 
+  /* ── Founder ── */
+  .founder-card {
+    display: flex; align-items: flex-start; gap: clamp(20px, 3vw, 32px);
+    background: #fff; border: 0.5px solid var(--hair);
+    border-radius: 20px; padding: clamp(24px, 3vw, 36px);
+    box-shadow: 0 1px 3px rgba(11,11,12,0.04);
+  }
+  .founder-headshot {
+    flex-shrink: 0;
+    width: 88px; height: 88px; border-radius: 50%;
+    overflow: hidden; border: 0.5px solid var(--hair);
+    background: var(--bone-2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .founder-headshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .founder-headshot .placeholder-icon {
+    width: 36px; height: 36px; opacity: 0.2;
+  }
+  .founder-name { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 2px; }
+  .founder-title { font-size: 14px; color: var(--sec); margin-bottom: 14px; }
+  .founder-bio p { font-size: clamp(15px, 1.5vw, 16px); color: var(--sec); line-height: 1.65; }
+  .founder-bio p + p { margin-top: 12px; }
+
   @media (max-width: 560px) {
     .contact-card { flex-direction: column; align-items: flex-start; }
     .facts { grid-template-columns: 1fr 1fr; }
+    .founder-card { flex-direction: column; }
   }
 </style>
 </head>
@@ -437,6 +461,22 @@
               Download SVG
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Founder -->
+    <div class="section">
+      <div class="section-label">The founder</div>
+      <div class="founder-card">
+        <div class="founder-headshot">
+          <img src="/shuaib-headshot.jpg" alt="Shuaib Khan">
+        </div>
+        <div class="founder-bio">
+          <div class="founder-name">Shuaib Khan</div>
+          <div class="founder-title">Founder, Bytehood Ltd. · London, UK</div>
+          <p>Shuaib is a software engineer with over 15 years of experience across some of the world's most demanding engineering organisations — including Meta, Amazon, Badoo, and Upwork. He spent much of his career shipping products used by hundreds of millions of people, but always had an itch to build things entirely on his own terms.</p>
+          <p>He has now made the leap to indie development, founding Bytehood Ltd. to build apps that are genuinely useful instead of mindlessly addictive. Disconnect is one of those apps — a screen time tool built entirely from his own frustration with how hard it is to actually put your phone down.</p>
         </div>
       </div>
     </div>
