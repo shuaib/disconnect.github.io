@@ -176,6 +176,17 @@
 <meta name="twitter:description" content="An accountability partner is the most effective screen time tool there is — if you set it up so it does not depend on goodwill and nagging. Here is how.">
 <meta name="twitter:image" content="https://disconnectapp.co/og-image.png">
 
+<!-- PostHog Analytics -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function c(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}var u=t;void 0!==a?u=t[a]=[]:a="posthog";c(u,"capture");c(u,"identify");c(u,"alias");c(u,"set_config");c(u,"register");c(u,"register_once");c(u,"unregister");c(u,"opt_in_capturing");c(u,"opt_out_capturing");c(u,"has_opted_in_capturing");c(u,"has_opted_out_capturing");c(u,"reset");c(u,"isFeatureEnabled");c(u,"onFeatureFlags");c(u,"reloadFeatureFlags");c(u,"addGroup");c(u,"updateEarlyAccessFeatureEnrollment");c(u,"getEarlyAccessFeatures");c(u,"getActiveMatchingSurveys");c(u,"getSurveys");u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e};u.people={set:function(){var t=Array.prototype.slice.call(arguments);t.unshift("people.set");u.push(t)}};e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_meNigUHcXmZr8joaJwZTomvhGNwzYJ43t4NvkTikLMwV', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true,
+    });
+</script>
 </head>
 <body class="guide-page">
 
@@ -326,5 +337,32 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     })();
   </script>
+<script>
+  // Track App Store download clicks with page + label context
+  document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      posthog.capture('app_store_click', {
+        page: window.location.pathname,
+        label: (a.textContent.trim() || a.getAttribute('aria-label') || 'badge').slice(0, 80),
+        referrer: document.referrer || null,
+        utm_source: new URLSearchParams(window.location.search).get('utm_source'),
+        utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
+        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+      });
+    });
+  });
+
+  // Track scroll depth milestones (25 / 50 / 75 / 90 %)
+  var _phScrollFired = {};
+  window.addEventListener('scroll', function() {
+    var pct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+    [25, 50, 75, 90].forEach(function(m) {
+      if (!_phScrollFired[m] && pct >= m) {
+        _phScrollFired[m] = true;
+        posthog.capture('scroll_depth', { depth: m, page: window.location.pathname });
+      }
+    });
+  }, { passive: true });
+</script>
 </body>
 </html>
