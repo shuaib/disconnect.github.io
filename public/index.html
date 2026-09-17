@@ -158,10 +158,18 @@
         },
         {
           "@type": "Question",
+          "name": "Does my buddy need to be on iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. iPhone buddies use the Disconnect app, but buddies on Android, desktop, or tablet use the buddy web app at disconnectapp.co/buddy — they sign in with an email link and approve or deny requests from any browser, no install needed."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Does my buddy need the app? Does being a buddy change their phone?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Your buddy does need Disconnect installed to receive and answer requests, and being a buddy is free. It changes nothing about their own phone, their own apps, or their own screen time — they simply get a notification and approve or deny it with one tap."
+            "text": "iPhone buddies use the Disconnect app. Buddies on Android, desktop, or tablet use the buddy web app at disconnectapp.co/buddy — they sign in with an email link and approve or deny requests from any browser. Either way, being a buddy is free and changes nothing about their own phone or apps."
           }
         },
         {
@@ -193,7 +201,7 @@
           "name": "Is there an Android version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not currently. Disconnect is an iPhone app and requires iOS 16 or later. Because both people need the app, you and your buddy both need to be on iPhone."
+            "text": "Disconnect is an iPhone app and requires iOS 16 or later. There is no Android version of the app itself. However, if your buddy is on Android, desktop, or tablet, they can use the buddy web app at disconnectapp.co/buddy to approve and deny requests from any browser — no install needed."
           }
         },
         {
@@ -354,6 +362,19 @@
   .step .num .rule { flex: 1; height: 0.5px; background: var(--hair); }
   .step h3 { font-size: clamp(20px, 2vw, 25px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.15; }
   .step p { margin-top: 12px; font-size: clamp(15px, 1.4vw, 17px); color: var(--sec); line-height: 1.5; }
+
+  /* ── Buddy devices ── */
+  .buddy-devices { padding: clamp(48px, 5.6vw, 72px) 0; border-top: 0.5px solid var(--hair); }
+  .buddy-devices .eyebrow { margin-bottom: 8px; }
+  .buddy-devices-sub { font-size: clamp(15px, 1.4vw, 17px); color: var(--sec); max-width: 50ch; line-height: 1.55; margin-top: 12px; }
+  .buddy-devices-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(28px, 4vw, 40px); max-width: 600px; }
+  .buddy-device-card { background: var(--bone-2); border-radius: 16px; padding: 24px; }
+  .buddy-device-icon { font-size: 24px; margin-bottom: 12px; }
+  .buddy-device-card h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin: 0 0 6px; }
+  .buddy-device-card p { font-size: 14px; color: var(--sec); margin: 0; line-height: 1.45; }
+  .buddy-devices-footnote { margin-top: 20px; font-size: 14px; color: var(--sec); }
+  .buddy-devices-footnote a { color: var(--sage); text-decoration: none; font-weight: 500; }
+  @media (max-width: 500px) { .buddy-devices-grid { grid-template-columns: 1fr; } }
 
   /* ── Lock levels ── */
   .locks { padding: clamp(48px, 5.6vw, 76px) 0; }
@@ -759,6 +780,30 @@
       </div>
     </section>
 
+    <!-- 4b · Buddy device callout -->
+    <section class="buddy-devices">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">Buddy accountability</div>
+          <h2 class="section-title" style="margin-top:16px;">Your buddy can be on any device.</h2>
+          <p class="buddy-devices-sub">iPhone buddies use the app. If your buddy is on Android, desktop, or tablet, they approve from the browser — no install needed.</p>
+        </div>
+        <div class="buddy-devices-grid reveal">
+          <div class="buddy-device-card">
+            <div class="buddy-device-icon">📱</div>
+            <h3>iPhone buddy</h3>
+            <p>Gets the Disconnect app. Approves with one tap from a notification.</p>
+          </div>
+          <div class="buddy-device-card">
+            <div class="buddy-device-icon">🌐</div>
+            <h3>Android or desktop buddy</h3>
+            <p>Uses the web app. Signs in with email, approves from any browser.</p>
+          </div>
+        </div>
+        <p class="buddy-devices-footnote reveal">Share the invite link — your buddy's device determines which path they land on automatically. <a href="/buddy/">See the buddy web app &rarr;</a></p>
+      </div>
+    </section>
+
     <section class="banner align-right focus-cafe" aria-label="Two friends at a cafe table. One slides her phone face down while the other holds up a finger to say no.">
       <div class="banner-media">
         <picture>
@@ -890,8 +935,13 @@
           </details>
 
           <details class="faq-item">
+            <summary>Does my buddy need to be on iPhone?</summary>
+            <div class="faq-answer"><p>No. iPhone buddies use the Disconnect app, but buddies on Android, desktop, or tablet use the <a href="/buddy/" style="color:var(--sage);">buddy web app</a> &mdash; they sign in with an email link and approve or deny requests from any browser, no install needed.</p></div>
+          </details>
+
+          <details class="faq-item">
             <summary>Does my buddy need the app? Does being a buddy change their phone?</summary>
-            <div class="faq-answer"><p>Your buddy does need Disconnect installed to receive and answer requests, and being a buddy is free. It changes nothing about their own phone, their own apps, or their own screen time &mdash; they simply get a notification and approve or deny it with one tap.</p></div>
+            <div class="faq-answer"><p>iPhone buddies use the Disconnect app. Buddies on Android, desktop, or tablet use the <a href="/buddy/" style="color:var(--sage);">buddy web app</a> &mdash; they sign in with an email link and approve or deny requests from any browser. Either way, being a buddy is free and changes nothing about their own phone or apps.</p></div>
           </details>
 
           <details class="faq-item">
@@ -911,7 +961,7 @@
 
           <details class="faq-item">
             <summary>Is there an Android version?</summary>
-            <div class="faq-answer"><p>Not currently. Disconnect is an iPhone app and requires iOS 16 or later. Because both people need the app, you and your buddy both need to be on iPhone.</p></div>
+            <div class="faq-answer"><p>Disconnect is an iPhone app and requires iOS 16 or later. There is no Android version of the app itself. However, if your buddy is on Android, desktop, or tablet, they can use the <a href="/buddy/" style="color:var(--sage);">buddy web app</a> to approve and deny requests from any browser &mdash; no install needed.</p></div>
           </details>
 
           <details class="faq-item">
