@@ -345,15 +345,21 @@
   // Capture invite ID from path: /invite/{id}
   var inviteId = location.pathname.split('/').filter(Boolean)[1] || null;
 
-  // Point the "Open in Disconnect" button at the app's custom scheme so an installed recipient can
-  // jump straight into the invite — this is the reliable path when the link was opened from a
-  // .webloc / direct Safari load (universal links don't fire there). No auto-redirect: recipients
-  // without the app would otherwise get a "cannot open page" alert; they use the App Store CTA.
+  // Detect iPhone specifically (not iPad — iPadOS reports macOS UA by default,
+  // and the app is iPhone-only so iPad buddies must use the web app).
+  var isIPhone = /iPhone/.test(navigator.userAgent) && !/iPad/.test(navigator.userAgent);
+
   if (inviteId) {
-    var openBtn = document.getElementById('openApp');
-    openBtn.setAttribute('href', 'disconnect://invite/' + encodeURIComponent(inviteId));
-    openBtn.style.display = 'inline-block';
-    document.getElementById('openAppHint').style.display = 'block';
+    if (isIPhone) {
+      // iPhone: show "Open in app" custom-scheme button (primary for installed users)
+      var openBtn = document.getElementById('openApp');
+      openBtn.setAttribute('href', 'disconnect://invite/' + encodeURIComponent(inviteId));
+      openBtn.style.display = 'inline-block';
+      document.getElementById('openAppHint').style.display = 'block';
+    } else {
+      // Non-iPhone (Android, desktop, iPad): redirect to buddy web app
+      location.replace('/buddy/?invite=' + encodeURIComponent(inviteId));
+    }
   }
 </script>
 <script>

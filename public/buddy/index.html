@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disconnect Buddy</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<meta name="theme-color" content="#F5F4F1">
+
+<style>
+  :root {
+    --bone:   #F5F4F1;
+    --bone-2: #ECEAE3;
+    --ink:    #0B0B0C;
+    --sec:    rgba(60,60,67,0.62);
+    --ter:    rgba(60,60,67,0.32);
+    --hair:   rgba(11,11,12,0.12);
+    --sage:   #2DAB57;
+    --red:    #FF3B30;
+    --font:   -apple-system, "SF Pro Display", "SF Pro Text", system-ui, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  [hidden] { display: none !important; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--font);
+    background: var(--bone);
+    color: var(--ink);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Shell ── */
+  .shell {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── Top bar ── */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 0;
+    min-height: 56px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .logo img { border-radius: 7px; box-shadow: 0 0 0 1px var(--hair); }
+  .logo .wordmark { font-size: 15px; font-weight: 800; letter-spacing: -0.03em; }
+  .top-right { display: flex; gap: 4px; }
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sec);
+    font-size: 18px;
+    transition: background .15s;
+  }
+  .icon-btn:hover { background: var(--bone-2); }
+
+  /* ── Screens ── */
+  .screen { display: none; flex-direction: column; flex: 1; padding: 32px 0 48px; gap: 28px; }
+  .screen.active { display: flex; }
+
+  /* ── Sign-in ── */
+  .signin-header { display: flex; flex-direction: column; gap: 6px; }
+  .screen-title { font-size: 26px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
+  .screen-sub { font-size: 15px; color: var(--sec); line-height: 1.55; }
+
+  .field-label { font-size: 13px; font-weight: 600; color: var(--sec); margin-bottom: 7px; }
+  input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--font);
+    font-size: 16px;
+    background: #fff;
+    border: 0.5px solid var(--hair);
+    border-radius: 12px;
+    outline: none;
+    color: var(--ink);
+    -webkit-appearance: none;
+  }
+  input[type="email"]:focus { border-color: var(--sage); }
+
+  .btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: var(--ink);
+    color: var(--bone);
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: opacity .18s;
+  }
+  .btn-primary:active { opacity: .85; }
+  .btn-primary:disabled { opacity: .4; cursor: default; }
+
+  .btn-secondary {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 500;
+    border: 0.5px solid var(--hair);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .btn-secondary:hover { background: var(--bone-2); }
+  .btn-secondary:disabled { opacity: .4; cursor: default; }
+
+  .btn-ghost {
+    background: none;
+    border: none;
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--sec);
+    cursor: pointer;
+    text-align: left;
+  }
+  .btn-ghost:hover { color: var(--ink); }
+
+  .error-msg { font-size: 14px; color: var(--red); }
+
+  .divider { height: 0.5px; background: var(--hair); }
+
+  .appstore-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+  .appstore-row .hint { font-size: 13px; color: var(--ter); }
+  .appstore-badge img { height: 44px; width: auto; display: block; }
+
+  /* ── Check email ── */
+  .check-email-card {
+    background: #fff;
+    border: 0.5px solid var(--hair);
+    border-radius: 20px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+  .big-emoji { font-size: 52px; line-height: 1; }
+
+  /* ── Dashboard ── */
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ter);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .list { display: flex; flex-direction: column; gap: 2px; }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border: 0.5px solid var(--hair);
+    border-radius: 14px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: background .15s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .row:hover { background: var(--bone-2); }
+  .row-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--bone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .row-icon.green { background: rgba(45,171,87,0.12); }
+  .row-body { flex: 1; min-width: 0; }
+  .row-title { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-sub { font-size: 13px; color: var(--sec); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-chevron { color: var(--ter); font-size: 16px; flex-shrink: 0; }
+  .row-badge {
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 2px 7px;
+    flex-shrink: 0;
+  }
+
+  .empty-state {
+    text-align: center;
+    color: var(--sec);
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 40px 0;
+  }
+
+  /* ── Detail ── */
+  .detail-back { display: flex; align-items: center; gap: 4px; }
+  .detail-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    padding: 8px 0;
+  }
+  .detail-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--bone-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+  .detail-card {
+    background: #fff;
+    border: 0.5px solid var(--hair);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .detail-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .detail-key { font-size: 14px; color: var(--sec); flex-shrink: 0; }
+  .detail-val { font-size: 14px; font-weight: 500; text-align: right; }
+  .detail-reason {
+    font-size: 14px;
+    color: var(--sec);
+    font-style: italic;
+    padding: 10px 12px;
+    background: var(--bone);
+    border-radius: 10px;
+    line-height: 1.5;
+  }
+
+  .dur-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .dur-chip {
+    padding: 10px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--hair);
+    background: var(--bone);
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: background .15s, border-color .15s;
+  }
+  .dur-chip:hover { background: var(--bone-2); }
+  .dur-chip.selected { background: var(--sage); border-color: var(--sage); color: #fff; }
+
+  .action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-approve {
+    padding: 15px;
+    border-radius: 14px;
+    border: none;
+    background: var(--sage);
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity .15s;
+  }
+  .btn-approve:disabled { opacity: .35; cursor: default; }
+  .btn-deny {
+    padding: 15px;
+    border-radius: 14px;
+    border: 0.5px solid var(--hair);
+    background: transparent;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--red);
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .btn-deny:hover { background: rgba(255,59,48,0.06); }
+  .btn-deny:disabled { opacity: .4; cursor: default; }
+
+  /* Invite detail */
+  .invite-bullets { display: flex; flex-direction: column; gap: 10px; }
+  .invite-bullet { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--sec); line-height: 1.5; }
+  .bullet-dot { color: var(--sage); font-size: 18px; flex-shrink: 0; line-height: 1.3; }
+
+  /* ── Settings ── */
+  .settings-section { display: flex; flex-direction: column; gap: 10px; }
+  .settings-card {
+    background: #fff;
+    border: 0.5px solid var(--hair);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 0.5px solid var(--hair);
+    gap: 12px;
+  }
+  .settings-row:last-child { border-bottom: none; }
+  .settings-key { font-size: 15px; }
+  .settings-val { font-size: 14px; color: var(--sec); text-align: right; word-break: break-all; }
+  .btn-danger {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    color: var(--red);
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 600;
+    border: 0.5px solid rgba(255,59,48,0.3);
+    border-radius: 14px;
+    cursor: pointer;
+  }
+  .btn-unpair {
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--red);
+    background: none;
+    border: 0.5px solid rgba(255,59,48,0.3);
+    border-radius: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .btn-unpair:disabled { opacity: .4; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Top bar (always visible) -->
+  <div class="top-bar" id="top-bar">
+    <a class="logo" href="/buddy/">
+      <img src="/app-icon.svg" width="26" height="26" alt="">
+      <span class="wordmark">Disconnect</span>
+    </a>
+    <div class="top-right" id="top-right-auth" hidden>
+      <button class="icon-btn" id="settings-btn" aria-label="Settings" title="Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── SIGN IN ── -->
+  <div id="screen-signin" class="screen">
+    <div class="signin-header">
+      <div class="screen-title">Sign in as a buddy</div>
+      <div class="screen-sub">Enter your email and we'll send you a sign-in link. No password needed.</div>
+    </div>
+    <form id="signin-form" style="display:flex; flex-direction:column; gap:10px;">
+      <div>
+        <div class="field-label">Email address</div>
+        <input type="email" id="signin-email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+      <p id="signin-error" class="error-msg" hidden></p>
+      <button type="submit" id="signin-btn" class="btn-primary">Send sign-in link</button>
+    </form>
+    <div class="divider"></div>
+    <div class="appstore-row">
+      <div class="hint">Have an iPhone? The app is better.</div>
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6743134572" aria-label="Download Disconnect on the App Store">
+        <img src="/badge-app-store.svg" alt="Download on the App Store">
+      </a>
+    </div>
+  </div>
+
+  <!-- ── CHECK EMAIL ── -->
+  <div id="screen-check-email" class="screen">
+    <div class="check-email-card">
+      <div class="big-emoji">✉️</div>
+      <div class="screen-title">Check your email</div>
+      <div class="screen-sub">We sent a sign-in link to <strong id="check-email-addr"></strong>.<br>Tap the link to continue — it works on any device.</div>
+      <div class="divider" style="width:100%;"></div>
+      <button id="resend-btn" class="btn-ghost">Use a different email</button>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARD ── -->
+  <div id="screen-dashboard" class="screen">
+    <div id="dash-content">
+      <p class="empty-state">Loading…</p>
+    </div>
+  </div>
+
+  <!-- ── REQUEST DETAIL ── -->
+  <div id="screen-detail" class="screen">
+    <div class="detail-back">
+      <button id="detail-back-btn" class="btn-ghost">← Back</button>
+    </div>
+    <div class="detail-hero">
+      <div class="detail-icon" id="detail-icon">📱</div>
+      <div class="screen-title" id="detail-title"></div>
+      <div class="screen-sub" id="detail-sub"></div>
+    </div>
+    <div class="detail-card" id="detail-info"></div>
+    <div id="detail-duration-section" hidden>
+      <div class="field-label" style="margin-bottom:10px;">Allow for how long?</div>
+      <div class="dur-grid" id="detail-dur-chips"></div>
+    </div>
+    <p id="detail-error" class="error-msg" hidden></p>
+    <div class="action-row" id="detail-actions"></div>
+  </div>
+
+  <!-- ── INVITE DETAIL ── -->
+  <div id="screen-invite" class="screen">
+    <div class="detail-back">
+      <button id="invite-back-btn" class="btn-ghost">← Back</button>
+    </div>
+    <div class="detail-hero">
+      <div class="detail-icon">🤝</div>
+      <div class="screen-title" id="invite-title">Buddy request</div>
+      <div class="screen-sub" id="invite-sub"></div>
+    </div>
+    <div class="invite-bullets">
+      <div class="invite-bullet"><span class="bullet-dot">●</span><span>When they try to unlock a blocked app, you get a quick notification to approve or deny. That's it.</span></div>
+      <div class="invite-bullet"><span class="bullet-dot">●</span><span>Being a buddy is free and doesn't affect your own phone or screen time.</span></div>
+      <div class="invite-bullet"><span class="bullet-dot">●</span><span>You can unpair any time from settings.</span></div>
+    </div>
+    <p id="invite-error" class="error-msg" hidden></p>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <button id="invite-accept-btn" class="btn-primary">Accept</button>
+      <button id="invite-decline-btn" class="btn-secondary">Decline</button>
+    </div>
+  </div>
+
+  <!-- ── SETTINGS ── -->
+  <div id="screen-settings" class="screen">
+    <div class="detail-back">
+      <button id="settings-back-btn" class="btn-ghost">← Back</button>
+    </div>
+    <div class="screen-title">Settings</div>
+    <div class="settings-section">
+      <div class="section-label">Account</div>
+      <div class="settings-card">
+        <div class="settings-row">
+          <span class="settings-key">Email</span>
+          <span class="settings-val" id="settings-email"></span>
+        </div>
+      </div>
+      <button id="signout-btn" class="btn-danger">Sign out</button>
+    </div>
+    <div class="settings-section">
+      <div class="section-label">People you're a buddy for</div>
+      <div id="pairs-container">
+        <p class="empty-state" style="padding:20px 0;">Loading…</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /shell -->
+
+<script type="module">
+import { initializeApp }        from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
+import { getAuth, isSignInWithEmailLink, sendSignInLinkToEmail, signInWithEmailLink, signOut, onAuthStateChanged }
+                                 from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
+import { getFirestore, collection, query, where, onSnapshot }
+                                 from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
+import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-functions.js';
+
+const app = initializeApp({
+  apiKey:            "AIzaSyBackbuyxigadeECvtELU9hOhUH0RfJffU",
+  authDomain:        "disconnect-5cf11.firebaseapp.com",
+  projectId:         "disconnect-5cf11",
+  storageBucket:     "disconnect-5cf11.firebasestorage.app",
+  messagingSenderId: "994480224851",
+  appId:             "1:994480224851:web:7589bb5f946afd9e8ee4a6",
+});
+const auth      = getAuth(app);
+const db        = getFirestore(app);
+const functions = getFunctions(app, 'us-central1');
+
+// ── Utils ────────────────────────────────────────────────────────────────────
+
+const $   = id => document.getElementById(id);
+const esc = s => !s ? '' : String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  $(id).classList.add('active');
+}
+
+function setLoading(el, on) {
+  if (typeof el === 'string') el = $(el);
+  el.disabled = on;
+  if (on) { el._orig = el.textContent; el.textContent = '…'; }
+  else if (el._orig) el.textContent = el._orig;
+}
+
+function friendlyError(e) {
+  const c = e.code || '', m = e.message || '';
+  if (c === 'functions/not-found')          return 'Not found — this invite may have expired.';
+  if (c === 'functions/failed-precondition') return `Can't do that: ${m}.`;
+  if (c === 'functions/permission-denied')   return 'You don\'t have permission to do that.';
+  if (c === 'auth/invalid-action-code')      return 'This sign-in link has expired or already been used. Please request a new one.';
+  return m || 'Something went wrong — please try again.';
+}
+
+function fmtDuration(s) {
+  if (s < 3600)  return `${s/60} min`;
+  if (s < 86400) return `${s/3600} hr`;
+  return `${s/86400}d`;
+}
+
+function timeAgo(ts) {
+  if (!ts) return '';
+  const s = Math.floor((Date.now() - ts.toDate().getTime()) / 1000);
+  if (s < 60) return 'just now';
+  if (s < 3600) return `${Math.floor(s/60)}m ago`;
+  if (s < 86400) return `${Math.floor(s/3600)}h ago`;
+  return ts.toDate().toLocaleDateString();
+}
+
+// ── State ────────────────────────────────────────────────────────────────────
+
+let uid = null;
+let userEmail = null;
+let requestsUnsub = null;
+let pendingItems = []; // { type:'unlock'|'invite', id, data }
+let currentItem = null;
+
+// ── Auth ─────────────────────────────────────────────────────────────────────
+
+const ACTION_CODE_SETTINGS = {
+  url: location.origin + '/buddy/' + location.search,
+  handleCodeInApp: true,
+};
+
+$('signin-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  $('signin-error').hidden = true;
+  const email = $('signin-email').value.trim();
+  if (!email) return;
+  setLoading('signin-btn', true);
+  try {
+    await sendSignInLinkToEmail(auth, email, ACTION_CODE_SETTINGS);
+    localStorage.setItem('emailForSignIn', email);
+    $('check-email-addr').textContent = email;
+    showScreen('screen-check-email');
+  } catch (err) {
+    $('signin-error').textContent = friendlyError(err);
+    $('signin-error').hidden = false;
+  } finally {
+    setLoading('signin-btn', false);
+  }
+});
+
+$('resend-btn').addEventListener('click', () => showScreen('screen-signin'));
+
+$('signout-btn').addEventListener('click', async () => {
+  if (requestsUnsub) { requestsUnsub(); requestsUnsub = null; }
+  await signOut(auth);
+  uid = null;
+  $('top-right-auth').hidden = true;
+  history.replaceState(null, '', '/buddy/');
+  showScreen('screen-signin');
+});
+
+// ── Sign-in link handling ────────────────────────────────────────────────────
+
+async function tryEmailLinkSignIn() {
+  if (!isSignInWithEmailLink(auth, location.href)) return false;
+  let email = localStorage.getItem('emailForSignIn');
+  if (!email) email = prompt('Confirm your email address to sign in:');
+  if (!email) return false;
+  try {
+    await signInWithEmailLink(auth, email, location.href);
+    localStorage.removeItem('emailForSignIn');
+    const inviteId = new URLSearchParams(location.search).get('invite');
+    history.replaceState(null, '', '/buddy/' + (inviteId ? '?invite=' + inviteId : ''));
+    return true;
+  } catch (err) {
+    $('signin-error').textContent = friendlyError(err);
+    $('signin-error').hidden = false;
+    showScreen('screen-signin');
+    return false;
+  }
+}
+
+// ── Dashboard ────────────────────────────────────────────────────────────────
+
+async function enterApp(user) {
+  uid = user.uid;
+  userEmail = user.email;
+  $('top-right-auth').hidden = false;
+  showScreen('screen-dashboard');
+  startListeners();
+
+  // If arrived via invite link, surface that invite immediately
+  const inviteId = new URLSearchParams(location.search).get('invite');
+  if (inviteId) openInviteById(inviteId);
+}
+
+function startListeners() {
+  if (requestsUnsub) requestsUnsub();
+  const q = query(
+    collection(db, 'unlock_requests'),
+    where('buddy_id', '==', uid),
+    where('status', '==', 'pending')
+  );
+  requestsUnsub = onSnapshot(q, snap => {
+    const unlocks = snap.docs
+      .map(d => ({ type: 'unlock', id: d.id, data: d.data() }))
+      .sort((a, b) => (b.data.created_at?.seconds || 0) - (a.data.created_at?.seconds || 0));
+    // Invites come from a separate query; merge here if needed. For now just unlocks.
+    renderDashboard(unlocks);
+  }, err => {
+    console.error(err);
+    renderDashboard([]);
+  });
+}
+
+function renderDashboard(items) {
+  pendingItems = items;
+  const el = $('dash-content');
+
+  if (items.length === 0) {
+    el.innerHTML = '<p class="empty-state">No pending requests.<br>You\'ll get a notification when someone needs you.</p>';
+    return;
+  }
+
+  el.innerHTML = `<div class="section-label">Pending (${items.length})</div><div class="list" id="dash-list"></div>`;
+  const list = $('dash-list');
+  items.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.setAttribute('role', 'button');
+    row.tabIndex = 0;
+    if (item.type === 'unlock') {
+      const d = item.data;
+      row.innerHTML = `
+        <div class="row-icon">${glyphFor(d.rule_icon)}</div>
+        <div class="row-body">
+          <div class="row-title">${esc(d.user_name)} wants to unlock</div>
+          <div class="row-sub">${esc(d.rule_name)} · ${timeAgo(d.created_at)}</div>
+        </div>
+        <div class="row-chevron">›</div>`;
+      row.addEventListener('click', () => openUnlockDetail(item));
+      row.addEventListener('keydown', e => e.key === 'Enter' && openUnlockDetail(item));
+    }
+    list.appendChild(row);
+  });
+}
+
+// ── Unlock detail ─────────────────────────────────────────────────────────────
+
+const DURATIONS = [15*60, 30*60, 60*60, 2*3600, 4*3600, 8*3600];
+
+function openUnlockDetail(item) {
+  currentItem = item;
+  const d = item.data;
+
+  $('detail-icon').textContent = glyphFor(d.rule_icon);
+  $('detail-title').textContent = `${d.user_name} wants to unlock`;
+  $('detail-sub').textContent = d.rule_name;
+  $('detail-error').hidden = true;
+
+  $('detail-info').innerHTML = `
+    ${d.reason ? `<div class="detail-reason">"${esc(d.reason)}"</div>` : ''}
+    <div class="detail-row"><span class="detail-key">Rule</span><span class="detail-val">${esc(d.rule_name)}</span></div>
+    <div class="detail-row"><span class="detail-key">Requested</span><span class="detail-val">${timeAgo(d.created_at)}</span></div>
+  `;
+
+  // Duration chips
+  $('detail-duration-section').hidden = false;
+  let selectedSecs = null;
+  $('detail-dur-chips').innerHTML = DURATIONS.map(s =>
+    `<button class="dur-chip" data-secs="${s}">${fmtDuration(s)}</button>`
+  ).join('');
+  $('detail-dur-chips').querySelectorAll('.dur-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      $('detail-dur-chips').querySelectorAll('.dur-chip').forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      selectedSecs = parseInt(chip.dataset.secs, 10);
+      approveBtn.disabled = false;
+    });
+  });
+
+  const approveBtn = document.createElement('button');
+  approveBtn.className = 'btn-approve';
+  approveBtn.textContent = 'Approve';
+  approveBtn.disabled = true;
+  approveBtn.addEventListener('click', async () => {
+    if (!selectedSecs) return;
+    setLoading(approveBtn, true);
+    $('detail-error').hidden = true;
+    try {
+      await httpsCallable(functions, 'approveUnlockRequest')({ request_id: item.id, approved_duration_seconds: selectedSecs });
+      history.replaceState(null, '', '/buddy/');
+      showScreen('screen-dashboard');
+    } catch (err) {
+      $('detail-error').textContent = friendlyError(err);
+      $('detail-error').hidden = false;
+      setLoading(approveBtn, false);
+    }
+  });
+
+  const denyBtn = document.createElement('button');
+  denyBtn.className = 'btn-deny';
+  denyBtn.textContent = 'Deny';
+  denyBtn.addEventListener('click', async () => {
+    setLoading(denyBtn, true);
+    $('detail-error').hidden = true;
+    try {
+      await httpsCallable(functions, 'denyUnlockRequest')({ request_id: item.id });
+      history.replaceState(null, '', '/buddy/');
+      showScreen('screen-dashboard');
+    } catch (err) {
+      $('detail-error').textContent = friendlyError(err);
+      $('detail-error').hidden = false;
+      setLoading(denyBtn, false);
+    }
+  });
+
+  $('detail-actions').innerHTML = '';
+  $('detail-actions').appendChild(denyBtn);
+  $('detail-actions').appendChild(approveBtn);
+
+  showScreen('screen-detail');
+}
+
+$('detail-back-btn').addEventListener('click', () => showScreen('screen-dashboard'));
+
+// ── Invite detail ─────────────────────────────────────────────────────────────
+
+async function openInviteById(inviteId) {
+  $('invite-title').textContent = 'Buddy request';
+  $('invite-sub').textContent = 'Loading…';
+  $('invite-error').hidden = true;
+  showScreen('screen-invite');
+
+  try {
+    const result = await httpsCallable(functions, 'getInvite')({ inviteId });
+    const { inviterName } = result.data;
+    $('invite-title').textContent = `${inviterName} wants you as a buddy`;
+    $('invite-sub').textContent = '';
+  } catch (err) {
+    $('invite-error').textContent = friendlyError(err);
+    $('invite-error').hidden = false;
+    $('invite-accept-btn').disabled = true;
+    $('invite-decline-btn').disabled = true;
+  }
+
+  $('invite-accept-btn').onclick = async () => {
+    setLoading('invite-accept-btn', true);
+    $('invite-error').hidden = true;
+    try {
+      await httpsCallable(functions, 'acceptInvite')({ inviteId });
+      history.replaceState(null, '', '/buddy/');
+      showScreen('screen-dashboard');
+    } catch (err) {
+      $('invite-error').textContent = friendlyError(err);
+      $('invite-error').hidden = false;
+      setLoading('invite-accept-btn', false);
+    }
+  };
+
+  $('invite-decline-btn').onclick = async () => {
+    setLoading('invite-decline-btn', true);
+    try {
+      await httpsCallable(functions, 'declineInvite')({ inviteId });
+      history.replaceState(null, '', '/buddy/');
+      showScreen('screen-dashboard');
+    } catch (err) {
+      $('invite-error').textContent = friendlyError(err);
+      $('invite-error').hidden = false;
+      setLoading('invite-decline-btn', false);
+    }
+  };
+}
+
+$('invite-back-btn').addEventListener('click', () => {
+  history.replaceState(null, '', '/buddy/');
+  showScreen('screen-dashboard');
+});
+
+// ── Settings ─────────────────────────────────────────────────────────────────
+
+$('settings-btn').addEventListener('click', () => openSettings());
+$('settings-back-btn').addEventListener('click', () => showScreen('screen-dashboard'));
+
+async function openSettings() {
+  $('settings-email').textContent = userEmail || uid;
+  $('pairs-container').innerHTML = '<p class="empty-state" style="padding:16px 0;">Loading…</p>';
+  showScreen('screen-settings');
+
+  try {
+    const q = query(collection(db, 'buddies'), where('buddy_id', '==', uid));
+    const snap = await new Promise((res, rej) => { const u = onSnapshot(q, s => { u(); res(s); }, rej); });
+    const pairs = snap.docs.map(d => ({ docId: d.id, ...d.data() }));
+
+    if (pairs.length === 0) {
+      $('pairs-container').innerHTML = '<p class="empty-state" style="padding:16px 0;">You\'re not paired with anyone.</p>';
+      return;
+    }
+
+    const card = document.createElement('div');
+    card.className = 'settings-card';
+    pairs.forEach(p => {
+      const row = document.createElement('div');
+      row.className = 'settings-row';
+      row.innerHTML = `
+        <div>
+          <div class="settings-key">${esc(p.buddy_name)}</div>
+          <div style="font-size:12px; color:var(--ter); margin-top:2px;">${esc(p.user_name || p.user_id)}</div>
+        </div>
+        <button class="btn-unpair" data-doc="${esc(p.docId)}">Unpair</button>`;
+      row.querySelector('.btn-unpair').addEventListener('click', async function() {
+        if (!confirm(`Stop being a buddy for ${p.buddy_name}?`)) return;
+        setLoading(this, true);
+        try {
+          await httpsCallable(functions, 'unpairAsBuddy')({ buddyDocId: p.docId });
+          row.remove();
+          if (!card.querySelector('.settings-row')) {
+            $('pairs-container').innerHTML = '<p class="empty-state" style="padding:16px 0;">You\'re not paired with anyone.</p>';
+          }
+        } catch (err) {
+          alert(friendlyError(err));
+          setLoading(this, false);
+        }
+      });
+      card.appendChild(row);
+    });
+    $('pairs-container').innerHTML = '';
+    $('pairs-container').appendChild(card);
+  } catch (err) {
+    $('pairs-container').innerHTML = `<p class="error-msg">${friendlyError(err)}</p>`;
+  }
+}
+
+// ── Glyph helper ─────────────────────────────────────────────────────────────
+
+function glyphFor(id) {
+  const m = { social:'📱', browser:'🌐', game:'🎮', video:'🎬', music:'🎵', shopping:'🛍️', news:'📰' };
+  return (id && m[id]) ? m[id] : '📱';
+}
+
+// ── Boot ─────────────────────────────────────────────────────────────────────
+
+(async () => {
+  // Handle email sign-in link return
+  if (isSignInWithEmailLink(auth, location.href)) {
+    await tryEmailLinkSignIn();
+  }
+
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      enterApp(user);
+    } else {
+      $('top-right-auth').hidden = true;
+      showScreen('screen-signin');
+    }
+  });
+})();
+</script>
+</body>
+</html>
