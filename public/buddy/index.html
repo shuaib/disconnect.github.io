@@ -505,9 +505,12 @@
 import { initializeApp }        from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
 import { getAuth, isSignInWithEmailLink, sendSignInLinkToEmail, signInWithEmailLink, signOut, onAuthStateChanged }
                                  from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
-import { getFirestore, collection, query, where, onSnapshot }
+import { getFirestore, collection, query, where, onSnapshot, doc, setDoc, arrayUnion }
                                  from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
 import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-functions.js';
+import { getMessaging, getToken, onMessage } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-messaging.js';
+
+const VAPID_KEY = 'BOdnOlmi46cNu_nQvl_pkWHwE3wCCiLkC1LpLZiMwx9QlGorkM2eeus2BmUe2c-xf2LQ_09Td1vdrbrXbgGFcrE';
 
 const app = initializeApp({
   apiKey:            "AIzaSyBackbuyxigadeECvtELU9hOhUH0RfJffU",
@@ -520,6 +523,7 @@ const app = initializeApp({
 const auth      = getAuth(app);
 const db        = getFirestore(app);
 const functions = getFunctions(app, 'us-central1');
+const messaging = getMessaging(app);
 
 // ── Utils ────────────────────────────────────────────────────────────────────
 
@@ -569,6 +573,33 @@ let userEmail = null;
 let requestsUnsub = null;
 let pendingItems = []; // { type:'unlock'|'invite', id, data }
 let currentItem = null;
+
+// ── Push notifications ───────────────────────────────────────────────────────
+
+async function setupPush(uid) {
+  try {
+    const permission = await Notification.requestPermission();
+    if (permission !== 'granted') return;
+
+    await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+    const swReg = await navigator.serviceWorker.ready;
+    const token = await getToken(messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: swReg });
+    if (!token) return;
+
+    // Save token to users/{uid}.fcm_tokens — backend fans out to all tokens
+    await setDoc(doc(db, 'users', uid), { fcm_tokens: arrayUnion(token) }, { merge: true });
+
+    // Handle foreground messages (app is open)
+    onMessage(messaging, payload => {
+      const { title, body } = payload.notification || {};
+      // Reload the dashboard so the new request appears in the list
+      if (payload.data?.type === 'unlock_request') startListeners();
+    });
+  } catch (err) {
+    // Non-fatal — buddy can still approve via the dashboard manually
+    console.warn('Push setup failed:', err);
+  }
+}
 
 // ── Auth ─────────────────────────────────────────────────────────────────────
 
@@ -636,6 +667,7 @@ async function enterApp(user) {
   $('top-right-auth').hidden = false;
   showScreen('screen-dashboard');
   startListeners();
+  setupPush(uid);
 
   // If arrived via invite link, surface that invite immediately
   const inviteId = new URLSearchParams(location.search).get('invite');
