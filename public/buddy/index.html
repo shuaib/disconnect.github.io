@@ -501,6 +501,11 @@
 
 </div><!-- /shell -->
 
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_distinct_id getGroups group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_session_id get_session_replay_url alias dragonflyHash".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_meNigUHcXmZr8joaJwZTomvhGNwzYJ43t4NvkTikLMwV', { api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only' });
+</script>
+
 <script type="module">
 import { initializeApp }        from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
 import { getAuth, isSignInWithEmailLink, sendSignInLinkToEmail, signInWithEmailLink, signOut, onAuthStateChanged }
@@ -533,6 +538,7 @@ const esc = s => !s ? '' : String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   $(id).classList.add('active');
+  posthog.capture('buddy_screen_viewed', { screen: id });
 }
 
 function setLoading(el, on) {
@@ -579,6 +585,7 @@ let currentItem = null;
 async function setupPush(uid) {
   try {
     const permission = await Notification.requestPermission();
+    posthog.capture('buddy_push_permission', { granted: permission === 'granted' });
     if (permission !== 'granted') return;
 
     await navigator.serviceWorker.register('/firebase-messaging-sw.js');
@@ -588,6 +595,7 @@ async function setupPush(uid) {
 
     // Save token to users/{uid}.fcm_tokens — backend fans out to all tokens
     await setDoc(doc(db, 'users', uid), { fcm_tokens: arrayUnion(token) }, { merge: true });
+    posthog.capture('buddy_push_token_saved');
 
     // Handle foreground messages (app is open)
     onMessage(messaging, payload => {
@@ -618,10 +626,12 @@ $('signin-form').addEventListener('submit', async e => {
     await sendSignInLinkToEmail(auth, email, ACTION_CODE_SETTINGS);
     localStorage.setItem('emailForSignIn', email);
     $('check-email-addr').textContent = email;
+    posthog.capture('buddy_magic_link_sent');
     showScreen('screen-check-email');
   } catch (err) {
     $('signin-error').textContent = friendlyError(err);
     $('signin-error').hidden = false;
+    posthog.capture('buddy_signin_error', { error: err.code || err.message });
   } finally {
     setLoading('signin-btn', false);
   }
@@ -631,6 +641,8 @@ $('resend-btn').addEventListener('click', () => showScreen('screen-signin'));
 
 $('signout-btn').addEventListener('click', async () => {
   if (requestsUnsub) { requestsUnsub(); requestsUnsub = null; }
+  posthog.capture('buddy_signed_out');
+  posthog.reset();
   await signOut(auth);
   uid = null;
   $('top-right-auth').hidden = true;
@@ -648,12 +660,14 @@ async function tryEmailLinkSignIn() {
   try {
     await signInWithEmailLink(auth, email, location.href);
     localStorage.removeItem('emailForSignIn');
+    posthog.capture('buddy_signed_in');
     const inviteId = new URLSearchParams(location.search).get('invite');
     history.replaceState(null, '', '/buddy/' + (inviteId ? '?invite=' + inviteId : ''));
     return true;
   } catch (err) {
     $('signin-error').textContent = friendlyError(err);
     $('signin-error').hidden = false;
+    posthog.capture('buddy_signin_error', { error: err.code || err.message });
     showScreen('screen-signin');
     return false;
   }
@@ -664,6 +678,7 @@ async function tryEmailLinkSignIn() {
 async function enterApp(user) {
   uid = user.uid;
   userEmail = user.email;
+  posthog.identify(uid, { email: userEmail });
   $('top-right-auth').hidden = false;
   showScreen('screen-dashboard');
   startListeners();
@@ -769,11 +784,13 @@ function openUnlockDetail(item) {
     $('detail-error').hidden = true;
     try {
       await httpsCallable(functions, 'approveUnlockRequest')({ request_id: item.id, approved_duration_seconds: selectedSecs });
+      posthog.capture('buddy_unlock_approved', { duration_seconds: selectedSecs, rule_name: item.data.rule_name });
       history.replaceState(null, '', '/buddy/');
       showScreen('screen-dashboard');
     } catch (err) {
       $('detail-error').textContent = friendlyError(err);
       $('detail-error').hidden = false;
+      posthog.capture('buddy_unlock_approve_error', { error: err.code || err.message });
       setLoading(approveBtn, false);
     }
   });
@@ -786,11 +803,13 @@ function openUnlockDetail(item) {
     $('detail-error').hidden = true;
     try {
       await httpsCallable(functions, 'denyUnlockRequest')({ request_id: item.id });
+      posthog.capture('buddy_unlock_denied', { rule_name: item.data.rule_name });
       history.replaceState(null, '', '/buddy/');
       showScreen('screen-dashboard');
     } catch (err) {
       $('detail-error').textContent = friendlyError(err);
       $('detail-error').hidden = false;
+      posthog.capture('buddy_unlock_deny_error', { error: err.code || err.message });
       setLoading(denyBtn, false);
     }
   });
@@ -829,11 +848,13 @@ async function openInviteById(inviteId) {
     $('invite-error').hidden = true;
     try {
       await httpsCallable(functions, 'acceptInvite')({ inviteId });
+      posthog.capture('buddy_invite_accepted', { invite_id: inviteId });
       history.replaceState(null, '', '/buddy/');
       showScreen('screen-dashboard');
     } catch (err) {
       $('invite-error').textContent = friendlyError(err);
       $('invite-error').hidden = false;
+      posthog.capture('buddy_invite_accept_error', { error: err.code || err.message });
       setLoading('invite-accept-btn', false);
     }
   };
@@ -842,6 +863,7 @@ async function openInviteById(inviteId) {
     setLoading('invite-decline-btn', true);
     try {
       await httpsCallable(functions, 'declineInvite')({ inviteId });
+      posthog.capture('buddy_invite_declined', { invite_id: inviteId });
       history.replaceState(null, '', '/buddy/');
       showScreen('screen-dashboard');
     } catch (err) {
@@ -893,6 +915,7 @@ async function openSettings() {
         setLoading(this, true);
         try {
           await httpsCallable(functions, 'unpairAsBuddy')({ buddyDocId: p.docId });
+          posthog.capture('buddy_unpaired');
           row.remove();
           if (!card.querySelector('.settings-row')) {
             $('pairs-container').innerHTML = '<p class="empty-state" style="padding:16px 0;">You\'re not paired with anyone.</p>';
