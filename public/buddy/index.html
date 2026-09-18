@@ -508,7 +508,8 @@ posthog.init('phc_meNigUHcXmZr8joaJwZTomvhGNwzYJ43t4NvkTikLMwV', { api_host: 'ht
 
 <script type="module">
 import { initializeApp }        from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
-import { getAuth, isSignInWithEmailLink, sendSignInLinkToEmail, signInWithEmailLink, signOut, onAuthStateChanged }
+import { initializeAppCheck, ReCaptchaEnterpriseProvider } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app-check.js';
+import { getAuth, isSignInWithEmailLink, signInWithEmailLink, signOut, onAuthStateChanged }
                                  from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
 import { getFirestore, collection, query, where, onSnapshot, doc, setDoc, arrayUnion }
                                  from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
@@ -529,6 +530,11 @@ const auth      = getAuth(app);
 const db        = getFirestore(app);
 const functions = getFunctions(app, 'us-central1');
 const messaging = getMessaging(app);
+
+initializeAppCheck(app, {
+  provider: new ReCaptchaEnterpriseProvider('6LdHNMItAAAAABSqdgSe0LsNeeSkgeI91QLHkClT'),
+  isTokenAutoRefreshEnabled: true,
+});
 
 // ── Utils ────────────────────────────────────────────────────────────────────
 
@@ -553,6 +559,8 @@ function friendlyError(e) {
   if (c === 'functions/not-found')          return 'Not found — this invite may have expired.';
   if (c === 'functions/failed-precondition') return `Can't do that: ${m}.`;
   if (c === 'functions/permission-denied')   return 'You don\'t have permission to do that.';
+  if (c === 'functions/resource-exhausted')  return 'Too many sign-in attempts. Please wait 15 minutes and try again.';
+  if (c === 'functions/internal')            return 'Failed to send the email. Please try again in a moment.';
   if (c === 'auth/invalid-action-code')      return 'This sign-in link has expired or already been used. Please request a new one.';
   return m || 'Something went wrong — please try again.';
 }
@@ -611,11 +619,6 @@ async function setupPush(uid) {
 
 // ── Auth ─────────────────────────────────────────────────────────────────────
 
-const ACTION_CODE_SETTINGS = {
-  url: location.origin + '/buddy/' + location.search,
-  handleCodeInApp: true,
-};
-
 $('signin-form').addEventListener('submit', async e => {
   e.preventDefault();
   $('signin-error').hidden = true;
@@ -623,7 +626,8 @@ $('signin-form').addEventListener('submit', async e => {
   if (!email) return;
   setLoading('signin-btn', true);
   try {
-    await sendSignInLinkToEmail(auth, email, ACTION_CODE_SETTINGS);
+    const continueUrl = location.origin + '/buddy/' + location.search;
+    await httpsCallable(functions, 'sendMagicLink')({ email, continueUrl });
     localStorage.setItem('emailForSignIn', email);
     $('check-email-addr').textContent = email;
     posthog.capture('buddy_magic_link_sent');
