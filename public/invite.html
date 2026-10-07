@@ -345,19 +345,21 @@
   // Capture invite ID from path: /invite/{id}
   var inviteId = location.pathname.split('/').filter(Boolean)[1] || null;
 
-  // Detect iPhone specifically (not iPad — iPadOS reports macOS UA by default,
-  // and the app is iPhone-only so iPad buddies must use the web app).
-  var isIPhone = /iPhone/.test(navigator.userAgent) && !/iPad/.test(navigator.userAgent);
+  // Detect iPhone or iPad. iPadOS 13+ reports a desktop Mac UA by default, so a
+  // "Macintosh" UA with multi-touch is treated as an iPad (Macs report 0 touch points).
+  var ua = navigator.userAgent;
+  var isIPad = /iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isIOSDevice = /iPhone|iPod/.test(ua) || isIPad;
 
   if (inviteId) {
-    if (isIPhone) {
-      // iPhone: show "Open in app" custom-scheme button (primary for installed users)
+    if (isIOSDevice) {
+      // iPhone / iPad: show "Open in app" custom-scheme button (primary for installed users)
       var openBtn = document.getElementById('openApp');
       openBtn.setAttribute('href', 'disconnect://invite/' + encodeURIComponent(inviteId));
       openBtn.style.display = 'inline-block';
       document.getElementById('openAppHint').style.display = 'block';
     } else {
-      // Non-iPhone (Android, desktop, iPad): redirect to buddy web app
+      // Android / desktop: redirect to buddy web app
       location.replace('/buddy/?invite=' + encodeURIComponent(inviteId));
     }
   }
