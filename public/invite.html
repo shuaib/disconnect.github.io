@@ -2,6 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+  // /invite/<id> is served through a rewrite, and Firebase Hosting skips its i18n routing for
+  // rewrites, so this page swaps itself for the visitor's translated copy (built by
+  // i18n/pages.py) in place: same URL, so the invite id in the path and universal links still work.
+  // Same language rules as the rest of the site: picker cookie first, then the browser.
+  (function () {
+    if (document.documentElement.lang !== 'en') return;
+    var FOLDERS = { de: 'de', fr: 'fr', it: 'it', pt: 'pt', es: 'es', nl: 'nl', ja: 'ja', ko: 'ko',
+                    zh: 'zh', tr: 'tr', pl: 'pl', ru: 'ru' };
+    function folder(tag) {
+      var p = tag.toLowerCase().replace(/_/g, '-').split('-'), base = p[0], rest = p.slice(1);
+      if (base === 'zh' && rest.some(function (x) { return ['hant', 'tw', 'hk', 'mo'].indexOf(x) >= 0; })) return 'zh_tw';
+      if (base === 'es' && rest.indexOf('es') >= 0) return 'es_es';
+      return FOLDERS[base] || (base === 'en' ? 'en' : null);
+    }
+    function cookie(k) { var m = document.cookie.match('(?:^|; )' + k + '=([^;]*)'); return m && m[1]; }
+    var f = null, lang = cookie('firebase-language-override');
+    if (lang) f = folder(lang + (cookie('firebase-country-override') ? '-' + cookie('firebase-country-override') : ''));
+    else (navigator.languages || [navigator.language || 'en']).some(function (t) { return (f = folder(t)); });
+    if (!f || f === 'en') return;
+    var root = document.documentElement;
+    root.style.visibility = 'hidden';
+    var reveal = setTimeout(function () { root.style.visibility = ''; }, 1500);
+    fetch('/localized/' + f + '/invite.html').then(function (r) {
+      if (!r.ok) throw r.status;
+      return r.text();
+    }).then(function (html) {
+      clearTimeout(reveal);
+      document.open(); document.write(html); document.close();
+    }).catch(function () { clearTimeout(reveal); root.style.visibility = ''; });
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You've been invited to be a Disconnect buddy</title>
 <meta name="description" content="Someone wants you as their accountability buddy on Disconnect — the iOS app that helps people stick to their screen-time goals with a little help from a friend.">
@@ -338,7 +370,29 @@
       <a href="mailto:support@bytehood.com">Support</a>
     </nav>
     <p class="copy">&copy; 2026&ndash;present Bytehood Ltd.</p>
-  </div>
+  <!-- i18n:skip -->
+    <p class="lang-switch"><label for="langSelect">Language</label> <select id="langSelect"><option value="en" selected>English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt-BR">Português</option><option value="es-MX">Español (Latinoamérica)</option><option value="es-ES">Español (España)</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="tr">Türkçe</option><option value="pl">Polski</option><option value="ru">Русский</option></select></p>
+<script>
+  // Language switcher: sets Firebase Hosting's i18n override cookies, then reloads this page so
+  // Hosting serves the chosen language (otherwise it follows the browser language).
+  (function () {
+    var s = document.getElementById('langSelect');
+    if (!s) return;
+    var map = {"en": ["en", null], "de": ["de", null], "fr": ["fr", null], "it": ["it", null], "pt-BR": ["pt", null], "es-MX": ["es", "mx"], "es-ES": ["es", "es"], "nl": ["nl", null], "ja": ["ja", null], "ko": ["ko", null], "zh-Hans": ["zh", "cn"], "zh-Hant": ["zh", "tw"], "tr": ["tr", null], "pl": ["pl", null], "ru": ["ru", null]};
+    s.addEventListener('change', function () {
+      var o = map[s.value], age = '; path=/; max-age=31536000; SameSite=Lax';
+      document.cookie = 'firebase-language-override=' + o[0] + age;
+      document.cookie = 'firebase-country-override=' + (o[1] || '') + (o[1] ? age : '; path=/; max-age=0');
+      // Pages are browser-cached, and the cache ignores these cookies: refetch first so the
+      // navigation gets the newly chosen language, not the copy cached for the old one.
+      var target = window.location.pathname.replace(/^\/localized\/[^/]+/, '');
+      var go = function () { window.location.href = target; };
+      fetch(target, { cache: 'reload', credentials: 'same-origin' }).then(go, go);
+    });
+  })();
+</script>
+<!-- /i18n:skip -->
+</div>
 </footer>
 
 <script>

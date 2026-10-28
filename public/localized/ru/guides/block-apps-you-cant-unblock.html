@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как заблокировать приложения так, чтобы не снять блокировку в одиночку — Disconnect</title>
+<meta name="description" content="Любую блокировку, которую можно выключить в одиночку, рано или поздно выключают. Вот схемы, которые действительно держатся, — и плюсы и минусы каждой.">
+<link rel="canonical" href="https://disconnectapp.co/localized/ru/guides/block-apps-you-cant-unblock">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://disconnectapp.co/#organization",
+      "name": "Bytehood",
+      "legalName": "Bytehood Ltd.",
+      "url": "https://bytehood.com",
+      "email": "support@bytehood.com",
+      "sameAs": [
+        "https://apps.apple.com/app/id6743134572"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://disconnectapp.co/disconnect-icon-1024.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "founder": {
+        "@id": "https://disconnectapp.co/#shuaib"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://disconnectapp.co/#website",
+      "url": "https://disconnectapp.co/",
+      "name": "Disconnect",
+      "inLanguage": "ru",
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://disconnectapp.co/#app",
+      "name": "Disconnect",
+      "operatingSystem": "iOS",
+      "applicationCategory": "ProductivityApplication",
+      "url": "https://disconnectapp.co/",
+      "sameAs": [
+        "https://apps.apple.com/app/id6743134572"
+      ],
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://disconnectapp.co/#shuaib",
+      "name": "Shuaib Khan",
+      "jobTitle": "Основатель",
+      "worksFor": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "url": "https://disconnectapp.co/press"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://disconnectapp.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Руководства",
+          "item": "https://disconnectapp.co/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Как заблокировать приложения так, чтобы не снять блокировку в одиночку",
+          "item": "https://disconnectapp.co/guides/block-apps-you-cant-unblock"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Как заблокировать приложения так, чтобы не снять блокировку в одиночку",
+      "description": "Любую блокировку, которую можно выключить в одиночку, рано или поздно выключают. Вот схемы, которые действительно держатся, — и плюсы и минусы каждой.",
+      "inLanguage": "ru",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock"
+      },
+      "datePublished": "2026-08-23",
+      "dateModified": "2026-08-23",
+      "author": {
+        "@id": "https://disconnectapp.co/#shuaib"
+      },
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "about": {
+        "@id": "https://disconnectapp.co/#app"
+      },
+      "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#article",
+      "isPartOf": {
+        "@id": "https://disconnectapp.co/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#breadcrumb"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как заблокировать приложения, чтобы их нельзя было разблокировать?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Любую блокировку, выключатель которой у тебя в руках, рано или поздно выключат. По-настоящему держатся две схемы: код-пароль, который задал другой человек и который ты никогда не видишь, или приложение со встроенным одобрением, где надёжный человек удалённо одобряет каждую разблокировку."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли обойти Экранное время на iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Свои лимиты Экранного времени можно снять в любой момент, потому что код-пароль знаешь ты. Так задумано. Поэтому Экранное время полезно как лежачий полицейский, но ненадёжно против осознанной тяги."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой блокировщик приложений для iPhone самый строгий?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Строгость зависит от того, у кого выключатель, а не от функций. Блокировщики, где каждую разблокировку одобряет другой человек, по самому устройству строже любого режима под твоим контролем: никакая настройка на твоём телефоне их не снимет."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Стоит ли блокировать все отвлекающие приложения сразу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Нет. Начни с одного приложения, про которое ты и так знаешь, что проблема в нём. Блокировка нескольких сразу — самая частая причина, по которой блокировщик бросают в первые две недели."
+          }
+        }
+      ],
+      "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#faq"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#F5F4F1">
+<meta name="apple-itunes-app" content="app-id=6743134572">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://disconnectapp.co/localized/ru/guides/block-apps-you-cant-unblock">
+<meta property="og:title" content="Как заблокировать приложения так, чтобы не снять блокировку в одиночку — Disconnect">
+<meta property="og:description" content="Любую блокировку, которую можно выключить в одиночку, рано или поздно выключают. Вот схемы, которые действительно держатся, — и плюсы и минусы каждой.">
+<meta property="og:image" content="https://disconnectapp.co/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Как заблокировать приложения так, чтобы не снять блокировку в одиночку — Disconnect">
+<meta name="twitter:description" content="Любую блокировку, которую можно выключить в одиночку, рано или поздно выключают. Вот схемы, которые действительно держатся, — и плюсы и минусы каждой.">
+<meta name="twitter:image" content="https://disconnectapp.co/og-image.png">
+
+<!-- PostHog Analytics -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="du vu fu pu yu init Bu Hu Nu qu Vu Kl ju Zu Ou th eh ih nh sh rh capture getExtension zu hu uh calculateEventProperties ah register register_once register_for_session unregister unregister_for_session ph Lu hh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync gh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset mh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty dh Ku createPersonProfile setInternalOrTestUser fh bu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Qu debug Xl Os getPageViewId captureTraceFeedback captureTraceMetric Pu".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_meNigUHcXmZr8joaJwZTomvhGNwzYJ43t4NvkTikLMwV', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true,
+    })
+</script>
+<!-- i18n:skip -->
+<link rel="alternate" hreflang="en" href="https://disconnectapp.co/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="de" href="https://disconnectapp.co/localized/de/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="fr" href="https://disconnectapp.co/localized/fr/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="it" href="https://disconnectapp.co/localized/it/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="pt-BR" href="https://disconnectapp.co/localized/pt/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="es-419" href="https://disconnectapp.co/localized/es/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="es-ES" href="https://disconnectapp.co/localized/es_es/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="nl" href="https://disconnectapp.co/localized/nl/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="ja" href="https://disconnectapp.co/localized/ja/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="ko" href="https://disconnectapp.co/localized/ko/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="zh-Hans" href="https://disconnectapp.co/localized/zh/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="zh-Hant" href="https://disconnectapp.co/localized/zh_tw/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="tr" href="https://disconnectapp.co/localized/tr/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="pl" href="https://disconnectapp.co/localized/pl/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="ru" href="https://disconnectapp.co/localized/ru/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="x-default" href="https://disconnectapp.co/guides/block-apps-you-cant-unblock">
+<!-- /i18n:skip -->
+</head>
+<body class="guide-page">
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="lockup" href="/" aria-label="Главная Disconnect">
+        <img src="/app-icon.svg" width="26" height="26" alt="">
+        <span class="wordmark">Disconnect</span>
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="/#how">Как это работает</a> <a href="/#locks">Уровни блокировки</a> <a href="/#compare">Сравнение</a> <a href="/guides/" aria-current="page">Руководства</a> <a href="/#faq">Вопросы и ответы</a>
+      </nav>
+      <a class="header-cta" href="https://apps.apple.com/app/id6743134572">Скачать приложение</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="guide-hero">
+      <div class="wrap">
+        <p class="kicker"><a href="/guides/">Руководства</a> &nbsp;/&nbsp; Экранное время</p>
+        <h1>Как заблокировать приложения так, чтобы не снять блокировку в одиночку</h1>
+        <p class="standfirst">Есть конкретная проверка, выдержит ли блокировка встречу с настоящей тягой: когда она срабатывает, можешь ли ты отменить её в одиночку?</p>
+        <p class="guide-meta">Автор: <a href="/press" rel="author">Shuaib Khan</a> &middot; 6 мин чтения &middot; Обновлено: август 2026</p>
+      </div>
+    </section>
+
+    <article class="article">
+      <div class="wrap">
+
+        <p>Большинство блокировщиков проваливают одну и ту же проверку. В момент, когда блокировка срабатывает, её можно отменить самостоятельно &mdash; кнопкой, известным тебе кодом, настройкой в двух касаниях. Если так, всё остальное в приложении уже не имеет значения.</p>
+        <p>Поэтому при сравнении блокировщиков полезен узкий вопрос: <strong>в момент, когда больше всего хочется зайти, решение всё ещё за тобой?</strong></p>
+
+        <h2>Четыре вида блокировок</h2>
+        <h3>1. Блокировки-препятствия</h3>
+        <p>Пауза, дыхательное упражнение, экран «Точно?». Приложения вроде one sec и ScreenZen делают это намеренно и хорошо.</p>
+        <p><strong>Защищает от:</strong> машинального движения руки. Действительно эффективно &mdash; большая часть поднятий телефона происходит на автомате, а не намеренно, и двухсекундная пауза их обрывает.</p>
+        <p><strong>Не защищает от:</strong> всего, что ты действительно решаешь сделать. Продолжить можно всегда — так задумано. Это смысл категории, а не недостаток.</p>
+
+        <h3>2. Блокировки по таймеру</h3>
+        <p>Сессия, которую ты запускаешь, с обратным отсчётом. Так работают Forest и большинство таймеров фокуса.</p>
+        <p><strong>Защищает от:</strong> отвлечений во время рабочей сессии, которую ты сознательно начинаешь.</p>
+        <p><strong>Не защищает от:</strong> вечеров и выходных, потому что сессию ты просто не запускаешь. Таймер, который нужно включать самостоятельно, ровно настолько надёжен, насколько надёжен момент, когда его включают.</p>
+
+        <h3>3. Блокировки с твоим же код-паролем</h3>
+        <p>Экранное время от Apple и большинство «строгих» режимов. Блокировка настоящая, а код — твой.</p>
+        <p><strong>Защищает от:</strong> лёгких импульсов, а сам запрос кода даёт полезную паузу.</p>
+        <p><strong>Не защищает от:</strong> осознанной тяги. Ты знаешь код. <a href="/guides/why-screen-time-limits-fail">На этом спотыкаются почти все.</a></p>
+
+        <h3>4. Блокировки под контролем другого человека</h3>
+        <p>Решение действительно уходит из твоих рук. Здесь стоит различать два варианта.</p>
+        <p><strong>Импровизированный</strong> вариант — попросить кого-то ввести код-пароль, которого ты никогда не увидишь. Это работает и ничего не стоит. Слабое место — логистика: этому человеку нужно быть рядом каждый раз, когда у тебя есть законная причина зайти, поэтому большинство бросает эту затею в течение двух недель.</p>
+        <p><strong>Встроенный</strong> вариант — приложение с запросом и одобрением: ты просишь удалённо, а другой человек отвечает одним касанием. Тот же принцип, но без проблем с логистикой.</p>
+
+        <h2>Что нужно именно тебе</h2>
+        <p>Честно определи, где именно твоё слабое место. Для разных случаев нужны разные инструменты.</p>
+        <ul>
+          <li><strong>Ты открываешь приложения, не замечая этого.</strong> Правильный ответ — препятствие. Ничего строже не нужно, а строгое будет давить.</li>
+          <li><strong>Тебе трудно сосредоточиться на работе.</strong> Хватит таймера: в начале сессии ты на месте и есть настрой работать.</li>
+          <li><strong>Ты осознанно теряешь целые вечера и потом жалеешь.</strong> Ничто, что можно отменить в одиночку, не выдержит. Это тот случай, когда нужен другой человек.</li>
+        </ul>
+        <p>Большинство применяет самый строгий вариант к проблемам, которым хватило бы препятствия, а потом бросает всё, потому что это ощущается как наказание. Подбирай инструмент под реальную слабость.</p>
+
+        <blockquote>
+          <p>Если лимит на конкретное приложение уже нарушался больше двух раз, этому приложению нужна блокировка, которую не открыть самостоятельно. Доказательства налицо.</p>
+        </blockquote>
+
+        <h2>Как это решает Disconnect</h2>
+        <p>Вместо того чтобы выбирать одну модель, Disconnect даёт все три работающие и позволяет выбрать для каждого правила:</p>
+        <ul>
+          <li><strong>Мягкая блокировка</strong> &mdash; напоминание, зачем приложение заблокировано, после чего можно продолжить. Препятствие против машинального движения руки.</li>
+          <li><strong>Средняя блокировка</strong> &mdash; пять минут ожидания, а отмена запускает таймер заново, а не пропускает его. Для беспокойства, которое проходит.</li>
+          <li><strong>Жёсткая блокировка</strong> &mdash; одобрить разблокировку может только друг. Никаких обходных путей, никаких лазеек, никакой настройки, которая её выключит.</li>
+        </ul>
+        <p>Все три есть в бесплатной версии, включая жёсткую блокировку, так что самый сильный вариант не спрятан за подпиской. Смотри, <a href="/#compare">как это выглядит на фоне других блокировщиков</a>.</p>
+
+        <div class="callout">
+          <h3>Блокировка, которую действительно не открыть</h3>
+          <p>У жёсткой блокировки нет обходных путей и лазеек. Одобрить разблокировку может только друг, а одобрения истекают сами.</p>
+          <a class="cta-inline" href="https://apps.apple.com/app/id6743134572">Скачать Disconnect &rarr;</a>
+        </div>
+
+        <h2>Два практических предупреждения</h2>
+        <p><strong>Не начинай с жёсткой блокировки всего подряд.</strong> Сначала заблокируй одно самое вредное приложение. Кто в первый день блокирует шесть приложений, к десятому дню возвращается к нулю.</p>
+        <p><strong>Задай расписание шире, чем кажется удобным.</strong> Если опасное окно — с 21:00 до полуночи, блокируй с 20:00. Срывы случаются на краях — в те полчаса, пока правило ещё не включилось.</p>
+
+      </div>
+    </article>
+
+    <section class="faq">
+      <div class="wrap">
+        <div class="head"><div class="eyebrow">Частые вопросы</div><h2 class="section-title" style="margin-top:16px;">Коротко.</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Как заблокировать приложения, чтобы их нельзя было разблокировать?</summary><div class="faq-answer"><p>Любую блокировку, выключатель которой у тебя в руках, рано или поздно выключат. По-настоящему держатся две схемы: код-пароль, который задал другой человек и который ты никогда не видишь, или приложение со встроенным одобрением, где надёжный человек удалённо одобряет каждую разблокировку.</p></div></details>
+          <details class="faq-item"><summary>Можно ли обойти Экранное время на iPhone?</summary><div class="faq-answer"><p>Свои лимиты Экранного времени можно снять в любой момент, потому что код-пароль знаешь ты. Так задумано. Поэтому Экранное время полезно как лежачий полицейский, но ненадёжно против осознанной тяги.</p></div></details>
+          <details class="faq-item"><summary>Какой блокировщик приложений для iPhone самый строгий?</summary><div class="faq-answer"><p>Строгость зависит от того, у кого выключатель, а не от функций. Блокировщики, где каждую разблокировку одобряет другой человек, по самому устройству строже любого режима под твоим контролем: никакая настройка на твоём телефоне их не снимет.</p></div></details>
+          <details class="faq-item"><summary>Стоит ли блокировать все отвлекающие приложения сразу?</summary><div class="faq-answer"><p>Нет. Начни с одного приложения, про которое ты и так знаешь, что проблема в нём. Блокировка нескольких сразу — самая частая причина, по которой блокировщик бросают в первые две недели.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-guides">
+      <div class="wrap">
+        <h2>Читать дальше</h2>
+        <div class="guide-grid">
+          <a class="guide-card" href="/guides/ask-a-friend-to-be-your-buddy"><h2>Как попросить друга присматривать за твоим экранным временем</h2><p>Большинство так и не находит себе партнёра по ответственности из-за одной неловкой мелочи: надо попросить. Это гораздо меньшая просьба…</p><span class="more">Читать &rarr;</span></a>
+          <a class="guide-card" href="/guides/block-social-media-iphone"><h2>Как заблокировать соцсети на iPhone (и не сорваться)</h2><p>Каждое руководство объясняет, как поставить блокировку. Почти ни одно не объясняет, почему к четвергу её уже не будет и что…</p><span class="more">Читать &rarr;</span></a>
+          <a class="guide-card" href="/guides/screen-time-apps-you-cant-cheat"><h2>Приложения для контроля экранного времени: какие можно обмануть?</h2><p>Списки функций — бесполезное сравнение. Есть один вопрос, который предсказывает, будет ли блокировщик…</p><span class="more">Читать &rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="footer-mark" href="/" aria-label="Главная Disconnect">
+      <img src="/app-icon.svg" width="44" height="44" alt="">
+    </a>
+    <nav class="links" aria-label="Подвал сайта">
+      <a href="/">Главная</a> <a href="/guides/">Руководства</a> <a href="/#compare">Сравнение</a> <a href="/#faq">Вопросы и ответы</a> <a href="/press">Для прессы</a> <a href="/privacy">Конфиденциальность</a> <a href="/terms">Условия</a> <a href="mailto:support@bytehood.com">Поддержка</a>
+    </nav>
+    <p class="copy">&copy; 2026&ndash;настоящее время Bytehood Ltd.</p>
+  <!-- i18n:skip -->
+    <p class="lang-switch"><label for="langSelect">Язык</label> <select id="langSelect"><option value="en">English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt-BR">Português</option><option value="es-MX">Español (Latinoamérica)</option><option value="es-ES">Español (España)</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="tr">Türkçe</option><option value="pl">Polski</option><option value="ru" selected>Русский</option></select></p>
+<script>
+  // Language switcher: sets Firebase Hosting's i18n override cookies, then reloads this page so
+  // Hosting serves the chosen language (otherwise it follows the browser language).
+  (function () {
+    var s = document.getElementById('langSelect');
+    if (!s) return;
+    var map = {"en": ["en", null], "de": ["de", null], "fr": ["fr", null], "it": ["it", null], "pt-BR": ["pt", null], "es-MX": ["es", "mx"], "es-ES": ["es", "es"], "nl": ["nl", null], "ja": ["ja", null], "ko": ["ko", null], "zh-Hans": ["zh", "cn"], "zh-Hant": ["zh", "tw"], "tr": ["tr", null], "pl": ["pl", null], "ru": ["ru", null]};
+    s.addEventListener('change', function () {
+      var o = map[s.value], age = '; path=/; max-age=31536000; SameSite=Lax';
+      document.cookie = 'firebase-language-override=' + o[0] + age;
+      document.cookie = 'firebase-country-override=' + (o[1] || '') + (o[1] ? age : '; path=/; max-age=0');
+      // Pages are browser-cached, and the cache ignores these cookies: refetch first so the
+      // navigation gets the newly chosen language, not the copy cached for the old one.
+      var target = window.location.pathname.replace(/^\/localized\/[^/]+/, '');
+      var go = function () { window.location.href = target; };
+      fetch(target, { cache: 'reload', credentials: 'same-origin' }).then(go, go);
+    });
+  })();
+</script>
+<!-- /i18n:skip -->
+</div>
+</footer>
+
+  <script>
+    (function () {
+      var h = document.getElementById('siteHeader');
+      if (!h) return;
+      var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+<script>
+  // Track App Store download clicks with page + label context
+  document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      posthog.capture('app_store_click', {
+        page: window.location.pathname,
+        label: (a.textContent.trim() || a.getAttribute('aria-label') || 'badge').slice(0, 80),
+        referrer: document.referrer || null,
+        utm_source: new URLSearchParams(window.location.search).get('utm_source'),
+        utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
+        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+      });
+    });
+  });
+
+  // Track scroll depth milestones (25 / 50 / 75 / 90 %)
+  var _phScrollFired = {};
+  window.addEventListener('scroll', function() {
+    var pct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+    [25, 50, 75, 90].forEach(function(m) {
+      if (!_phScrollFired[m] && pct >= m) {
+        _phScrollFired[m] = true;
+        posthog.capture('scroll_depth', { depth: m, page: window.location.pathname });
+      }
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>

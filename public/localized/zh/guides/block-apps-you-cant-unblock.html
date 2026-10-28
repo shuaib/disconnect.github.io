@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>如何屏蔽 App，让自己没法解除 — Disconnect</title>
+<meta name="description" content="凡是你自己能关掉的屏蔽工具，最后都会被你关掉。这里介绍几种真正守得住的方法，以及各自的取舍。">
+<link rel="canonical" href="https://disconnectapp.co/localized/zh/guides/block-apps-you-cant-unblock">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://disconnectapp.co/#organization",
+      "name": "Bytehood",
+      "legalName": "Bytehood Ltd.",
+      "url": "https://bytehood.com",
+      "email": "support@bytehood.com",
+      "sameAs": [
+        "https://apps.apple.com/app/id6743134572"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://disconnectapp.co/disconnect-icon-1024.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "founder": {
+        "@id": "https://disconnectapp.co/#shuaib"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://disconnectapp.co/#website",
+      "url": "https://disconnectapp.co/",
+      "name": "Disconnect",
+      "inLanguage": "zh-Hans",
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://disconnectapp.co/#app",
+      "name": "Disconnect",
+      "operatingSystem": "iOS",
+      "applicationCategory": "ProductivityApplication",
+      "url": "https://disconnectapp.co/",
+      "sameAs": [
+        "https://apps.apple.com/app/id6743134572"
+      ],
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://disconnectapp.co/#shuaib",
+      "name": "Shuaib Khan",
+      "jobTitle": "创始人",
+      "worksFor": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "url": "https://disconnectapp.co/press"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://disconnectapp.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "指南",
+          "item": "https://disconnectapp.co/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "如何屏蔽 App，让自己没法解除",
+          "item": "https://disconnectapp.co/guides/block-apps-you-cant-unblock"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "如何屏蔽 App，让自己没法解除",
+      "description": "凡是你自己能关掉的屏蔽工具，最后都会被你关掉。这里介绍几种真正守得住的方法，以及各自的取舍。",
+      "inLanguage": "zh-Hans",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock"
+      },
+      "datePublished": "2026-08-23",
+      "dateModified": "2026-08-23",
+      "author": {
+        "@id": "https://disconnectapp.co/#shuaib"
+      },
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      },
+      "about": {
+        "@id": "https://disconnectapp.co/#app"
+      },
+      "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#article",
+      "isPartOf": {
+        "@id": "https://disconnectapp.co/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#breadcrumb"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "怎样屏蔽 App，才能让自己没法解除？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "只要开关在你手里，屏蔽迟早会被关掉。真正守得住的方案有两种：让另一个人设置一个你从没见过的密码，或者使用自带审批流程的 App，由你信任的人远程同意每一次解锁。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apple 屏幕使用时间能被绕过吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "你随时都能解除自己的屏幕使用时间限制，因为密码在你手里。这是设计使然。这让屏幕使用时间可以当作减速带，但面对有意的冲动时并不可靠。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "iPhone 上最严格的 App 屏蔽工具是哪个？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "严格程度取决于开关在谁手里，而不是功能多少。由另一个人同意每次解锁的屏蔽工具，在结构上就比任何自控模式更严格，因为你自己手机上的任何设置都解除不了它。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我应该一次屏蔽所有让我分心的 App 吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不要。先从你心里清楚的那个“罪魁祸首”开始。一次屏蔽好几个，是人们在头两周就放弃屏蔽工具最常见的原因。"
+          }
+        }
+      ],
+      "@id": "https://disconnectapp.co/guides/block-apps-you-cant-unblock#faq"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#F5F4F1">
+<meta name="apple-itunes-app" content="app-id=6743134572">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://disconnectapp.co/localized/zh/guides/block-apps-you-cant-unblock">
+<meta property="og:title" content="如何屏蔽 App，让自己没法解除 — Disconnect">
+<meta property="og:description" content="凡是你自己能关掉的屏蔽工具，最后都会被你关掉。这里介绍几种真正守得住的方法，以及各自的取舍。">
+<meta property="og:image" content="https://disconnectapp.co/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="如何屏蔽 App，让自己没法解除 — Disconnect">
+<meta name="twitter:description" content="凡是你自己能关掉的屏蔽工具，最后都会被你关掉。这里介绍几种真正守得住的方法，以及各自的取舍。">
+<meta name="twitter:image" content="https://disconnectapp.co/og-image.png">
+
+<!-- PostHog Analytics -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="du vu fu pu yu init Bu Hu Nu qu Vu Kl ju Zu Ou th eh ih nh sh rh capture getExtension zu hu uh calculateEventProperties ah register register_once register_for_session unregister unregister_for_session ph Lu hh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync gh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset mh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty dh Ku createPersonProfile setInternalOrTestUser fh bu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Qu debug Xl Os getPageViewId captureTraceFeedback captureTraceMetric Pu".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_meNigUHcXmZr8joaJwZTomvhGNwzYJ43t4NvkTikLMwV', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true,
+    })
+</script>
+<!-- i18n:skip -->
+<link rel="alternate" hreflang="en" href="https://disconnectapp.co/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="de" href="https://disconnectapp.co/localized/de/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="fr" href="https://disconnectapp.co/localized/fr/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="it" href="https://disconnectapp.co/localized/it/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="pt-BR" href="https://disconnectapp.co/localized/pt/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="es-419" href="https://disconnectapp.co/localized/es/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="es-ES" href="https://disconnectapp.co/localized/es_es/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="nl" href="https://disconnectapp.co/localized/nl/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="ja" href="https://disconnectapp.co/localized/ja/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="ko" href="https://disconnectapp.co/localized/ko/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="zh-Hans" href="https://disconnectapp.co/localized/zh/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="zh-Hant" href="https://disconnectapp.co/localized/zh_tw/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="tr" href="https://disconnectapp.co/localized/tr/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="pl" href="https://disconnectapp.co/localized/pl/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="ru" href="https://disconnectapp.co/localized/ru/guides/block-apps-you-cant-unblock">
+<link rel="alternate" hreflang="x-default" href="https://disconnectapp.co/guides/block-apps-you-cant-unblock">
+<!-- /i18n:skip -->
+</head>
+<body class="guide-page">
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="lockup" href="/" aria-label="Disconnect 首页">
+        <img src="/app-icon.svg" width="26" height="26" alt="">
+        <span class="wordmark">Disconnect</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/#how">使用方法</a> <a href="/#locks">锁定级别</a> <a href="/#compare">对比</a> <a href="/guides/" aria-current="page">指南</a> <a href="/#faq">常见问题</a>
+      </nav>
+      <a class="header-cta" href="https://apps.apple.com/app/id6743134572">获取 App</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="guide-hero">
+      <div class="wrap">
+        <p class="kicker"><a href="/guides/">指南</a> &nbsp;/&nbsp; 屏幕时间</p>
+        <h1>如何屏蔽 App，让自己没法解除</h1>
+        <p class="standfirst">有一个具体的检验方法，能判断屏蔽能否扛住真正的冲动：在它生效的那一刻，你能独自撤销它吗？</p>
+        <p class="guide-meta">作者 <a href="/press" rel="author">Shuaib Khan</a> &middot; 阅读约 6 分钟 &middot; 更新于 2026 年 8 月</p>
+      </div>
+    </section>
+
+    <article class="article">
+      <div class="wrap">
+
+        <p>大多数 App 屏蔽工具都过不了同一个检验。在屏蔽生效的那一刻，你可以自己撤销它——一个按钮、一个你知道的密码、一个点两下就能找到的设置。只要这一点成立，这个 App 的其他一切都无关紧要了。</p>
+        <p>所以对比屏蔽工具时，真正有用的问题其实很具体：<strong>在你最想打开的那一刻，决定权还在你手里吗？</strong></p>
+
+        <h2>四种屏蔽方式</h2>
+        <h3>1. 制造阻力的屏蔽</h3>
+        <p>一次暂停、一段呼吸练习、一个“你确定吗？”的画面。one sec 和 ScreenZen 这类 App 在这方面刻意做得很好。</p>
+        <p><strong>能挡住：</strong>无意识地伸手。确实有效——很大一部分拿起手机的动作是自动的，而不是有意的，两秒钟的打断就能把它掐灭。</p>
+        <p><strong>挡不住：</strong>任何你真的决定要做的事。按设计，你总是可以继续。这正是这类工具的意义，而不是缺陷。</p>
+
+        <h3>2. 计时器屏蔽</h3>
+        <p>由你自己开始、带倒计时的专注时段。Forest 和大多数专注计时器都是这样工作的。</p>
+        <p><strong>能挡住：</strong>你主动开始的工作时段里的分心。</p>
+        <p><strong>挡不住：</strong>晚上和周末，因为你根本不会开始计时。一个需要你主动开启的计时器，可靠程度永远只取决于你开启它的那一刻。</p>
+
+        <h3>3. 密码在自己手里的屏蔽</h3>
+        <p>Apple 屏幕使用时间和大多数严格模式。屏蔽是真的，但密码是你的。</p>
+        <p><strong>能挡住：</strong>轻微的冲动，而且被询问本身就带来一次有用的停顿。</p>
+        <p><strong>挡不住：</strong>有意的冲动。你知道密码。<a href="/guides/why-screen-time-limits-fail">这几乎是每个人都会踩的坑。</a></p>
+
+        <h3>4. 由另一个人控制的屏蔽</h3>
+        <p>决定权真正离开了你的手。这里有两种值得区分的版本。</p>
+        <p><strong>临时凑合</strong>的版本，是让别人输入一个你从没见过的密码。它有效，而且不花钱就能试。它的弱点在操作上：每次你有正当理由要用时，对方都得在你身边，所以大多数人不到两周就放弃了。</p>
+        <p><strong>内置</strong>的版本，是带有“请求—同意”流程的 App：你远程提出请求，对方一键回复。原理相同，却没有操作上的麻烦。</p>
+
+        <h2>你真正需要的是哪一种</h2>
+        <p>诚实地面对你属于哪种失败模式。不同的情况需要不同的工具。</p>
+        <ul>
+          <li><strong>你会不知不觉地打开 App。</strong>制造阻力就是正确答案。你不需要更强的东西，更强反而会让你觉得压抑。</li>
+          <li><strong>你工作时很难专注。</strong>计时器就够了，因为在时段开始时，你人在场，也愿意配合。</li>
+          <li><strong>你会有意地浪费掉一整晚，然后后悔。</strong>任何你能独自撤销的东西都守不住。这种情况才需要另一个人。</li>
+        </ul>
+        <p>大多数人把最严格的方案用在了只需要一点阻力的问题上，然后因为感觉像受罚而全盘放弃。让工具匹配你真正的失败方式。</p>
+
+        <blockquote>
+          <p>如果你在某个 App 上已经破了自己的限制两次以上，那它就需要一把你打不开的锁。证据已经摆在那儿了。</p>
+        </blockquote>
+
+        <h2>Disconnect 怎么解决这个问题</h2>
+        <p>Disconnect 没有只选一种模式，而是把三种有效的方式都提供给你，让你按规则选择：</p>
+        <ul>
+          <li><strong>宽松锁定</strong>——提醒你当初为什么屏蔽它，然后你可以继续。制造阻力，针对无意识的伸手。</li>
+          <li><strong>适中锁定</strong>——等待五分钟，中途取消会让计时重新开始，而不是直接跳过。针对一阵就会过去的烦躁。</li>
+          <li><strong>严格锁定</strong>——只有伙伴能同意解锁。没有强制解锁，没有后门，也没有能关掉它的设置。</li>
+        </ul>
+        <p>三种锁定在免费版中都能用，包括严格锁定，所以最强的选项并没有藏在订阅后面。看看<a href="/#compare">它与其他屏蔽工具的对比</a>。</p>
+
+        <div class="callout">
+          <h3>一把你真的打不开的锁</h3>
+          <p>严格锁定没有强制解锁，也没有后门。只有伙伴能同意解锁，而且同意会自动到期。</p>
+          <a class="cta-inline" href="https://apps.apple.com/app/id6743134572">获取 Disconnect &rarr;</a>
+        </div>
+
+        <h2>两个实用提醒</h2>
+        <p><strong>别一开始就把所有东西都设成严格锁定。</strong>先屏蔽你最难戒的那一个 App。第一天就锁上六个 App 的人，到第十天就打回原形了。</p>
+        <p><strong>把时间表设得比你觉得舒服的再宽一点。</strong>如果危险时段是晚上 9 点到午夜，那就从 8 点开始屏蔽。复发往往发生在边缘，也就是规则生效前的那半小时。</p>
+
+      </div>
+    </article>
+
+    <section class="faq">
+      <div class="wrap">
+        <div class="head"><div class="eyebrow">常见问题</div><h2 class="section-title" style="margin-top:16px;">简短回答。</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>怎样屏蔽 App，才能让自己没法解除？</summary><div class="faq-answer"><p>只要开关在你手里，屏蔽迟早会被关掉。真正守得住的方案有两种：让另一个人设置一个你从没见过的密码，或者使用自带审批流程的 App，由你信任的人远程同意每一次解锁。</p></div></details>
+          <details class="faq-item"><summary>Apple 屏幕使用时间能被绕过吗？</summary><div class="faq-answer"><p>你随时都能解除自己的屏幕使用时间限制，因为密码在你手里。这是设计使然。这让屏幕使用时间可以当作减速带，但面对有意的冲动时并不可靠。</p></div></details>
+          <details class="faq-item"><summary>iPhone 上最严格的 App 屏蔽工具是哪个？</summary><div class="faq-answer"><p>严格程度取决于开关在谁手里，而不是功能多少。由另一个人同意每次解锁的屏蔽工具，在结构上就比任何自控模式更严格，因为你自己手机上的任何设置都解除不了它。</p></div></details>
+          <details class="faq-item"><summary>我应该一次屏蔽所有让我分心的 App 吗？</summary><div class="faq-answer"><p>不要。先从你心里清楚的那个“罪魁祸首”开始。一次屏蔽好几个，是人们在头两周就放弃屏蔽工具最常见的原因。</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-guides">
+      <div class="wrap">
+        <h2>继续阅读</h2>
+        <div class="guide-grid">
+          <a class="guide-card" href="/guides/ask-a-friend-to-be-your-buddy"><h2>如何请朋友当你的监督伙伴</h2><p>大多数人从来没找过监督伙伴，只因为一件让人尴尬的小事：开口。其实这个请求比你想的……</p><span class="more">阅读指南 &rarr;</span></a>
+          <a class="guide-card" href="/guides/block-social-media-iphone"><h2>如何在 iPhone 上屏蔽社交媒体（而且真的一直屏蔽下去）</h2><p>每篇指南都教你怎么设置屏蔽，却几乎没有一篇告诉你，为什么到周四它就没了，以及……</p><span class="more">阅读指南 &rarr;</span></a>
+          <a class="guide-card" href="/guides/screen-time-apps-you-cant-cheat"><h2>屏幕时间管理 App 对比：哪些其实能作弊？</h2><p>功能列表不是有用的对比。只有一个问题，能预测一款屏蔽工具下个月是否还……</p><span class="more">阅读指南 &rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="footer-mark" href="/" aria-label="Disconnect 首页">
+      <img src="/app-icon.svg" width="44" height="44" alt="">
+    </a>
+    <nav class="links" aria-label="页脚">
+      <a href="/">首页</a> <a href="/guides/">指南</a> <a href="/#compare">对比</a> <a href="/#faq">常见问题</a> <a href="/press">媒体</a> <a href="/privacy">隐私</a> <a href="/terms">条款</a> <a href="mailto:support@bytehood.com">支持</a>
+    </nav>
+    <p class="copy">&copy; 2026&ndash;至今 Bytehood Ltd.</p>
+  <!-- i18n:skip -->
+    <p class="lang-switch"><label for="langSelect">语言</label> <select id="langSelect"><option value="en">English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt-BR">Português</option><option value="es-MX">Español (Latinoamérica)</option><option value="es-ES">Español (España)</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh-Hans" selected>简体中文</option><option value="zh-Hant">繁體中文</option><option value="tr">Türkçe</option><option value="pl">Polski</option><option value="ru">Русский</option></select></p>
+<script>
+  // Language switcher: sets Firebase Hosting's i18n override cookies, then reloads this page so
+  // Hosting serves the chosen language (otherwise it follows the browser language).
+  (function () {
+    var s = document.getElementById('langSelect');
+    if (!s) return;
+    var map = {"en": ["en", null], "de": ["de", null], "fr": ["fr", null], "it": ["it", null], "pt-BR": ["pt", null], "es-MX": ["es", "mx"], "es-ES": ["es", "es"], "nl": ["nl", null], "ja": ["ja", null], "ko": ["ko", null], "zh-Hans": ["zh", "cn"], "zh-Hant": ["zh", "tw"], "tr": ["tr", null], "pl": ["pl", null], "ru": ["ru", null]};
+    s.addEventListener('change', function () {
+      var o = map[s.value], age = '; path=/; max-age=31536000; SameSite=Lax';
+      document.cookie = 'firebase-language-override=' + o[0] + age;
+      document.cookie = 'firebase-country-override=' + (o[1] || '') + (o[1] ? age : '; path=/; max-age=0');
+      // Pages are browser-cached, and the cache ignores these cookies: refetch first so the
+      // navigation gets the newly chosen language, not the copy cached for the old one.
+      var target = window.location.pathname.replace(/^\/localized\/[^/]+/, '');
+      var go = function () { window.location.href = target; };
+      fetch(target, { cache: 'reload', credentials: 'same-origin' }).then(go, go);
+    });
+  })();
+</script>
+<!-- /i18n:skip -->
+</div>
+</footer>
+
+  <script>
+    (function () {
+      var h = document.getElementById('siteHeader');
+      if (!h) return;
+      var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+<script>
+  // Track App Store download clicks with page + label context
+  document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      posthog.capture('app_store_click', {
+        page: window.location.pathname,
+        label: (a.textContent.trim() || a.getAttribute('aria-label') || 'badge').slice(0, 80),
+        referrer: document.referrer || null,
+        utm_source: new URLSearchParams(window.location.search).get('utm_source'),
+        utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
+        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+      });
+    });
+  });
+
+  // Track scroll depth milestones (25 / 50 / 75 / 90 %)
+  var _phScrollFired = {};
+  window.addEventListener('scroll', function() {
+    var pct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+    [25, 50, 75, 90].forEach(function(m) {
+      if (!_phScrollFired[m] && pct >= m) {
+        _phScrollFired[m] = true;
+        posthog.capture('scroll_depth', { depth: m, page: window.location.pathname });
+      }
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>

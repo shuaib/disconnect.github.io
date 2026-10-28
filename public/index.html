@@ -137,7 +137,7 @@
           "name": "What can my buddy actually see?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Very little, by design. When you ask to unlock something, your buddy sees the name of the rule you are trying to open and any optional reason you choose to write. That is all.They do not see which apps you have blocked, your schedule, your screen time statistics, or your usage history. The list of apps you block never leaves your device at all."
+            "text": "Very little, by design. When you ask to unlock something, your buddy sees the name of the rule you are trying to open and any optional reason you choose to write. That is all. They do not see which apps you have blocked, your schedule, your screen time statistics, or your usage history. The list of apps you block never leaves your device at all."
           }
         },
         {
@@ -153,7 +153,7 @@
           "name": "How is this different from Apple's built-in Screen Time?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Screen Time limits are enforced by a passcode you hold yourself, so in a weak moment you are asking yourself for permission — and you always say yes. Disconnect's Hard lock moves that decision to another person, so getting back in takes someone else's deliberate approval rather than your own tap.Soft and Medium locks work more like Screen Time, with a reminder or a cooldown, for the times you don't need the stronger version."
+            "text": "Screen Time limits are enforced by a passcode you hold yourself, so in a weak moment you are asking yourself for permission — and you always say yes. Disconnect's Hard lock moves that decision to another person, so getting back in takes someone else's deliberate approval rather than your own tap. Soft and Medium locks work more like Screen Time, with a reminder or a cooldown, for the times you don't need the stronger version."
           }
         },
         {
@@ -185,7 +185,7 @@
           "name": "Is Disconnect free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, and the free version is genuinely usable rather than a trial. It includes one blocking rule, one buddy, and all three lock levels — so Hard lock, the buddy accountability that makes Disconnect different, works without paying anything.Disconnect Pro lifts the limits on rules and buddies. It is available as a monthly or yearly subscription, or as a one-time lifetime purchase. Being someone else's buddy is always free."
+            "text": "Yes, and the free version is genuinely usable rather than a trial. It includes one blocking rule, one buddy, and all three lock levels — so Hard lock, the buddy accountability that makes Disconnect different, works without paying anything. Disconnect Pro lifts the limits on rules and buddies. It is available as a monthly or yearly subscription, or as a one-time lifetime purchase. Being someone else's buddy is always free."
           }
         },
         {
@@ -193,7 +193,7 @@
           "name": "What do I get in the free version versus Pro?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Free gives you one rule, one buddy, and every lock level including Hard lock. That is enough to block your single worst app and hand the key to a friend, which is the core of how Disconnect works.Pro is for people who want several rules running at once — a work schedule, a sleep schedule, a weekend rule — or more than one buddy. Nothing about the blocking itself gets stronger with Pro; you just get more of it."
+            "text": "Free gives you one rule, one buddy, and every lock level including Hard lock. That is enough to block your single worst app and hand the key to a friend, which is the core of how Disconnect works. Pro is for people who want several rules running at once — a work schedule, a sleep schedule, a weekend rule — or more than one buddy. Nothing about the blocking itself gets stronger with Pro; you just get more of it."
           }
         },
         {
@@ -209,7 +209,7 @@
           "name": "What data does Disconnect collect?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The apps you block and the schedule you set are stored only on your device and never sent to a server. Disconnect does not collect Screen Time statistics, usage data, or your location.What is stored is what the accountability system needs to work: your name and email from Sign in with Apple, who you are paired with, the unlock requests passing between you, and a push token to deliver notifications. Data is processed by Firebase, with RevenueCat handling subscriptions and Apple handling payments. Nothing is sold or used for advertising."
+            "text": "The apps you block and the schedule you set are stored only on your device and never sent to a server. Disconnect does not collect Screen Time statistics, usage data, or your location. What is stored is what the accountability system needs to work: your name and email from Sign in with Apple, who you are paired with, the unlock requests passing between you, and a push token to deliver notifications. Data is processed by Firebase, with RevenueCat handling subscriptions and Apple handling payments. Nothing is sold or used for advertising."
           }
         },
         {
@@ -586,6 +586,24 @@
         capture_pageleave: true,
     })
 </script>
+<!-- i18n:skip -->
+<link rel="alternate" hreflang="en" href="https://disconnectapp.co/">
+<link rel="alternate" hreflang="de" href="https://disconnectapp.co/localized/de/">
+<link rel="alternate" hreflang="fr" href="https://disconnectapp.co/localized/fr/">
+<link rel="alternate" hreflang="it" href="https://disconnectapp.co/localized/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://disconnectapp.co/localized/pt/">
+<link rel="alternate" hreflang="es-419" href="https://disconnectapp.co/localized/es/">
+<link rel="alternate" hreflang="es-ES" href="https://disconnectapp.co/localized/es_es/">
+<link rel="alternate" hreflang="nl" href="https://disconnectapp.co/localized/nl/">
+<link rel="alternate" hreflang="ja" href="https://disconnectapp.co/localized/ja/">
+<link rel="alternate" hreflang="ko" href="https://disconnectapp.co/localized/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://disconnectapp.co/localized/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://disconnectapp.co/localized/zh_tw/">
+<link rel="alternate" hreflang="tr" href="https://disconnectapp.co/localized/tr/">
+<link rel="alternate" hreflang="pl" href="https://disconnectapp.co/localized/pl/">
+<link rel="alternate" hreflang="ru" href="https://disconnectapp.co/localized/ru/">
+<link rel="alternate" hreflang="x-default" href="https://disconnectapp.co/">
+<!-- /i18n:skip -->
 </head>
 <body>
 
@@ -1030,7 +1048,29 @@
       <a href="mailto:support@bytehood.com">Support</a>
     </nav>
     <p class="copy">&copy; 2026&ndash;present Bytehood Ltd.</p>
-  </div>
+  <!-- i18n:skip -->
+    <p class="lang-switch"><label for="langSelect">Language</label> <select id="langSelect"><option value="en" selected>English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt-BR">Português</option><option value="es-MX">Español (Latinoamérica)</option><option value="es-ES">Español (España)</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="tr">Türkçe</option><option value="pl">Polski</option><option value="ru">Русский</option></select></p>
+<script>
+  // Language switcher: sets Firebase Hosting's i18n override cookies, then reloads this page so
+  // Hosting serves the chosen language (otherwise it follows the browser language).
+  (function () {
+    var s = document.getElementById('langSelect');
+    if (!s) return;
+    var map = {"en": ["en", null], "de": ["de", null], "fr": ["fr", null], "it": ["it", null], "pt-BR": ["pt", null], "es-MX": ["es", "mx"], "es-ES": ["es", "es"], "nl": ["nl", null], "ja": ["ja", null], "ko": ["ko", null], "zh-Hans": ["zh", "cn"], "zh-Hant": ["zh", "tw"], "tr": ["tr", null], "pl": ["pl", null], "ru": ["ru", null]};
+    s.addEventListener('change', function () {
+      var o = map[s.value], age = '; path=/; max-age=31536000; SameSite=Lax';
+      document.cookie = 'firebase-language-override=' + o[0] + age;
+      document.cookie = 'firebase-country-override=' + (o[1] || '') + (o[1] ? age : '; path=/; max-age=0');
+      // Pages are browser-cached, and the cache ignores these cookies: refetch first so the
+      // navigation gets the newly chosen language, not the copy cached for the old one.
+      var target = window.location.pathname.replace(/^\/localized\/[^/]+/, '');
+      var go = function () { window.location.href = target; };
+      fetch(target, { cache: 'reload', credentials: 'same-origin' }).then(go, go);
+    });
+  })();
+</script>
+<!-- /i18n:skip -->
+</div>
 </footer>
 
   <script>

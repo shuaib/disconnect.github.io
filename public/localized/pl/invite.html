@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<script>
+  // /invite/<id> is served through a rewrite, and Firebase Hosting skips its i18n routing for
+  // rewrites, so this page swaps itself for the visitor's translated copy (built by
+  // i18n/pages.py) in place: same URL, so the invite id in the path and universal links still work.
+  // Same language rules as the rest of the site: picker cookie first, then the browser.
+  (function () {
+    if (document.documentElement.lang !== 'en') return;
+    var FOLDERS = { de: 'de', fr: 'fr', it: 'it', pt: 'pt', es: 'es', nl: 'nl', ja: 'ja', ko: 'ko',
+                    zh: 'zh', tr: 'tr', pl: 'pl', ru: 'ru' };
+    function folder(tag) {
+      var p = tag.toLowerCase().replace(/_/g, '-').split('-'), base = p[0], rest = p.slice(1);
+      if (base === 'zh' && rest.some(function (x) { return ['hant', 'tw', 'hk', 'mo'].indexOf(x) >= 0; })) return 'zh_tw';
+      if (base === 'es' && rest.indexOf('es') >= 0) return 'es_es';
+      return FOLDERS[base] || (base === 'en' ? 'en' : null);
+    }
+    function cookie(k) { var m = document.cookie.match('(?:^|; )' + k + '=([^;]*)'); return m && m[1]; }
+    var f = null, lang = cookie('firebase-language-override');
+    if (lang) f = folder(lang + (cookie('firebase-country-override') ? '-' + cookie('firebase-country-override') : ''));
+    else (navigator.languages || [navigator.language || 'en']).some(function (t) { return (f = folder(t)); });
+    if (!f || f === 'en') return;
+    var root = document.documentElement;
+    root.style.visibility = 'hidden';
+    var reveal = setTimeout(function () { root.style.visibility = ''; }, 1500);
+    fetch('/localized/' + f + '/invite.html').then(function (r) {
+      if (!r.ok) throw r.status;
+      return r.text();
+    }).then(function (html) {
+      clearTimeout(reveal);
+      document.open(); document.write(html); document.close();
+    }).catch(function () { clearTimeout(reveal); root.style.visibility = ''; });
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaproszenie: zostań kumplem w Disconnect</title>
+<meta name="description" content="Ktoś zaprasza Cię do roli kumpla w Disconnect – aplikacji na iOS, która z drobną pomocą przyjaciela pomaga trzymać się postanowień dotyczących czasu przed ekranem.">
+<meta name="robots" content="noindex">
+
+<!-- Smart App Banner. iOS knows the install state and renders "Open" (installed) or "Get" (not),
+     so we don't have to detect it. app-argument carries the invite deep link (disconnect://invite/{id})
+     so tapping "Open" hands the invite straight to the app. The id is only in the URL at runtime, so
+     an inline script below rewrites app-argument during parse, before Safari renders the banner.
+     Note: this banner is Safari-controlled — it can't be pinned/styled and scrolls with the page. -->
+<meta name="apple-itunes-app" id="smart-app-banner" content="app-id=6743134572">
+<script>
+  (function () {
+    var id = location.pathname.split('/').filter(Boolean)[1];
+    if (id) {
+      document.getElementById('smart-app-banner').setAttribute(
+        'content',
+        'app-id=6743134572, app-argument=disconnect://invite/' + encodeURIComponent(id)
+      );
+    }
+  })();
+</script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#F5F4F1">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Zaproszenie: zostań kumplem w Disconnect">
+<meta property="og:description" content="Ktoś prosi Cię o pomoc w ograniczeniu czasu przed ekranem. Wystarczy jedno stuknięcie – pobierz Disconnect, by przyjąć zaproszenie.">
+<meta property="og:image"       content="https://disconnectapp.co/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Zaproszenie: zostań kumplem w Disconnect">
+<meta name="twitter:description" content="Ktoś prosi Cię o pomoc w ograniczeniu czasu przed ekranem. Wystarczy jedno stuknięcie – pobierz Disconnect, by przyjąć zaproszenie.">
+<meta name="twitter:image"       content="https://disconnectapp.co/og-image.png">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+  :root {
+    --bone:   #F5F4F1;
+    --bone-2: #ECEAE3;
+    --ink:    #0B0B0C;
+    --sec:    rgba(60,60,67,0.62);
+    --ter:    rgba(60,60,67,0.32);
+    --hair:   rgba(11,11,12,0.12);
+    --sage:   #2DAB57;
+    --font: -apple-system, "SF Pro Display", "SF Pro Text", system-ui, "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body {
+    font-family: var(--font);
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.4;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Header ── */
+  .lockup { display: inline-flex; align-items: center; }
+  .lockup .wordmark { font-size: 15px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+
+  /* ── Main content ── */
+  main {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px);
+    position: relative; overflow: hidden;
+  }
+  .wm {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: min(120vw, 880px); color: var(--ink); opacity: 0.035;
+    z-index: 0; pointer-events: none;
+  }
+
+  .invite-card {
+    width: 100%; max-width: 480px;
+    text-align: center;
+  }
+
+  /* Glyph mark */
+  .invite-glyph {
+    display: flex; justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  /* Badge pill below logo */
+  .invite-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(45,171,87,0.1);
+    border: 1px solid rgba(45,171,87,0.22);
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 12px; font-weight: 600; color: var(--sage);
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: clamp(20px, 3vw, 28px);
+  }
+  .invite-pill::before {
+    content: ''; display: block;
+    width: 6px; height: 6px;
+    background: var(--sage); border-radius: 50%;
+  }
+
+  /* Headline */
+  .invite-title {
+    font-size: clamp(28px, 6vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    text-wrap: balance;
+    margin-bottom: clamp(18px, 3vw, 26px);
+  }
+
+  /* Body copy */
+  .invite-body {
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--sec);
+    text-wrap: pretty;
+    margin-bottom: clamp(10px, 2vw, 16px);
+  }
+
+  /* What being a buddy means */
+  .buddy-details {
+    background: #fff;
+    border: 0.5px solid var(--hair);
+    border-radius: 18px;
+    padding: clamp(20px, 3vw, 28px);
+    margin: clamp(24px, 4vw, 36px) 0;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(11,11,12,0.05);
+  }
+  .buddy-details ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .buddy-details li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 1.45;
+    color: var(--sec);
+  }
+  .buddy-details li .icon {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    background: rgba(45,171,87,0.1);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+  .buddy-details li .icon svg { width: 11px; height: 11px; }
+
+  /* Divider */
+  .divider {
+    height: 0.5px; background: var(--hair);
+    margin: clamp(28px, 4vw, 40px) 0;
+  }
+
+  /* CTA */
+  .invite-cta-label {
+    font-size: 13px; font-weight: 600;
+    color: var(--sec); letter-spacing: 0.01em;
+    margin-bottom: 14px;
+  }
+
+  .appstore-badge {
+    display: inline-block;
+    transition: transform .18s ease, box-shadow .18s ease;
+    border-radius: 10px;
+  }
+  .appstore-badge:hover { transform: translateY(-1px); }
+  .appstore-badge:active { transform: translateY(0); }
+  .appstore-badge img { display: block; height: 44px; width: auto; }
+
+  /* Primary CTA — open the installed app via the custom scheme */
+  .open-app-btn {
+    display: inline-block;
+    background: var(--ink); color: var(--bone);
+    font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+    padding: 14px 28px; border-radius: 12px;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+  .open-app-btn:hover { transform: translateY(-1px); }
+  .open-app-btn:active { transform: translateY(0); opacity: .9; }
+
+  .invite-after {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--ter);
+    line-height: 1.5;
+  }
+  .invite-after strong {
+    color: var(--sec); font-weight: 500;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 0.5px solid var(--hair);
+    padding: 28px 0;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding-inline: clamp(20px, 5vw, 64px);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+  }
+  .footer .links { display: flex; gap: 22px; }
+  .footer .links a { font-size: 13px; color: var(--sec); transition: color .2s; }
+  .footer .links a:hover { color: var(--ink); }
+  .footer .copy { font-size: 12px; color: var(--ter); }
+</style>
+<!-- PostHog Analytics -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="du vu fu pu yu init Bu Hu Nu qu Vu Kl ju Zu Ou th eh ih nh sh rh capture getExtension zu hu uh calculateEventProperties ah register register_once register_for_session unregister unregister_for_session ph Lu hh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync gh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset mh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty dh Ku createPersonProfile setInternalOrTestUser fh bu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Qu debug Xl Os getPageViewId captureTraceFeedback captureTraceMetric Pu".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_meNigUHcXmZr8joaJwZTomvhGNwzYJ43t4NvkTikLMwV', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true,
+    })
+</script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="lockup" href="/" aria-label="Strona główna Disconnect">
+        <img src="/app-icon.svg" width="26" height="26" alt="">
+        <span class="wordmark">Disconnect</span>
+      </a>
+      <nav class="site-nav" aria-label="Główna nawigacja">
+        <a href="/#how">Jak to działa</a> <a href="/#locks">Poziomy blokady</a> <a href="/#compare">Porównanie</a> <a href="/guides/">Poradniki</a> <a href="/#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href="https://apps.apple.com/app/id6743134572">Pobierz aplikację</a>
+    </div>
+  </header>
+
+
+  <main>
+    <svg class="wm" viewBox="0 0 100 100" aria-hidden="true"><path d="M 88.755 27.625 A 44.75 44.75 0 1 1 11.245 27.625" fill="none" stroke="currentColor" stroke-width="10.5" stroke-linecap="butt"/></svg>
+    <div class="invite-card" style="position:relative;z-index:1;">
+
+      <div class="invite-glyph">
+        <img src="/app-icon.svg" width="80" height="80" alt="Disconnect" style="border-radius:22.37%;display:block;box-shadow:0 0 0 0.5px rgba(11,11,12,0.12);">
+      </div>
+
+      <div class="invite-pill">Zaproszenie od kumpla</div>
+
+      <h1 class="invite-title">Ktoś zaprasza Cię do roli kumpla w Disconnect.</h1>
+
+      <p class="invite-body">Ktoś bliski chce spędzać mniej czasu w rozpraszających aplikacjach – i prosi Cię o wsparcie jako partnera odpowiedzialności.</p>
+
+      <div class="buddy-details">
+        <ul>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#2DAB57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="2,6 5,9 10,3"/>
+              </svg>
+            </span>
+            <span>Gdy ta osoba spróbuje odblokować zablokowaną aplikację, dostaniesz powiadomienie, które zatwierdzasz jednym stuknięciem. To wszystko.</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#2DAB57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="2,6 5,9 10,3"/>
+              </svg>
+            </span>
+            <span>Rola kumpla jest darmowa i nie zmienia niczego w Twoim telefonie ani w Twoim czasie przed ekranem.</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#2DAB57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="2,6 5,9 10,3"/>
+              </svg>
+            </span>
+            <span>Zatwierdzasz albo odrzucasz – jednym stuknięciem. Wystarczy sama aplikacja, bez zakładania dodatkowych kont.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Primary: open the installed app directly via the custom scheme. Shown only when the URL
+           carries an invite id. The custom scheme sidesteps the universal-link limitation where a
+           link opened from a .webloc / direct Safari load (e.g. AirDropped from an older iOS) never
+           routes into the app. -->
+      <a id="openApp" class="open-app-btn" href="#" style="display:none" aria-label="Otwórz w Disconnect">Otwórz w Disconnect</a>
+      <p class="invite-after" id="openAppHint" style="display:none">Masz już Disconnect? Ten przycisk otworzy aplikację, gdzie przyjmiesz zaproszenie.</p>
+
+      <p class="invite-cta-label" style="margin-top: clamp(24px, 4vw, 32px)">Nie masz jeszcze Disconnect?</p>
+
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6743134572" aria-label="Pobierz Disconnect z App Store">
+        <img src="/badge-app-store.svg" alt="Pobierz z App Store" width="148" height="44">
+      </a>
+
+      <p class="invite-after">
+        <strong>Po instalacji</strong> otwórz ten link jeszcze raz, by przyjąć zaproszenie.</p>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="footer-mark" href="/" aria-label="Strona główna Disconnect">
+      <img src="/app-icon.svg" width="44" height="44" alt="">
+    </a>
+    <nav class="links" aria-label="Stopka">
+      <a href="/">Start</a> <a href="/guides/">Poradniki</a> <a href="/#compare">Porównanie</a> <a href="/#faq">FAQ</a> <a href="/press">Dla prasy</a> <a href="/privacy">Prywatność</a> <a href="/terms">Regulamin</a> <a href="mailto:support@bytehood.com">Pomoc</a>
+    </nav>
+    <p class="copy">&copy; 2026&ndash;obecnie Bytehood Ltd.</p>
+  <!-- i18n:skip -->
+    <p class="lang-switch"><label for="langSelect">Język</label> <select id="langSelect"><option value="en">English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt-BR">Português</option><option value="es-MX">Español (Latinoamérica)</option><option value="es-ES">Español (España)</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="tr">Türkçe</option><option value="pl" selected>Polski</option><option value="ru">Русский</option></select></p>
+<script>
+  // Language switcher: sets Firebase Hosting's i18n override cookies, then reloads this page so
+  // Hosting serves the chosen language (otherwise it follows the browser language).
+  (function () {
+    var s = document.getElementById('langSelect');
+    if (!s) return;
+    var map = {"en": ["en", null], "de": ["de", null], "fr": ["fr", null], "it": ["it", null], "pt-BR": ["pt", null], "es-MX": ["es", "mx"], "es-ES": ["es", "es"], "nl": ["nl", null], "ja": ["ja", null], "ko": ["ko", null], "zh-Hans": ["zh", "cn"], "zh-Hant": ["zh", "tw"], "tr": ["tr", null], "pl": ["pl", null], "ru": ["ru", null]};
+    s.addEventListener('change', function () {
+      var o = map[s.value], age = '; path=/; max-age=31536000; SameSite=Lax';
+      document.cookie = 'firebase-language-override=' + o[0] + age;
+      document.cookie = 'firebase-country-override=' + (o[1] || '') + (o[1] ? age : '; path=/; max-age=0');
+      // Pages are browser-cached, and the cache ignores these cookies: refetch first so the
+      // navigation gets the newly chosen language, not the copy cached for the old one.
+      var target = window.location.pathname.replace(/^\/localized\/[^/]+/, '');
+      var go = function () { window.location.href = target; };
+      fetch(target, { cache: 'reload', credentials: 'same-origin' }).then(go, go);
+    });
+  })();
+</script>
+<!-- /i18n:skip -->
+</div>
+</footer>
+
+<script>
+  // Capture invite ID from path: /invite/{id}
+  var inviteId = location.pathname.split('/').filter(Boolean)[1] || null;
+
+  // Detect iPhone or iPad. iPadOS 13+ reports a desktop Mac UA by default, so a
+  // "Macintosh" UA with multi-touch is treated as an iPad (Macs report 0 touch points).
+  var ua = navigator.userAgent;
+  var isIPad = /iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isIOSDevice = /iPhone|iPod/.test(ua) || isIPad;
+
+  if (inviteId) {
+    if (isIOSDevice) {
+      // iPhone / iPad: show "Open in app" custom-scheme button (primary for installed users)
+      var openBtn = document.getElementById('openApp');
+      openBtn.setAttribute('href', 'disconnect://invite/' + encodeURIComponent(inviteId));
+      openBtn.style.display = 'inline-block';
+      document.getElementById('openAppHint').style.display = 'block';
+    } else {
+      // Android / desktop: redirect to buddy web app
+      location.replace('/buddy/?invite=' + encodeURIComponent(inviteId));
+    }
+  }
+</script>
+<script>
+  (function () {
+    var h = document.getElementById('siteHeader');
+    if (!h) return;
+    var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
+<script>
+  // Track App Store download clicks with page + label context
+  document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      posthog.capture('app_store_click', {
+        page: window.location.pathname,
+        label: (a.textContent.trim() || a.getAttribute('aria-label') || 'badge').slice(0, 80),
+        referrer: document.referrer || null,
+        invite_id: (location.pathname.split('/').filter(Boolean)[1] || null),
+        utm_source: new URLSearchParams(window.location.search).get('utm_source'),
+        utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
+        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+      });
+    });
+  });
+
+  // Track Open-in-Disconnect button click
+  var _openBtn = document.getElementById('openApp');
+  if (_openBtn) {
+    _openBtn.addEventListener('click', function() {
+      posthog.capture('open_app_clicked', {
+        invite_id: (location.pathname.split('/').filter(Boolean)[1] || null),
+      });
+    });
+  }
+
+  // Fire buddy_invite_viewed once the page is ready
+  (function() {
+    var invId = location.pathname.split('/').filter(Boolean)[1] || null;
+    posthog.capture('buddy_invite_viewed', {
+      invite_id: invId,
+      referrer: document.referrer || null,
+      utm_source: new URLSearchParams(window.location.search).get('utm_source'),
+      utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
+    });
+  })();
+
+  // Track scroll depth milestones (25 / 50 / 75 / 90 %)
+  var _phScrollFired = {};
+  window.addEventListener('scroll', function() {
+    var pct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+    [25, 50, 75, 90].forEach(function(m) {
+      if (!_phScrollFired[m] && pct >= m) {
+        _phScrollFired[m] = true;
+        posthog.capture('scroll_depth', { depth: m, page: window.location.pathname });
+      }
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>

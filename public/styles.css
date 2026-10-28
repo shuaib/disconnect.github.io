@@ -280,3 +280,8 @@ table.cmp tr.is-us td:first-child .cmp-app { font-weight: 700; }
   .banner.align-right .banner-copy { align-items: flex-start; text-align: left; }
   .banner.align-right .banner-quote, .banner.align-right .banner-sub { margin-left: 0; }
 }
+
+/* Language picker in the footer (added by i18n/pages.py) */
+.footer .lang-switch { margin: 0; font-size: 13px; color: var(--ter); }
+.footer .lang-switch label { margin-right: 6px; }
+.footer .lang-switch select { font: inherit; color: var(--sec); background: transparent; border: 0.5px solid var(--hair); border-radius: 8px; padding: 3px 6px; }

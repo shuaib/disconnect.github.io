@@ -82,7 +82,11 @@ SWITCHER_SCRIPT = '''<script>
       var o = map[s.value], age = '; path=/; max-age=31536000; SameSite=Lax';
       document.cookie = 'firebase-language-override=' + o[0] + age;
       document.cookie = 'firebase-country-override=' + (o[1] || '') + (o[1] ? age : '; path=/; max-age=0');
-      window.location.href = window.location.pathname.replace(/^\\/localized\\/[^/]+/, '');
+      // Pages are browser-cached, and the cache ignores these cookies: refetch first so the
+      // navigation gets the newly chosen language, not the copy cached for the old one.
+      var target = window.location.pathname.replace(/^\\/localized\\/[^/]+/, '');
+      var go = function () { window.location.href = target; };
+      fetch(target, { cache: 'reload', credentials: 'same-origin' }).then(go, go);
     });
   })();
 </script>'''

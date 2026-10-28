@@ -63,3 +63,33 @@ Terms-specific:
 - "Apple's standard Licensed Application End User License Agreement" — use Apple's own name for it in
   your language if one exists (it's Apple's "Standard EULA"); otherwise translate it plainly.
 - Keep it as friendly and plain as the English — this is deliberately not heavy legalese.
+
+## Website pages (home, press, guides, invite, 404)
+Different format: one flat JSON per page. Source: `i18n/pages/<page>/en.json` (pages: `index`,
+`press`, `404`, `invite`, `guides/index`, `guides/<slug>` — list them with
+`ls i18n/pages i18n/pages/guides`). It's `{ "<id>": "<English>" }`, in page order. Write
+`i18n/pages/<page>/<code>.json` with the SAME ids, every one, values translated. Check with
+`python3 i18n/pages.py check <code>` (and `python3 i18n/pages.py missing <code>`) until OK.
+
+- A value may hold HTML fragments, sometimes starting or ending mid-tag (e.g.
+  `Yes</span><span class="micro">On Hard lock…`, or several `<a>` links in a row for a menu).
+  Keep every tag, attribute, class and href exactly as-is and in a sensible order; translate only
+  the text between them. Keep entities like `&rarr;` `&mdash;` `&nbsp;` `&middot;` (you may use
+  normal punctuation instead of `&mdash;` where your language doesn't use dashes).
+- Some values are plain text from `<meta>`, `alt`, `aria-label` or JSON-LD — no HTML there.
+- Tone: this is marketing and blog copy — warm, punchy, human. Write it the way a good native
+  copywriter would, not a literal translation. Short headlines stay short.
+- Guides are SEO articles: make each title and meta description read like what people in your
+  language actually search for (e.g. "how to stop scrolling in bed"). Keep the article's meaning,
+  structure and claims; adapt idioms freely.
+- Lock levels, "rule", "buddy", "Settings → Delete account", "Ask your buddy" etc. must match the app:
+  use your glossary and `Localizable.xcstrings`. For the brand tagline and screenshot captions
+  ("Less Phone. More Life.", "Hand the key to a friend.", "Ask your buddy", "They decide"…), reuse
+  what the App Store screenshots already say in your language:
+  `/Users/shuaibkhan/workspace/ios/disconnect/.l10n-work/screenshots/captions.json`.
+- Header/footer menu labels: reuse the wording in `i18n/privacy/<code>.json` (`ui.*`).
+- "Download on the App Store" → Apple's official badge wording in your language.
+- Keep competitor and product names (Apple Screen Time → Apple's own name for Screen Time in your
+  language; Opal, one sec, ScreenZen, Forest, Family Sharing → Apple's name for it), prices, numbers
+  and the author name unchanged. "Updated August 2026", "6 min read" → natural local format.
+- `&copy; 2026&ndash;present Bytehood Ltd.` → translate only "present".
