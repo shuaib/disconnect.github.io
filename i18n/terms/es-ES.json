@@ -1,0 +1,129 @@
+{
+  "_notes": "Source text for /privacy. Strings may contain inline HTML (<strong>, <a>, <br>) — keep tags and hrefs exactly as they are. App UI labels must match the app's own translations.",
+  "ui": {
+    "page_title": "Condiciones del servicio — Disconnect",
+    "meta_description": "Las condiciones de uso de Disconnect, la app que te ayuda a pasar menos tiempo con el móvil, de Bytehood Ltd.",
+    "nav_how": "Cómo funciona",
+    "nav_locks": "Niveles de bloqueo",
+    "nav_compare": "Comparar",
+    "nav_guides": "Guías",
+    "nav_faq": "Preguntas frecuentes",
+    "get_app": "Descargar la app",
+    "home_label": "Inicio de Disconnect",
+    "footer_home": "Inicio",
+    "footer_guides": "Guías",
+    "footer_compare": "Comparar",
+    "footer_faq": "Preguntas frecuentes",
+    "footer_press": "Prensa",
+    "footer_privacy": "Privacidad",
+    "footer_terms": "Condiciones",
+    "footer_support": "Soporte",
+    "language_label": "Idioma",
+    "translation_note": "Esta es una traducción de las condiciones en inglés. Si las dos versiones no coinciden, prevalece la versión en inglés."
+  },
+  "h1": "Condiciones del servicio",
+  "effective_date": "Fecha de entrada en vigor: 28 de octubre de 2026",
+  "blocks": [
+    {
+      "p": "Estas condiciones son un acuerdo entre tú y <strong>Bytehood Ltd</strong> («nosotros»), la empresa que está detrás de Disconnect. Al usar Disconnect, las aceptas. Hemos intentado que sean breves y estén en un lenguaje sencillo."
+    },
+    {
+      "h2": "1. Qué es Disconnect"
+    },
+    {
+      "p": "Disconnect te ayuda a pasar menos tiempo con el móvil bloqueando apps y, si quieres, dándole la llave a alguien de confianza: tu colega. Disconnect funciona en el iPhone, y los colegas pueden responder en la app o en la web. Lo mejoramos constantemente, así que las funciones pueden cambiar con el tiempo."
+    },
+    {
+      "h2": "2. Tu cuenta"
+    },
+    {
+      "p": "Puedes usar parte de Disconnect sin una cuenta. Las funciones de colega requieren que inicies sesión. Mantén tu cuenta segura y no uses la de otra persona. Debes tener al menos 13 años para usar Disconnect."
+    },
+    {
+      "h2": "3. El sistema de colegas"
+    },
+    {
+      "p": "Tener un colega es totalmente voluntario. Cuando eliges a un colega, le das la posibilidad de aprobar o rechazar tus solicitudes; sus decisiones son suyas y no somos responsables de ellas. Los colegas no trabajan para nosotros y no pueden ver qué apps bloqueas."
+    },
+    {
+      "p": "Cualquiera de los dos puede terminar la conexión en cualquier momento. Si tu colega se va o elimina su cuenta, las reglas cuya llave tenía pasan a un nivel que puedes desbloquear tú."
+    },
+    {
+      "h2": "4. Usar Disconnect de forma responsable"
+    },
+    {
+      "p": "Por favor, no:"
+    },
+    {
+      "ul": [
+        "Uses Disconnect para vigilar, presionar o controlar a alguien que no lo haya aceptado de verdad",
+        "La uses para nada ilegal ni de una forma que perjudique a otras personas",
+        "Intentes copiar, aplicar ingeniería inversa, interrumpir o hacer un uso indebido de la app o de nuestros servicios",
+        "Te saltes los límites de Disconnect, por ejemplo creando varias cuentas"
+      ]
+    },
+    {
+      "p": "Y, por favor, no dependas de Disconnect en situaciones en las que bloquear una app podría poner a alguien en peligro."
+    },
+    {
+      "h2": "5. Disconnect Pro y compras"
+    },
+    {
+      "p": "Algunas funciones forman parte de Disconnect Pro. Lo que incluye, los planes disponibles, los precios y los posibles periodos de prueba se muestran en la app antes de comprar, y pueden cambiar con el tiempo. Cualquier cambio de precio se aplica a partir de tu próxima renovación, y Apple te avisará con antelación."
+    },
+    {
+      "p": "Las compras se realizan a través de Apple, y se rigen por las condiciones de Apple. Las suscripciones se renuevan automáticamente hasta que las canceles en los ajustes de tu cuenta de Apple. Los reembolsos los gestiona Apple."
+    },
+    {
+      "h2": "6. Eliminar tu cuenta"
+    },
+    {
+      "p": "Puedes eliminar tu cuenta en cualquier momento en la app, en <strong>Ajustes → Eliminar cuenta</strong>. Es permanente, y tus datos se tratan como se describe en nuestra <a href=\"/privacy\">Política de privacidad</a>. Eliminar tu cuenta no cancela una suscripción de la App Store; cancélala en los ajustes de tu cuenta de Apple."
+    },
+    {
+      "h2": "7. Disponibilidad"
+    },
+    {
+      "p": "Nos esforzamos para que Disconnect funcione bien, pero no podemos prometer que esté siempre disponible o libre de errores. El bloqueo depende de la tecnología Tiempo de uso de Apple, que escapa a nuestro control y puede no funcionar en todas las situaciones. Podemos cambiar, pausar o dejar de ofrecer partes de Disconnect, e intentaremos avisarte de cualquier cambio importante."
+    },
+    {
+      "h2": "8. Nuestra responsabilidad contigo"
+    },
+    {
+      "p": "Nada de lo dispuesto en estas condiciones limita nuestra responsabilidad cuando la ley no lo permite (incluida la muerte o los daños personales causados por nuestra negligencia, o el fraude) ni afecta a tus derechos legales como consumidor."
+    },
+    {
+      "p": "Por lo demás, no somos responsables de las pérdidas que no fueran una consecuencia previsible de nuestro incumplimiento de estas condiciones, ni de ninguna pérdida empresarial. Nuestra responsabilidad total frente a ti se limita al importe que nos hayas pagado en los 12 meses anteriores a la reclamación, o a £50, lo que sea mayor."
+    },
+    {
+      "h2": "9. Si las cosas no salen bien"
+    },
+    {
+      "p": "Puedes dejar de usar Disconnect en cualquier momento. Podemos suspender o cerrar una cuenta que incumpla estas condiciones de forma grave o reiterada."
+    },
+    {
+      "h2": "10. Cambios en estas condiciones"
+    },
+    {
+      "p": "Si hacemos cambios importantes, te avisaremos en la app o por correo electrónico antes de que entren en vigor. Si no estás de acuerdo con ellos, puedes dejar de usar Disconnect y eliminar tu cuenta."
+    },
+    {
+      "h2": "11. Apple"
+    },
+    {
+      "p": "Estas condiciones son entre tú y nosotros, no con Apple. Apple no es responsable de Disconnect, de su contenido, soporte o mantenimiento, ni de atender reclamaciones relacionadas con la app. Apple y sus filiales son terceros beneficiarios de estas condiciones y pueden exigir su cumplimiento. También se aplica el Contrato de licencia de usuario final estándar de Apple para aplicaciones con licencia."
+    },
+    {
+      "h2": "12. Legislación aplicable y litigios"
+    },
+    {
+      "p": "Estas condiciones se rigen por las leyes de Inglaterra y Gales, y los litigios se someten a los tribunales de Inglaterra y Gales. Si vives en otra parte del Reino Unido o en la UE, también puedes interponer una acción ante los tribunales de tu país, y conservas la protección que te ofrecen las leyes de consumo de tu país."
+    },
+    {
+      "h2": "13. Contacto"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

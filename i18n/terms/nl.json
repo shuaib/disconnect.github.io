@@ -1,0 +1,129 @@
+{
+  "_notes": "Source text for /privacy. Strings may contain inline HTML (<strong>, <a>, <br>) — keep tags and hrefs exactly as they are. App UI labels must match the app's own translations.",
+  "ui": {
+    "page_title": "Gebruiksvoorwaarden — Disconnect",
+    "meta_description": "De voorwaarden voor het gebruik van Disconnect, de app van Bytehood Ltd die je helpt minder tijd op je telefoon te besteden.",
+    "nav_how": "Zo werkt het",
+    "nav_locks": "Slotniveaus",
+    "nav_compare": "Vergelijken",
+    "nav_guides": "Gidsen",
+    "nav_faq": "FAQ",
+    "get_app": "Download de app",
+    "home_label": "Disconnect-startpagina",
+    "footer_home": "Start",
+    "footer_guides": "Gidsen",
+    "footer_compare": "Vergelijken",
+    "footer_faq": "FAQ",
+    "footer_press": "Pers",
+    "footer_privacy": "Privacybeleid",
+    "footer_terms": "Voorwaarden",
+    "footer_support": "Hulp",
+    "language_label": "Taal",
+    "translation_note": "Dit is een vertaling van de Engelse voorwaarden. Als de twee verschillen, geldt de Engelse versie."
+  },
+  "h1": "Gebruiksvoorwaarden",
+  "effective_date": "Ingangsdatum: 28 oktober 2026",
+  "blocks": [
+    {
+      "p": "Deze voorwaarden zijn een overeenkomst tussen jou en <strong>Bytehood Ltd</strong> (“wij”, “ons”), het bedrijf achter Disconnect. Door Disconnect te gebruiken, ga je ermee akkoord. We hebben geprobeerd ze kort en in gewone taal te houden."
+    },
+    {
+      "h2": "1. Wat Disconnect is"
+    },
+    {
+      "p": "Disconnect helpt je minder tijd op je telefoon te besteden door apps te blokkeren en, als je wilt, de sleutel te geven aan iemand die je vertrouwt: je buddy. Disconnect werkt op de iPhone, en buddy’s kunnen reageren in de app of op het web. We verbeteren de app voortdurend, dus functies kunnen in de loop van de tijd veranderen."
+    },
+    {
+      "h2": "2. Je account"
+    },
+    {
+      "p": "Je kunt een deel van Disconnect zonder account gebruiken. Voor de buddyfuncties moet je inloggen. Houd je account veilig en gebruik niet het account van iemand anders. Je moet minstens 13 jaar oud zijn om Disconnect te gebruiken."
+    },
+    {
+      "h2": "3. Het buddysysteem"
+    },
+    {
+      "p": "Een buddy hebben is helemaal vrijwillig. Als je een buddy kiest, geef je die persoon de mogelijkheid om je verzoeken goed te keuren of af te wijzen. Die beslissingen zijn van je buddy zelf, en wij zijn er niet verantwoordelijk voor. Buddy’s werken niet voor ons en kunnen niet zien welke apps je blokkeert."
+    },
+    {
+      "p": "Jullie kunnen allebei de verbinding op elk moment verbreken. Als je buddy vertrekt of zijn of haar account verwijdert, schakelen regels waarvan je buddy de sleutel had over naar een niveau dat je zelf kunt ontgrendelen."
+    },
+    {
+      "h2": "4. Disconnect verantwoord gebruiken"
+    },
+    {
+      "p": "Doe alsjeblieft het volgende niet:"
+    },
+    {
+      "ul": [
+        "Disconnect gebruiken om iemand te controleren, onder druk te zetten of te beheersen die daar niet echt mee heeft ingestemd",
+        "Het gebruiken voor iets onwettigs, of op een manier die anderen schaadt",
+        "Proberen de app of onze diensten te kopiëren, te reverse-engineeren, te verstoren of te misbruiken",
+        "De limieten van Disconnect omzeilen, bijvoorbeeld door meerdere accounts aan te maken"
+      ]
+    },
+    {
+      "p": "En vertrouw alsjeblieft niet op Disconnect in situaties waarin het blokkeren van een app iemand in gevaar kan brengen."
+    },
+    {
+      "h2": "5. Disconnect Pro en aankopen"
+    },
+    {
+      "p": "Sommige functies maken deel uit van Disconnect Pro. Wat erbij hoort, de beschikbare abonnementen, prijzen en eventuele proefperiodes zie je in de app voordat je iets koopt, en die kunnen in de loop van de tijd veranderen. Een prijswijziging geldt vanaf je volgende verlenging, en Apple laat je dat van tevoren weten."
+    },
+    {
+      "p": "Aankopen verlopen via Apple, en daarop zijn de voorwaarden van Apple van toepassing. Abonnementen worden automatisch verlengd totdat je ze opzegt in de instellingen van je Apple-account. Terugbetalingen worden door Apple afgehandeld."
+    },
+    {
+      "h2": "6. Je account verwijderen"
+    },
+    {
+      "p": "Je kunt je account op elk moment verwijderen in de app via <strong>Instellingen → Verwijder account</strong>. Dit is definitief, en je gegevens worden behandeld zoals beschreven in ons <a href=\"/privacy\">Privacybeleid</a>. Het verwijderen van je account zegt een App Store-abonnement niet op. Zeg dat op in de instellingen van je Apple-account."
+    },
+    {
+      "h2": "7. Beschikbaarheid"
+    },
+    {
+      "p": "We doen ons best om Disconnect goed te laten werken, maar we kunnen niet beloven dat de app altijd beschikbaar of foutloos is. Het blokkeren is afhankelijk van de Schermtijd-technologie van Apple, waar wij geen controle over hebben en die niet in elke situatie werkt. We kunnen onderdelen van Disconnect wijzigen, pauzeren of stopzetten, en we proberen je vooraf te laten weten als het om iets belangrijks gaat."
+    },
+    {
+      "h2": "8. Onze aansprakelijkheid tegenover jou"
+    },
+    {
+      "p": "Niets in deze voorwaarden beperkt onze aansprakelijkheid waar de wet dat niet toestaat, waaronder voor overlijden of letselschade door onze nalatigheid, of voor fraude. Ook doet niets in deze voorwaarden af aan je wettelijke rechten als consument."
+    },
+    {
+      "p": "Verder zijn we niet aansprakelijk voor schade die geen voorzienbaar gevolg was van het feit dat wij deze voorwaarden schenden, of voor zakelijke verliezen. Onze totale aansprakelijkheid tegenover jou is beperkt tot het bedrag dat je ons hebt betaald in de 12 maanden vóór de claim, of £50, als dat hoger is."
+    },
+    {
+      "h2": "9. Als het niet werkt"
+    },
+    {
+      "p": "Je kunt op elk moment stoppen met Disconnect. We kunnen een account opschorten of sluiten als het deze voorwaarden ernstig of herhaaldelijk schendt."
+    },
+    {
+      "h2": "10. Wijzigingen in deze voorwaarden"
+    },
+    {
+      "p": "Als we belangrijke wijzigingen aanbrengen, laten we je dat in de app of per e-mail weten voordat ze ingaan. Als je het er niet mee eens bent, kun je stoppen met Disconnect en je account verwijderen."
+    },
+    {
+      "h2": "11. Apple"
+    },
+    {
+      "p": "Deze voorwaarden gelden tussen jou en ons, niet Apple. Apple is niet verantwoordelijk voor Disconnect, de inhoud ervan, ondersteuning of onderhoud, of voor het afhandelen van claims erover. Apple en haar dochterondernemingen zijn derde begunstigden van deze voorwaarden en kunnen ze afdwingen. De standaard licentieovereenkomst voor eindgebruikers van gelicentieerde applicaties van Apple (Standard EULA) is ook van toepassing."
+    },
+    {
+      "h2": "12. Recht en geschillen"
+    },
+    {
+      "p": "Op deze voorwaarden is het recht van Engeland en Wales van toepassing, en geschillen worden voorgelegd aan de rechtbanken van Engeland en Wales. Als je elders in het Verenigd Koninkrijk of in de EU woont, kun je ook een procedure starten bij de rechter in je eigen land, en behoud je de bescherming van het consumentenrecht daar."
+    },
+    {
+      "h2": "13. Contactgegevens"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

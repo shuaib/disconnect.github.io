@@ -1,0 +1,129 @@
+{
+  "_notes": "Source text for /privacy. Strings may contain inline HTML (<strong>, <a>, <br>) — keep tags and hrefs exactly as they are. App UI labels must match the app's own translations.",
+  "ui": {
+    "page_title": "Hizmet Koşulları — Disconnect",
+    "meta_description": "Telefonda daha az zaman geçirmene yardımcı olan Bytehood Ltd uygulaması Disconnect’in kullanım koşulları.",
+    "nav_how": "Nasıl çalışır",
+    "nav_locks": "Kilit seviyeleri",
+    "nav_compare": "Karşılaştır",
+    "nav_guides": "Rehberler",
+    "nav_faq": "SSS",
+    "get_app": "Uygulamayı indir",
+    "home_label": "Disconnect ana sayfa",
+    "footer_home": "Ana Sayfa",
+    "footer_guides": "Rehberler",
+    "footer_compare": "Karşılaştır",
+    "footer_faq": "SSS",
+    "footer_press": "Basın",
+    "footer_privacy": "Gizlilik",
+    "footer_terms": "Koşullar",
+    "footer_support": "Destek",
+    "language_label": "Dil",
+    "translation_note": "Bu, İngilizce koşulların bir çevirisidir. İkisi arasında fark olursa İngilizce sürüm geçerlidir."
+  },
+  "h1": "Hizmet Koşulları",
+  "effective_date": "Yürürlük tarihi: 28 Ekim 2026",
+  "blocks": [
+    {
+      "p": "Bu koşullar, sen ile Disconnect’in arkasındaki şirket olan <strong>Bytehood Ltd</strong> (\"biz\") arasında bir sözleşmedir. Disconnect’i kullanarak bu koşulları kabul etmiş olursun. Koşulları kısa ve sade bir dille yazmaya çalıştık."
+    },
+    {
+      "h2": "1. Disconnect nedir"
+    },
+    {
+      "p": "Disconnect, uygulamaları engelleyerek ve istersen anahtarı güvendiğin birine, yani destekçine vererek telefonda daha az zaman geçirmene yardımcı olur. Disconnect iPhone’da çalışır; destekçiler uygulamadan veya web’den yanıt verebilir. Uygulamayı sürekli geliştiriyoruz, bu yüzden özellikler zamanla değişebilir."
+    },
+    {
+      "h2": "2. Hesabın"
+    },
+    {
+      "p": "Disconnect’in bazı bölümlerini hesap olmadan kullanabilirsin. Destekçi özellikleri için giriş yapman gerekir. Lütfen hesabını güvende tut ve başkasının hesabını kullanma. Disconnect’i kullanmak için en az 13 yaşında olmalısın."
+    },
+    {
+      "h2": "3. Destekçi sistemi"
+    },
+    {
+      "p": "Bir destekçin olması tamamen isteğe bağlıdır. Bir destekçi seçtiğinde, ona isteklerini onaylama veya reddetme yetkisi verirsin. Verdiği kararlar kendisine aittir ve bunlardan biz sorumlu değiliz. Destekçiler bizim için çalışmaz ve hangi uygulamaları engellediğini göremez."
+    },
+    {
+      "p": "İkiniz de bağlantıyı istediğiniz zaman sonlandırabilirsiniz. Destekçin ayrılırsa veya hesabını silerse, anahtarını onun tuttuğu kurallar kilidini kendin açabileceğin bir seviyeye geçer."
+    },
+    {
+      "h2": "4. Disconnect’i sorumlu kullanmak"
+    },
+    {
+      "p": "Lütfen şunları yapma:"
+    },
+    {
+      "ul": [
+        "Disconnect’i, buna gerçekten onay vermemiş birini izlemek, baskı altına almak veya kontrol etmek için kullanmak",
+        "Uygulamayı yasa dışı herhangi bir şey için ya da başkalarına zarar verecek şekilde kullanmak",
+        "Uygulamayı veya hizmetlerimizi kopyalamaya, tersine mühendislik uygulamaya, aksatmaya veya kötüye kullanmaya çalışmak",
+        "Disconnect’in sınırlarını, örneğin birden fazla hesap oluşturarak aşmak"
+      ]
+    },
+    {
+      "p": "Ayrıca bir uygulamanın engellenmesinin herhangi birini tehlikeye atabileceği durumlarda lütfen Disconnect’e güvenme."
+    },
+    {
+      "h2": "5. Disconnect Pro ve satın almalar"
+    },
+    {
+      "p": "Bazı özellikler Disconnect Pro’nun parçasıdır. Neyin dahil olduğu, mevcut planlar, fiyatlar ve varsa deneme süreleri satın almadan önce uygulamada gösterilir ve zamanla değişebilir. Fiyat değişiklikleri bir sonraki yenilemenden itibaren geçerli olur ve Apple seni önceden bilgilendirir."
+    },
+    {
+      "p": "Satın almalar Apple üzerinden yapılır ve bunlara Apple’ın koşulları uygulanır. Abonelikler, Apple hesap ayarlarından iptal edene kadar otomatik olarak yenilenir. İadeler Apple tarafından yürütülür."
+    },
+    {
+      "h2": "6. Hesabını silmek"
+    },
+    {
+      "p": "Hesabını istediğin zaman uygulamada <strong>Ayarlar → Hesabı Sil</strong> bölümünden silebilirsin. Bu işlem kalıcıdır ve verilerin <a href=\"/privacy\">Gizlilik Politikası</a>’nda açıklandığı şekilde ele alınır. Hesabını silmek App Store aboneliğini iptal etmez; lütfen aboneliğini Apple hesap ayarlarından iptal et."
+    },
+    {
+      "h2": "7. Erişilebilirlik"
+    },
+    {
+      "p": "Disconnect’in sorunsuz çalışması için çok çalışıyoruz, ancak her zaman erişilebilir veya hatasız olacağına söz veremeyiz. Engelleme, Apple’ın Ekran Süresi teknolojisine dayanır; bu teknoloji bizim kontrolümüzde değildir ve her durumda çalışmayabilir. Disconnect’in bazı bölümlerini değiştirebilir, duraklatabilir veya sonlandırabiliriz; önemli değişiklikleri sana önceden bildirmeye çalışırız."
+    },
+    {
+      "h2": "8. Sana karşı sorumluluğumuz"
+    },
+    {
+      "p": "Bu koşullardaki hiçbir şey, yasanın izin vermediği durumlarda (ihmalimizden kaynaklanan ölüm veya kişisel yaralanma ya da dolandırıcılık dahil) sorumluluğumuzu sınırlamaz veya tüketici olarak yasal haklarını etkilemez."
+    },
+    {
+      "p": "Bunun dışında, bu koşulları ihlal etmemizin öngörülebilir bir sonucu olmayan kayıplardan veya ticari kayıplardan sorumlu değiliz. Sana karşı toplam sorumluluğumuz, talepten önceki 12 ay içinde bize ödediğin tutar veya £50 ile, hangisi daha yüksekse, sınırlıdır."
+    },
+    {
+      "h2": "9. İşler yolunda gitmezse"
+    },
+    {
+      "p": "Disconnect’i kullanmayı istediğin zaman bırakabilirsin. Bu koşulları ciddi şekilde veya tekrar tekrar ihlal eden bir hesabı askıya alabilir veya kapatabiliriz."
+    },
+    {
+      "h2": "10. Bu koşullardaki değişiklikler"
+    },
+    {
+      "p": "Önemli değişiklikler yaparsak, bunlar yürürlüğe girmeden önce seni uygulamada veya e-postayla bilgilendiririz. Değişiklikleri kabul etmiyorsan Disconnect’i kullanmayı bırakıp hesabını silebilirsin."
+    },
+    {
+      "h2": "11. Apple"
+    },
+    {
+      "p": "Bu koşullar Apple ile değil, seninle bizim aramızdadır. Apple; Disconnect’ten, içeriğinden, desteğinden veya bakımından ya da bununla ilgili taleplerin ele alınmasından sorumlu değildir. Apple ve bağlı ortaklıkları bu koşulların üçüncü taraf lehtarlarıdır ve koşulları uygulatabilir. Apple’ın Lisanslı Uygulama Standart Son Kullanıcı Lisans Sözleşmesi (Standart EULA) de geçerlidir."
+    },
+    {
+      "h2": "12. Hukuk ve uyuşmazlıklar"
+    },
+    {
+      "p": "Bu koşullar İngiltere ve Galler hukukuna tabidir ve uyuşmazlıklar İngiltere ve Galler mahkemelerinde çözülür. Birleşik Krallık’ın başka bir yerinde veya AB’de yaşıyorsan, kendi bölgendeki mahkemelerde de dava açabilirsin ve yerel tüketici hukukunun sağladığı korumalardan yararlanmaya devam edersin."
+    },
+    {
+      "h2": "13. İletişim"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

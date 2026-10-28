@@ -1,0 +1,144 @@
+{
+  "_notes": "Turkish translation of en.json. Keep tags and hrefs exactly as they are. App UI labels match the app's own translations.",
+  "ui": {
+    "page_title": "Gizlilik Politikası — Disconnect",
+    "meta_description": "Disconnect verilerini nasıl ele alıyor: cihazında neler kalıyor, destekçi sisteminin neye ihtiyacı var ve hesabını nasıl silersin.",
+    "nav_how": "Nasıl çalışır",
+    "nav_locks": "Kilit seviyeleri",
+    "nav_compare": "Karşılaştır",
+    "nav_guides": "Rehberler",
+    "nav_faq": "SSS",
+    "get_app": "Uygulamayı indir",
+    "home_label": "Disconnect ana sayfa",
+    "footer_home": "Ana Sayfa",
+    "footer_guides": "Rehberler",
+    "footer_compare": "Karşılaştır",
+    "footer_faq": "SSS",
+    "footer_press": "Basın",
+    "footer_privacy": "Gizlilik",
+    "footer_terms": "Koşullar",
+    "footer_support": "Destek",
+    "language_label": "Dil",
+    "translation_note": "Bu, İngilizce politikanın bir çevirisidir. İkisi arasında fark olursa İngilizce sürüm geçerlidir."
+  },
+  "h1": "Gizlilik Politikası",
+  "effective_date": "Yürürlük tarihi: 28 Ekim 2026",
+  "blocks": [
+    {
+      "p": "Disconnect, <strong>Bytehood Ltd</strong> (“biz”) tarafından geliştirilir. Onu, hakkında veri toplamak için değil, telefonunda daha az zaman geçirmene yardımcı olmak için yaptık. Bu politika, hangi verileri işlediğimizi ve nedenini sade bir dille açıklar."
+    },
+    {
+      "h2": "Kısaca"
+    },
+    {
+      "ul": [
+        "<strong>Engellediğin uygulamalar telefonunda kalır.</strong> Hangi uygulama ve web sitelerini engellediğin ve kurallarının zamanlamaları cihazından asla çıkmaz.",
+        "<strong>Yalnızca destekçi sisteminin çalışması için gerekenleri saklarız</strong> — böylece sen ve destekçin istek gönderebilir, görebilir ve yanıtlayabilirsiniz.",
+        "<strong>Verilerini satmayız ve reklam için kullanmayız.</strong>",
+        "<strong>Hesabını ve verilerini istediğin zaman silebilirsin</strong>, doğrudan uygulamadan."
+      ]
+    },
+    {
+      "h2": "Cihazında kalanlar"
+    },
+    {
+      "ul": [
+        "Engellemeyi seçtiğin uygulamalar, kategoriler ve web siteleri",
+        "Kuralların ve zamanlamaları",
+        "Ekran Süresi bilgileri ve diğer uygulamaları nasıl kullandığın",
+        "Konumun ve kişilerin — Disconnect bunları asla istemez"
+      ]
+    },
+    {
+      "h2": "Ne topluyoruz ve neden"
+    },
+    {
+      "p": "<strong>Hesabın.</strong> Apple ile giriş yaptığında Apple, adını ve e-posta adresini bizimle paylaşır (ya da “E-postamı Gizle” seçeneğini seçtiysen özel bir yönlendirme adresini). Disconnect’i web’de kullanan destekçiler e-posta adresleriyle giriş yapar. Adını, seni destekçine göstermek için; e-posta adresini ise yalnızca hesabın veya hizmetle ilgili önemli mesajlar için kullanırız. Disconnect’i giriş yapmadan da kullanabilirsin; bu durumda destekçi özellikleri kullanılamaz ve senin için bir hesap oluşturmayız."
+    },
+    {
+      "p": "<strong>Destekçi sistemi.</strong> Seni destekçinle bağlamak için destekçi bağlantılarını ve karşılıklı gönderdiğiniz istekleri saklarız — örneğin bir kuralın kilidini açma veya kuralı silme isteği. Bir istek, destekçinin onu yanıtlaması için gerekenleri içerir: kuralın adı, istediğin süre ve ikinizden birinin eklemeyi seçtiği mesaj. Bunları, ikiniz de görüp yanıtlayabilesiniz ve geçmişini görüntüleyebilesin diye saklarız."
+    },
+    {
+      "p": "<strong>Bildirimler.</strong> Sana zamana duyarlı uyarıları — örneğin destekçinin yanıtını — kendi dilinde gönderebilmek için cihazına ait bir bildirim belirtecini ve uygulama dilini saklarız."
+    },
+    {
+      "p": "<strong>Abonelikler.</strong> Disconnect Pro’ya abone olursan Pro özelliklerini açabilmek için satın alma durumunu alırız. Ödemeyi Apple yürütür; kart bilgilerini asla görmeyiz."
+    },
+    {
+      "p": "<strong>Uygulama kullanımı ve tanılama.</strong> Uygulamanın nasıl kullanıldığına dair bilgileri — örneğin hangi özelliklerin kullanıldığını ve bir şeylerin ne zaman ters gittiğini — çökme raporlarıyla birlikte toplarız. Bu, sorunları düzeltmemize ve Disconnect’i geliştirmemize yardımcı olur. Bu bilgiler, karşılaştığın sorunları inceleyebilmemiz için hesabına bağlıdır ve asla reklam için kullanılmaz."
+    },
+    {
+      "p": "<strong>Bu web sitesi.</strong> disconnectapp.co’yu ziyaret ettiğinde, sitenin nasıl kullanıldığını anlamak için görüntülediğin sayfalar gibi temel ziyaret bilgilerini toplarız."
+    },
+    {
+      "h2": "Disconnect’i çalıştırmamıza kim yardım ediyor"
+    },
+    {
+      "p": "Az sayıda güvenilir hizmet sağlayıcıyla çalışırız; bu sağlayıcılar verileri yalnızca bize hizmetlerini sunmak için işler:"
+    },
+    {
+      "ul": [
+        "<strong>Google Firebase</strong> — giriş, veritabanımız, bildirimler ve çökme raporlama",
+        "<strong>RevenueCat</strong> — aboneliklerin ve abonelik tekliflerinin yönetimi",
+        "<strong>PostHog</strong> — uygulama ve web sitesi analitiği",
+        "<strong>Resend</strong> — giriş ve hizmet e-postalarının gönderimi",
+        "<strong>Apple</strong> — Apple ile Giriş Yap, bildirimler ve App Store ödemeleri"
+      ]
+    },
+    {
+      "p": "Bu sağlayıcılardan bazıları verileri Birleşik Krallık ve AB dışında, Amerika Birleşik Devletleri dahil, işler. Bu durumlarda standart sözleşme maddeleri gibi uygun güvenceler mevcuttur."
+    },
+    {
+      "p": "Yasaların gerektirdiği durumlar dışında verilerini başka kimseyle paylaşmayız."
+    },
+    {
+      "h2": "Ne kadar süre saklıyoruz"
+    },
+    {
+      "p": "Hesap verilerini, hesabın olduğu sürece saklarız. Hesabını sildiğinde hesabını, destekçi bağlantılarını ve isteklerini sistemlerimizden sileriz — normalde hemen, her durumda 30 gün içinde. Hizmet sağlayıcılarımızda tutulan bazı kullanım ve tanılama kayıtları sonrasında kalabilir; bunlar seninle iletişim kurmak için kullanılamaz ve bunları kaldırmamızı isteyebilirsin."
+    },
+    {
+      "h2": "Güvenliği sağlamak"
+    },
+    {
+      "p": "Verilerin aktarım sırasında şifrelenir ve sağlayıcılarımızda sektör standardı güvenlik önlemleriyle saklanır. İsteklerini yalnızca sen ve destekçin görebilir."
+    },
+    {
+      "h2": "Hakların"
+    },
+    {
+      "p": "Şunları yapabilirsin:"
+    },
+    {
+      "ul": [
+        "<strong>Hesabını ve verilerini silmek</strong>: istediğin zaman, uygulamada <strong>Ayarlar → Hesabı Sil</strong> bölümünden",
+        "<strong>Verilerinin bir kopyasını istemek</strong> veya düzeltmemizi istemek",
+        "Verilerini nasıl kullandığımıza <strong>itiraz etmek veya bunu kısıtlamak</strong>"
+      ]
+    },
+    {
+      "p": "Bunlardan herhangi biri için <a href=\"mailto:support@bytehood.com\">support@bytehood.com</a> adresine e-posta gönder. Birleşik Krallık’ta veya AB’deysen veri koruma otoritene de şikâyette bulunabilirsin — Birleşik Krallık’ta bu, ICO’dur (<a href=\"https://ico.org.uk\" target=\"_blank\" rel=\"noopener\">ico.org.uk</a>)."
+    },
+    {
+      "p": "Birleşik Krallık veya AB hukukunun geçerli olduğu durumlarda, verilerini kullanmanın hukuki dayanağı olarak istediğin hizmeti sunmaya ve hizmeti çalışır durumda tutma ve geliştirme konusundaki meşru menfaatimize dayanırız."
+    },
+    {
+      "h2": "Çocuklar"
+    },
+    {
+      "p": "Disconnect 13 yaşından küçük çocuklara yönelik değildir ve onların verilerini bilerek toplamayız. Bir çocuğun bize kişisel veri verdiğini düşünüyorsan bizimle iletişime geç, bu verileri silelim."
+    },
+    {
+      "h2": "Bu politikadaki değişiklikler"
+    },
+    {
+      "p": "Önemli değişiklikler yaparsak bunları yürürlüğe girmeden önce uygulamada veya e-postayla sana bildiririz."
+    },
+    {
+      "h2": "İletişim"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "_notes": "Source text for /privacy. Strings may contain inline HTML (<strong>, <a>, <br>) — keep tags and hrefs exactly as they are. App UI labels must match the app's own translations.",
+  "ui": {
+    "page_title": "Privacy Policy — Disconnect",
+    "meta_description": "How Disconnect handles your data: what stays on your device, what the buddy system needs, and how to delete your account.",
+    "nav_how": "How it works",
+    "nav_locks": "Lock levels",
+    "nav_compare": "Compare",
+    "nav_guides": "Guides",
+    "nav_faq": "FAQ",
+    "get_app": "Get the app",
+    "home_label": "Disconnect home",
+    "footer_home": "Home",
+    "footer_guides": "Guides",
+    "footer_compare": "Compare",
+    "footer_faq": "FAQ",
+    "footer_press": "Press",
+    "footer_privacy": "Privacy",
+    "footer_terms": "Terms",
+    "footer_support": "Support",
+    "language_label": "Language",
+    "translation_note": "This is a translation of the English policy. If the two differ, the English version applies."
+  },
+  "h1": "Privacy Policy",
+  "effective_date": "Effective date: 28 October 2026",
+  "blocks": [
+    {
+      "p": "Disconnect is made by <strong>Bytehood Ltd</strong> (\"we\", \"us\"). We built it to help you spend less time on your phone, not to collect data about you. This policy explains, in plain language, what we handle and why."
+    },
+    {
+      "h2": "The short version"
+    },
+    {
+      "ul": [
+        "<strong>Your blocked apps stay on your phone.</strong> Which apps and websites you block, and your rules' schedules, never leave your device.",
+        "<strong>We only store what the buddy system needs</strong> to work — so you and your buddy can send, see and answer requests.",
+        "<strong>We don't sell your data, and we don't use it for advertising.</strong>",
+        "<strong>You can delete your account and data at any time</strong>, right in the app."
+      ]
+    },
+    {
+      "h2": "What stays on your device"
+    },
+    {
+      "ul": [
+        "The apps, categories and websites you choose to block",
+        "Your rules and their schedules",
+        "Screen Time information and how you use other apps",
+        "Your location and contacts — Disconnect never asks for them"
+      ]
+    },
+    {
+      "h2": "What we collect, and why"
+    },
+    {
+      "p": "<strong>Your account.</strong> When you sign in with Apple, Apple shares your name and email address with us (or a private relay address, if you chose \"Hide My Email\"). Buddies who use Disconnect on the web sign in with their email address. We use your name to show you to your buddy, and your email only for important messages about your account or the service. You can also use Disconnect without signing in; the buddy features aren't available then, and we don't create an account for you."
+    },
+    {
+      "p": "<strong>The buddy system.</strong> To connect you with your buddy, we store your buddy connections and the requests you exchange — for example, asking to unlock or delete a rule. A request includes what's needed for your buddy to answer it: the rule's name, the time you're asking for, and any message either of you chooses to add. We keep these so you can both see and respond to them, and so you can view your history."
+    },
+    {
+      "p": "<strong>Notifications.</strong> We store a notification token for your device, and your app language, so we can send you time-sensitive alerts — like your buddy's reply — in your language."
+    },
+    {
+      "p": "<strong>Subscriptions.</strong> If you subscribe to Disconnect Pro, we receive your purchase status so we can unlock Pro features. Apple handles payment; we never see your card details."
+    },
+    {
+      "p": "<strong>App usage and diagnostics.</strong> We collect information about how the app is used — for example, which features are used and when something goes wrong — along with crash reports. This helps us fix problems and improve Disconnect. It's linked to your account so we can look into issues you run into, and it's never used for advertising."
+    },
+    {
+      "p": "<strong>This website.</strong> When you visit disconnectapp.co, we collect basic visit information, such as the pages you view, to understand how the site is used."
+    },
+    {
+      "h2": "Who helps us run Disconnect"
+    },
+    {
+      "p": "We use a small number of trusted service providers, who process data only to provide their service to us:"
+    },
+    {
+      "ul": [
+        "<strong>Google Firebase</strong> — sign-in, our database, notifications and crash reporting",
+        "<strong>RevenueCat</strong> — managing subscriptions and subscription offers",
+        "<strong>PostHog</strong> — app and website analytics",
+        "<strong>Resend</strong> — sending sign-in and service emails",
+        "<strong>Apple</strong> — Sign in with Apple, notifications and App Store payments"
+      ]
+    },
+    {
+      "p": "Some of these providers process data outside the UK and EU, including in the United States. Where they do, appropriate safeguards are in place, such as standard contractual clauses."
+    },
+    {
+      "p": "We don't share your data with anyone else, except where required by law."
+    },
+    {
+      "h2": "How long we keep it"
+    },
+    {
+      "p": "We keep your account data for as long as you have an account. When you delete your account, we delete your account, buddy connections and requests from our systems — normally right away, and always within 30 days. Some usage and diagnostic records held by our service providers may remain afterwards; they can't be used to contact you, and you can ask us to remove them."
+    },
+    {
+      "h2": "Keeping it safe"
+    },
+    {
+      "p": "Your data is encrypted in transit and stored with our providers using industry-standard security. Only you and your buddy can see your requests."
+    },
+    {
+      "h2": "Your rights"
+    },
+    {
+      "p": "You can:"
+    },
+    {
+      "ul": [
+        "<strong>Delete your account and data</strong> at any time, in the app under <strong>Settings → Delete account</strong>",
+        "<strong>Ask for a copy</strong> of your data, or ask us to correct it",
+        "<strong>Object to or restrict</strong> how we use your data"
+      ]
+    },
+    {
+      "p": "To do any of these, email <a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>. If you're in the UK or EU, you can also complain to your data protection authority — in the UK, that's the ICO (<a href=\"https://ico.org.uk\" target=\"_blank\" rel=\"noopener\">ico.org.uk</a>)."
+    },
+    {
+      "p": "Where UK or EU law applies, we rely on providing the service you asked for, and our legitimate interest in keeping it working and improving it, as the legal basis for using your data."
+    },
+    {
+      "h2": "Children"
+    },
+    {
+      "p": "Disconnect isn't intended for children under 13, and we don't knowingly collect their data. If you think a child has given us personal data, contact us and we'll delete it."
+    },
+    {
+      "h2": "Changes to this policy"
+    },
+    {
+      "p": "If we make significant changes, we'll let you know in the app or by email before they take effect."
+    },
+    {
+      "h2": "Contact"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "_notes": "Source text for /privacy. Strings may contain inline HTML (<strong>, <a>, <br>) — keep tags and hrefs exactly as they are. App UI labels must match the app's own translations.",
+  "ui": {
+    "page_title": "Regulamin – Disconnect",
+    "meta_description": "Zasady korzystania z Disconnect – aplikacji od Bytehood Ltd, która pomaga spędzać mniej czasu z telefonem.",
+    "nav_how": "Jak to działa",
+    "nav_locks": "Poziomy blokady",
+    "nav_compare": "Porównanie",
+    "nav_guides": "Poradniki",
+    "nav_faq": "FAQ",
+    "get_app": "Pobierz aplikację",
+    "home_label": "Strona główna Disconnect",
+    "footer_home": "Start",
+    "footer_guides": "Poradniki",
+    "footer_compare": "Porównanie",
+    "footer_faq": "FAQ",
+    "footer_press": "Dla prasy",
+    "footer_privacy": "Prywatność",
+    "footer_terms": "Regulamin",
+    "footer_support": "Pomoc",
+    "language_label": "Język",
+    "translation_note": "To jest tłumaczenie angielskiej wersji regulaminu. W razie rozbieżności obowiązuje wersja angielska."
+  },
+  "h1": "Regulamin",
+  "effective_date": "Data wejścia w życie: 28 października 2026 r.",
+  "blocks": [
+    {
+      "p": "Ten regulamin to umowa między Tobą a <strong>Bytehood Ltd</strong> („my”), firmą, która stoi za Disconnect. Korzystając z Disconnect, akceptujesz go. Staramy się, żeby był krótki i napisany prostym językiem."
+    },
+    {
+      "h2": "1. Czym jest Disconnect"
+    },
+    {
+      "p": "Disconnect pomaga spędzać mniej czasu z telefonem, blokując aplikacje i – jeśli chcesz – oddając klucz komuś, komu ufasz: Twojemu kumplowi. Disconnect działa na iPhonie, a kumple mogą odpowiadać w aplikacji lub w przeglądarce. Stale ją ulepszamy, więc funkcje mogą się z czasem zmieniać."
+    },
+    {
+      "h2": "2. Twoje konto"
+    },
+    {
+      "p": "Z części Disconnect możesz korzystać bez konta. Funkcje kumpla wymagają zalogowania się. Dbaj o bezpieczeństwo swojego konta i nie korzystaj z cudzego. Aby korzystać z Disconnect, musisz mieć co najmniej 13 lat."
+    },
+    {
+      "h2": "3. System kumpli"
+    },
+    {
+      "p": "Posiadanie kumpla jest całkowicie dobrowolne. Wybierając kumpla, dajesz mu możliwość zatwierdzania lub odrzucania Twoich próśb – jego decyzje należą do niego i nie odpowiadamy za nie. Kumple nie pracują dla nas i nie widzą, które aplikacje blokujesz."
+    },
+    {
+      "p": "Każde z Was może w dowolnej chwili zakończyć połączenie. Jeśli kumpel odejdzie lub usunie swoje konto, reguły, do których miał klucz, przełączą się na poziom, który możesz odblokować samodzielnie."
+    },
+    {
+      "h2": "4. Odpowiedzialne korzystanie z Disconnect"
+    },
+    {
+      "p": "Prosimy:"
+    },
+    {
+      "ul": [
+        "nie używaj Disconnect do monitorowania, wywierania presji ani kontrolowania kogokolwiek, kto naprawdę się na to nie zgodził,",
+        "nie używaj go do niczego niezgodnego z prawem ani w sposób szkodzący innym,",
+        "nie próbuj kopiować, poddawać inżynierii wstecznej, zakłócać działania ani nadużywać aplikacji lub naszych usług,",
+        "nie obchodź limitów Disconnect, na przykład zakładając wiele kont."
+      ]
+    },
+    {
+      "p": "I prosimy, nie polegaj na Disconnect w sytuacjach, w których zablokowanie aplikacji mogłoby narazić kogokolwiek na niebezpieczeństwo."
+    },
+    {
+      "h2": "5. Disconnect Pro i zakupy"
+    },
+    {
+      "p": "Niektóre funkcje są częścią Disconnect Pro. Co obejmuje, dostępne plany, ceny i ewentualne okresy próbne są pokazywane w aplikacji przed zakupem i mogą się z czasem zmieniać. Każda zmiana ceny obowiązuje od następnego odnowienia, a Apple wcześniej Cię o niej powiadomi."
+    },
+    {
+      "p": "Zakupy odbywają się przez Apple i obowiązują je warunki Apple. Subskrypcje odnawiają się automatycznie, dopóki nie anulujesz ich w ustawieniach konta Apple. Zwrotami zajmuje się Apple."
+    },
+    {
+      "h2": "6. Usuwanie konta"
+    },
+    {
+      "p": "Konto możesz usunąć w dowolnej chwili w aplikacji, w sekcji <strong>Ustawienia → Usuń konto</strong>. Jest to nieodwracalne, a Twoje dane są traktowane zgodnie z naszą <a href=\"/privacy\">Polityką prywatności</a>. Usunięcie konta nie anuluje subskrypcji w App Store – anuluj ją w ustawieniach konta Apple."
+    },
+    {
+      "h2": "7. Dostępność"
+    },
+    {
+      "p": "Ciężko pracujemy, aby Disconnect działał dobrze, ale nie możemy obiecać, że zawsze będzie dostępny i wolny od błędów. Blokowanie opiera się na technologii Czas przed ekranem firmy Apple, na którą nie mamy wpływu i która może nie działać w każdej sytuacji. Możemy zmieniać, wstrzymywać lub wycofywać części Disconnect i postaramy się uprzedzić Cię o wszystkim, co istotne."
+    },
+    {
+      "h2": "8. Nasza odpowiedzialność wobec Ciebie"
+    },
+    {
+      "p": "Nic w tym regulaminie nie ogranicza naszej odpowiedzialności tam, gdzie prawo na to nie pozwala – w tym za śmierć lub uszkodzenie ciała spowodowane naszym zaniedbaniem albo za oszustwo – ani nie wpływa na Twoje ustawowe prawa jako konsumenta."
+    },
+    {
+      "p": "Poza tym nie odpowiadamy za straty, które nie były przewidywalnym skutkiem naruszenia przez nas tego regulaminu, ani za jakiekolwiek straty biznesowe. Nasza łączna odpowiedzialność wobec Ciebie jest ograniczona do kwoty zapłaconej nam w ciągu 12 miesięcy przed zgłoszeniem roszczenia lub do £50 – w zależności od tego, która kwota jest wyższa."
+    },
+    {
+      "h2": "9. Jeśli coś nie wyjdzie"
+    },
+    {
+      "p": "Możesz w każdej chwili przestać korzystać z Disconnect. Możemy zawiesić lub zamknąć konto, które poważnie lub wielokrotnie narusza ten regulamin."
+    },
+    {
+      "h2": "10. Zmiany regulaminu"
+    },
+    {
+      "p": "Jeśli wprowadzimy istotne zmiany, poinformujemy Cię o nich w aplikacji lub e-mailem, zanim zaczną obowiązywać. Jeśli się z nimi nie zgadzasz, możesz przestać korzystać z Disconnect i usunąć konto."
+    },
+    {
+      "h2": "11. Apple"
+    },
+    {
+      "p": "Ten regulamin obowiązuje między Tobą a nami, a nie Apple. Apple nie odpowiada za Disconnect, jego zawartość, wsparcie ani utrzymanie, ani za rozpatrywanie jakichkolwiek roszczeń z nim związanych. Apple i jego spółki zależne są beneficjentami tego regulaminu jako osoby trzecie i mogą dochodzić jego przestrzegania. Obowiązuje również standardowa Umowa licencyjna użytkownika końcowego licencjonowanej aplikacji Apple (Standard EULA)."
+    },
+    {
+      "h2": "12. Prawo i spory"
+    },
+    {
+      "p": "Ten regulamin podlega prawu Anglii i Walii, a spory rozstrzygają sądy Anglii i Walii. Jeśli mieszkasz w innej części Wielkiej Brytanii lub w UE, możesz również wnieść sprawę do sądu w swoim kraju i zachowujesz ochronę wynikającą z lokalnych przepisów konsumenckich."
+    },
+    {
+      "h2": "13. Kontakt"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

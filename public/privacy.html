@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Disconnect</title>
 <link rel="canonical" href="https://disconnectapp.co/privacy">
+<link rel="alternate" hreflang="en" href="https://disconnectapp.co/privacy">
+<link rel="alternate" hreflang="de" href="https://disconnectapp.co/localized/de/privacy">
+<link rel="alternate" hreflang="fr" href="https://disconnectapp.co/localized/fr/privacy">
+<link rel="alternate" hreflang="it" href="https://disconnectapp.co/localized/it/privacy">
+<link rel="alternate" hreflang="pt-BR" href="https://disconnectapp.co/localized/pt/privacy">
+<link rel="alternate" hreflang="es-419" href="https://disconnectapp.co/localized/es/privacy">
+<link rel="alternate" hreflang="es-ES" href="https://disconnectapp.co/localized/es_es/privacy">
+<link rel="alternate" hreflang="nl" href="https://disconnectapp.co/localized/nl/privacy">
+<link rel="alternate" hreflang="ja" href="https://disconnectapp.co/localized/ja/privacy">
+<link rel="alternate" hreflang="ko" href="https://disconnectapp.co/localized/ko/privacy">
+<link rel="alternate" hreflang="zh-Hans" href="https://disconnectapp.co/localized/zh/privacy">
+<link rel="alternate" hreflang="zh-Hant" href="https://disconnectapp.co/localized/zh_tw/privacy">
+<link rel="alternate" hreflang="tr" href="https://disconnectapp.co/localized/tr/privacy">
+<link rel="alternate" hreflang="pl" href="https://disconnectapp.co/localized/pl/privacy">
+<link rel="alternate" hreflang="ru" href="https://disconnectapp.co/localized/ru/privacy">
+<link rel="alternate" hreflang="x-default" href="https://disconnectapp.co/privacy">
 <meta name="description" content="How Disconnect handles your data: what stays on your device, what the buddy system needs, and how to delete your account.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://disconnectapp.co/privacy">
@@ -204,6 +220,10 @@
                 padding: 24px;
             }
         }
+        .lang-switch { margin: -32px 0 32px; font-size: 14px; color: rgba(60, 55, 50, 0.60); }
+        .lang-switch label { margin-right: 8px; }
+        .lang-switch select { font: inherit; color: #3C3732; background: transparent; border: 0.5px solid rgba(11, 11, 12, 0.2); border-radius: 8px; padding: 4px 8px; }
+        .translation-note { font-size: 14px; color: rgba(60, 55, 50, 0.60); font-style: italic; }
     </style>
 <!-- PostHog Analytics -->
 <script>
@@ -238,99 +258,107 @@
 
 <main>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective date: June 2026</p>
-
-    <p>Disconnect is developed and operated by <strong>Bytehood Ltd</strong> ("we", "us", "our"). This Privacy Policy explains what data we collect, how we use it, and your rights.</p>
+    <p class="effective-date">Effective date: 28 October 2026</p>
+    <p class="lang-switch"><label for="langSelect">Language</label>
+      <select id="langSelect">
+        <option value="en" selected>English</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="pt-BR">Português</option>
+        <option value="es-MX">Español (Latinoamérica)</option>
+        <option value="es-ES">Español (España)</option>
+        <option value="nl">Nederlands</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+        <option value="tr">Türkçe</option>
+        <option value="pl">Polski</option>
+        <option value="ru">Русский</option>
+      </select></p>
+    <p>Disconnect is made by <strong>Bytehood Ltd</strong> ("we", "us"). We built it to help you spend less time on your phone, not to collect data about you. This policy explains, in plain language, what we handle and why.</p>
 
     <hr>
 
-    <h2>What data we collect</h2>
-
-    <h3>Account data</h3>
-    <p>When you sign in with Apple, we receive your name and email address (Apple only shares these on the first sign-in). We store your display name in our database to identify you to your buddy and in notifications. Your Apple ID is used to authenticate you — we never see your Apple ID password.</p>
-
-    <h3>Usage data</h3>
-    <p>We store the following to operate the buddy accountability system:</p>
+    <h2>The short version</h2>
     <ul>
-        <li>Your buddy relationships (who you have paired with)</li>
-        <li>Unlock requests you send or receive — including the rule name and any optional reason you write</li>
-        <li>Push notification tokens so we can deliver time-sensitive notifications to your device</li>
+        <li><strong>Your blocked apps stay on your phone.</strong> Which apps and websites you block, and your rules' schedules, never leave your device.</li>
+        <li><strong>We only store what the buddy system needs</strong> to work — so you and your buddy can send, see and answer requests.</li>
+        <li><strong>We don't sell your data, and we don't use it for advertising.</strong></li>
+        <li><strong>You can delete your account and data at any time</strong>, right in the app.</li>
     </ul>
 
-    <h3>What we do not collect</h3>
+    <hr>
+
+    <h2>What stays on your device</h2>
     <ul>
-        <li>Which apps you choose to block — this data never leaves your device</li>
-        <li>Your blocking schedule — stored locally only</li>
-        <li>Any Screen Time or usage statistics</li>
-        <li>Your location</li>
+        <li>The apps, categories and websites you choose to block</li>
+        <li>Your rules and their schedules</li>
+        <li>Screen Time information and how you use other apps</li>
+        <li>Your location and contacts — Disconnect never asks for them</li>
     </ul>
 
     <hr>
 
-    <h2>How we use your data</h2>
+    <h2>What we collect, and why</h2>
+    <p><strong>Your account.</strong> When you sign in with Apple, Apple shares your name and email address with us (or a private relay address, if you chose "Hide My Email"). Buddies who use Disconnect on the web sign in with their email address. We use your name to show you to your buddy, and your email only for important messages about your account or the service. You can also use Disconnect without signing in; the buddy features aren't available then, and we don't create an account for you.</p>
+    <p><strong>The buddy system.</strong> To connect you with your buddy, we store your buddy connections and the requests you exchange — for example, asking to unlock or delete a rule. A request includes what's needed for your buddy to answer it: the rule's name, the time you're asking for, and any message either of you chooses to add. We keep these so you can both see and respond to them, and so you can view your history.</p>
+    <p><strong>Notifications.</strong> We store a notification token for your device, and your app language, so we can send you time-sensitive alerts — like your buddy's reply — in your language.</p>
+    <p><strong>Subscriptions.</strong> If you subscribe to Disconnect Pro, we receive your purchase status so we can unlock Pro features. Apple handles payment; we never see your card details.</p>
+    <p><strong>App usage and diagnostics.</strong> We collect information about how the app is used — for example, which features are used and when something goes wrong — along with crash reports. This helps us fix problems and improve Disconnect. It's linked to your account so we can look into issues you run into, and it's never used for advertising.</p>
+    <p><strong>This website.</strong> When you visit disconnectapp.co, we collect basic visit information, such as the pages you view, to understand how the site is used.</p>
 
-    <p>We use your data only to operate Disconnect:</p>
+    <hr>
+
+    <h2>Who helps us run Disconnect</h2>
+    <p>We use a small number of trusted service providers, who process data only to provide their service to us:</p>
     <ul>
-        <li>To route buddy invitations and unlock requests between you and your buddy</li>
-        <li>To deliver push notifications when your buddy approves or denies a request</li>
-        <li>To identify you by name in notifications and in-app screens</li>
+        <li><strong>Google Firebase</strong> — sign-in, our database, notifications and crash reporting</li>
+        <li><strong>RevenueCat</strong> — managing subscriptions and subscription offers</li>
+        <li><strong>PostHog</strong> — app and website analytics</li>
+        <li><strong>Resend</strong> — sending sign-in and service emails</li>
+        <li><strong>Apple</strong> — Sign in with Apple, notifications and App Store payments</li>
     </ul>
-
-    <p>We do not sell your data. We do not use your data for advertising. We do not share your data with third parties except as described below.</p>
-
-    <hr>
-
-    <h2>Third parties</h2>
-
-    <h3>Firebase (Google)</h3>
-    <p>We use Firebase for authentication, database storage, and push notifications. Firebase is operated by Google LLC. Data is processed in accordance with Google's privacy policy.</p>
-
-    <h3>RevenueCat</h3>
-    <p>We use RevenueCat to manage Pro subscriptions. RevenueCat receives your anonymised user ID and purchase history to verify your subscription status. RevenueCat's privacy policy applies to this data.</p>
-
-    <h3>Apple</h3>
-    <p>Purchases are processed by Apple via the App Store. Apple's privacy policy governs payment data — we never see your payment details.</p>
+    <p>Some of these providers process data outside the UK and EU, including in the United States. Where they do, appropriate safeguards are in place, such as standard contractual clauses.</p>
+    <p>We don't share your data with anyone else, except where required by law.</p>
 
     <hr>
 
-    <h2>Data retention</h2>
+    <h2>How long we keep it</h2>
+    <p>We keep your account data for as long as you have an account. When you delete your account, we delete your account, buddy connections and requests from our systems — normally right away, and always within 30 days. Some usage and diagnostic records held by our service providers may remain afterwards; they can't be used to contact you, and you can ask us to remove them.</p>
 
-    <p>We retain your data for as long as your account is active. When you delete your account, we permanently delete all data associated with your account within 30 days, including your user record, buddy relationships, and unlock request history.</p>
+    <hr>
+
+    <h2>Keeping it safe</h2>
+    <p>Your data is encrypted in transit and stored with our providers using industry-standard security. Only you and your buddy can see your requests.</p>
 
     <hr>
 
     <h2>Your rights</h2>
-
-    <p>As a user you have the right to:</p>
+    <p>You can:</p>
     <ul>
-        <li><strong>Access</strong> the data we hold about you</li>
-        <li><strong>Delete</strong> your account and all associated data — available directly in the app under Settings → Delete account</li>
-        <li><strong>Object</strong> to or <strong>restrict</strong> processing of your data</li>
-        <li><strong>Port</strong> your data to another service</li>
+        <li><strong>Delete your account and data</strong> at any time, in the app under <strong>Settings → Delete account</strong></li>
+        <li><strong>Ask for a copy</strong> of your data, or ask us to correct it</li>
+        <li><strong>Object to or restrict</strong> how we use your data</li>
     </ul>
-
-    <p>To exercise any of these rights, contact us at <a href="mailto:support@bytehood.com">support@bytehood.com</a>.</p>
-
-    <p>If you are in the UK or EU, you also have the right to lodge a complaint with your local data protection authority (in the UK: the ICO at <a href="https://ico.org.uk" target="_blank">ico.org.uk</a>).</p>
+    <p>To do any of these, email <a href="mailto:support@bytehood.com">support@bytehood.com</a>. If you're in the UK or EU, you can also complain to your data protection authority — in the UK, that's the ICO (<a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>).</p>
+    <p>Where UK or EU law applies, we rely on providing the service you asked for, and our legitimate interest in keeping it working and improving it, as the legal basis for using your data.</p>
 
     <hr>
 
     <h2>Children</h2>
-
-    <p>Disconnect is not directed at children under 13. We do not knowingly collect data from children under 13. If you believe a child has provided us with personal data, contact us at <a href="mailto:support@bytehood.com">support@bytehood.com</a> and we will delete it.</p>
+    <p>Disconnect isn't intended for children under 13, and we don't knowingly collect their data. If you think a child has given us personal data, contact us and we'll delete it.</p>
 
     <hr>
 
     <h2>Changes to this policy</h2>
-
-    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes via the app or by email. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <p>If we make significant changes, we'll let you know in the app or by email before they take effect.</p>
 
     <hr>
 
     <h2>Contact</h2>
-
-    <p><strong>Bytehood Ltd</strong><br>
-    <a href="mailto:support@bytehood.com">support@bytehood.com</a></p>
+    <p><strong>Bytehood Ltd</strong><br><a href="mailto:support@bytehood.com">support@bytehood.com</a></p>
 </main>
 
 <footer class="footer">
@@ -387,6 +415,21 @@
       }
     });
   }, { passive: true });
+</script>
+<script>
+  // Language switcher: sets Firebase Hosting's i18n override cookies, then reloads this page so
+  // Hosting serves the chosen language (otherwise it follows the browser language).
+  (function () {
+    var s = document.getElementById('langSelect');
+    if (!s) return;
+    var map = {"en": ["en", null], "de": ["de", null], "fr": ["fr", null], "it": ["it", null], "pt-BR": ["pt", null], "es-MX": ["es", "mx"], "es-ES": ["es", "es"], "nl": ["nl", null], "ja": ["ja", null], "ko": ["ko", null], "zh-Hans": ["zh", "cn"], "zh-Hant": ["zh", "tw"], "tr": ["tr", null], "pl": ["pl", null], "ru": ["ru", null]};
+    s.addEventListener('change', function () {
+      var o = map[s.value], age = '; path=/; max-age=31536000; SameSite=Lax';
+      document.cookie = 'firebase-language-override=' + o[0] + age;
+      document.cookie = 'firebase-country-override=' + (o[1] || '') + (o[1] ? age : '; path=/; max-age=0');
+      window.location.href = window.location.pathname.replace(/^\/localized\/[^/]+/, '');
+    });
+  })();
 </script>
 </body>
 </html>

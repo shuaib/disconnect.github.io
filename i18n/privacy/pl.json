@@ -1,0 +1,144 @@
+{
+  "_notes": "Polish translation of en.json. Keep tags and hrefs exactly as they are. App UI labels match the app's own translations.",
+  "ui": {
+    "page_title": "Polityka prywatności – Disconnect",
+    "meta_description": "Jak Disconnect obchodzi się z Twoimi danymi: co zostaje na urządzeniu, czego potrzebuje system kumpli i jak usunąć konto.",
+    "nav_how": "Jak to działa",
+    "nav_locks": "Poziomy blokady",
+    "nav_compare": "Porównanie",
+    "nav_guides": "Poradniki",
+    "nav_faq": "FAQ",
+    "get_app": "Pobierz aplikację",
+    "home_label": "Strona główna Disconnect",
+    "footer_home": "Start",
+    "footer_guides": "Poradniki",
+    "footer_compare": "Porównanie",
+    "footer_faq": "FAQ",
+    "footer_press": "Dla prasy",
+    "footer_privacy": "Prywatność",
+    "footer_terms": "Regulamin",
+    "footer_support": "Pomoc",
+    "language_label": "Język",
+    "translation_note": "To jest tłumaczenie angielskiej wersji polityki. W razie rozbieżności obowiązuje wersja angielska."
+  },
+  "h1": "Polityka prywatności",
+  "effective_date": "Data wejścia w życie: 28 października 2026 r.",
+  "blocks": [
+    {
+      "p": "Disconnect tworzy firma <strong>Bytehood Ltd</strong> („my”). Zbudowaliśmy tę aplikację, żeby pomóc Ci spędzać mniej czasu przy telefonie, a nie po to, żeby zbierać o Tobie dane. Ta polityka prostym językiem wyjaśnia, jakie dane przetwarzamy i dlaczego."
+    },
+    {
+      "h2": "W skrócie"
+    },
+    {
+      "ul": [
+        "<strong>Blokowane aplikacje zostają na Twoim telefonie.</strong> To, jakie aplikacje i strony blokujesz, oraz harmonogramy Twoich reguł nigdy nie opuszczają urządzenia.",
+        "<strong>Przechowujemy tylko to, czego potrzebuje system kumpli</strong> do działania – żebyście Ty i Twój kumpel mogli wysyłać, widzieć prośby i na nie odpowiadać.",
+        "<strong>Nie sprzedajemy Twoich danych i nie używamy ich do reklam.</strong>",
+        "<strong>Możesz w każdej chwili usunąć konto i dane</strong> – bezpośrednio w aplikacji."
+      ]
+    },
+    {
+      "h2": "Co zostaje na Twoim urządzeniu"
+    },
+    {
+      "ul": [
+        "Aplikacje, kategorie i strony, które wybierasz do zablokowania",
+        "Twoje reguły i ich harmonogramy",
+        "Dane z funkcji Czas przed ekranem i to, jak korzystasz z innych aplikacji",
+        "Twoja lokalizacja i kontakty – Disconnect nigdy o nie nie prosi"
+      ]
+    },
+    {
+      "h2": "Co zbieramy i dlaczego"
+    },
+    {
+      "p": "<strong>Twoje konto.</strong> Gdy logujesz się przez Apple, Apple udostępnia nam Twoje imię i nazwisko oraz adres e-mail (albo prywatny adres przekierowujący, jeśli wybierzesz „Ukryj mój adres e-mail”). Kumple, którzy korzystają z Disconnect w przeglądarce, logują się adresem e-mail. Twojego imienia używamy, żeby pokazać Cię kumplowi, a adresu e-mail – wyłącznie do ważnych wiadomości dotyczących konta lub usługi. Z Disconnect możesz też korzystać bez logowania; wtedy funkcje kumpla są niedostępne i nie zakładamy dla Ciebie konta."
+    },
+    {
+      "p": "<strong>System kumpli.</strong> Żeby połączyć Cię z kumplem, przechowujemy Wasze połączenia i prośby, które wymieniacie – na przykład prośbę o odblokowanie lub usunięcie reguły. Prośba zawiera to, czego kumpel potrzebuje, żeby na nią odpowiedzieć: nazwę reguły, czas, o który prosisz, i ewentualną wiadomość, którą któreś z Was zechce dodać. Przechowujemy je, żebyście oboje mogli je widzieć i na nie odpowiadać, a Ty – przeglądać swoją historię."
+    },
+    {
+      "p": "<strong>Powiadomienia.</strong> Przechowujemy token powiadomień Twojego urządzenia i język aplikacji, żeby wysyłać Ci pilne powiadomienia – na przykład odpowiedź kumpla – w Twoim języku."
+    },
+    {
+      "p": "<strong>Subskrypcje.</strong> Jeśli wykupisz subskrypcję Disconnect Pro, otrzymujemy informację o statusie zakupu, żeby odblokować funkcje Pro. Płatności obsługuje Apple; nigdy nie widzimy danych Twojej karty."
+    },
+    {
+      "p": "<strong>Korzystanie z aplikacji i diagnostyka.</strong> Zbieramy informacje o tym, jak używana jest aplikacja – na przykład z jakich funkcji się korzysta i kiedy coś idzie nie tak – a także raporty o awariach. Dzięki temu możemy naprawiać błędy i ulepszać Disconnect. Te dane są powiązane z Twoim kontem, żebyśmy mogli zbadać problemy, na które trafiasz, i nigdy nie są używane do reklam."
+    },
+    {
+      "p": "<strong>Ta strona.</strong> Gdy odwiedzasz disconnectapp.co, zbieramy podstawowe informacje o wizycie, takie jak oglądane strony, żeby zrozumieć, jak korzysta się z serwisu."
+    },
+    {
+      "h2": "Kto pomaga nam prowadzić Disconnect"
+    },
+    {
+      "p": "Korzystamy z niewielu zaufanych dostawców usług, którzy przetwarzają dane wyłącznie po to, by świadczyć nam swoje usługi:"
+    },
+    {
+      "ul": [
+        "<strong>Google Firebase</strong> – logowanie, nasza baza danych, powiadomienia i raportowanie awarii",
+        "<strong>RevenueCat</strong> – zarządzanie subskrypcjami i ofertami subskrypcji",
+        "<strong>PostHog</strong> – analityka aplikacji i strony",
+        "<strong>Resend</strong> – wysyłanie e-maili do logowania i wiadomości o usłudze",
+        "<strong>Apple</strong> – Zaloguj się przez Apple, powiadomienia i płatności w App Store"
+      ]
+    },
+    {
+      "p": "Niektórzy z tych dostawców przetwarzają dane poza Wielką Brytanią i UE, w tym w Stanach Zjednoczonych. W takich przypadkach stosowane są odpowiednie zabezpieczenia, takie jak standardowe klauzule umowne."
+    },
+    {
+      "p": "Nie udostępniamy Twoich danych nikomu innemu, chyba że wymaga tego prawo."
+    },
+    {
+      "h2": "Jak długo przechowujemy dane"
+    },
+    {
+      "p": "Dane konta przechowujemy tak długo, jak masz konto. Gdy usuniesz konto, usuwamy z naszych systemów Twoje konto, połączenia z kumplami i prośby – zwykle od razu, a zawsze w ciągu 30 dni. Niektóre dane o korzystaniu i diagnostyczne przechowywane przez naszych dostawców mogą pozostać po tym czasie; nie da się ich użyć do kontaktu z Tobą, a Ty możesz poprosić nas o ich usunięcie."
+    },
+    {
+      "h2": "Bezpieczeństwo"
+    },
+    {
+      "p": "Twoje dane są szyfrowane podczas przesyłania i przechowywane u naszych dostawców z użyciem zabezpieczeń zgodnych ze standardami branżowymi. Twoje prośby widzisz tylko Ty i Twój kumpel."
+    },
+    {
+      "h2": "Twoje prawa"
+    },
+    {
+      "p": "Możesz:"
+    },
+    {
+      "ul": [
+        "<strong>Usunąć konto i dane</strong> w dowolnym momencie w aplikacji, w sekcji <strong>Ustawienia → Usuń konto</strong>",
+        "<strong>Poprosić o kopię</strong> swoich danych albo o ich poprawienie",
+        "<strong>Wnieść sprzeciw lub ograniczyć</strong> sposób, w jaki używamy Twoich danych"
+      ]
+    },
+    {
+      "p": "W każdej z tych spraw napisz na <a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>. Jeśli jesteś w Wielkiej Brytanii lub UE, możesz też złożyć skargę do organu ochrony danych osobowych – w Wielkiej Brytanii jest to ICO (<a href=\"https://ico.org.uk\" target=\"_blank\" rel=\"noopener\">ico.org.uk</a>)."
+    },
+    {
+      "p": "Tam, gdzie ma zastosowanie prawo brytyjskie lub unijne, podstawą prawną korzystania z Twoich danych jest świadczenie usługi, o którą prosisz, oraz nasz prawnie uzasadniony interes w utrzymaniu jej działania i jej ulepszaniu."
+    },
+    {
+      "h2": "Dzieci"
+    },
+    {
+      "p": "Disconnect nie jest przeznaczony dla dzieci poniżej 13 roku życia i nie zbieramy świadomie ich danych. Jeśli uważasz, że dziecko przekazało nam dane osobowe, skontaktuj się z nami, a je usuniemy."
+    },
+    {
+      "h2": "Zmiany w tej polityce"
+    },
+    {
+      "p": "Jeśli wprowadzimy istotne zmiany, poinformujemy Cię o nich w aplikacji lub e-mailem, zanim zaczną obowiązywać."
+    },
+    {
+      "h2": "Kontakt"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

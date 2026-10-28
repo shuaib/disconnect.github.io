@@ -1,0 +1,144 @@
+{
+  "_notes": "Dutch translation of en.json. Keep tags and hrefs exactly as they are. App UI labels match the app's own translations.",
+  "ui": {
+    "page_title": "Privacybeleid — Disconnect",
+    "meta_description": "Hoe Disconnect met je gegevens omgaat: wat op je apparaat blijft, wat het buddysysteem nodig heeft en hoe je je account verwijdert.",
+    "nav_how": "Zo werkt het",
+    "nav_locks": "Slotniveaus",
+    "nav_compare": "Vergelijken",
+    "nav_guides": "Gidsen",
+    "nav_faq": "FAQ",
+    "get_app": "Download de app",
+    "home_label": "Disconnect-startpagina",
+    "footer_home": "Start",
+    "footer_guides": "Gidsen",
+    "footer_compare": "Vergelijken",
+    "footer_faq": "FAQ",
+    "footer_press": "Pers",
+    "footer_privacy": "Privacybeleid",
+    "footer_terms": "Voorwaarden",
+    "footer_support": "Hulp",
+    "language_label": "Taal",
+    "translation_note": "Dit is een vertaling van het Engelse beleid. Als de twee verschillen, geldt de Engelse versie."
+  },
+  "h1": "Privacybeleid",
+  "effective_date": "Ingangsdatum: 28 oktober 2026",
+  "blocks": [
+    {
+      "p": "Disconnect is gemaakt door <strong>Bytehood Ltd</strong> (“wij”, “ons”). We hebben de app gebouwd om je te helpen minder tijd op je telefoon door te brengen, niet om gegevens over je te verzamelen. In dit beleid leggen we in gewone taal uit met welke gegevens we werken en waarom."
+    },
+    {
+      "h2": "De korte versie"
+    },
+    {
+      "ul": [
+        "<strong>Je geblokkeerde apps blijven op je telefoon.</strong> Welke apps en websites je blokkeert en de schema’s van je regels verlaten je apparaat nooit.",
+        "<strong>We bewaren alleen wat het buddysysteem nodig heeft</strong> om te werken — zodat jij en je buddy verzoeken kunnen sturen, bekijken en beantwoorden.",
+        "<strong>We verkopen je gegevens niet en gebruiken ze niet voor advertenties.</strong>",
+        "<strong>Je kunt je account en gegevens op elk moment verwijderen</strong>, gewoon in de app."
+      ]
+    },
+    {
+      "h2": "Wat op je apparaat blijft"
+    },
+    {
+      "ul": [
+        "De apps, categorieën en websites die je kiest om te blokkeren",
+        "Je regels en hun schema’s",
+        "Schermtijd-gegevens en hoe je andere apps gebruikt",
+        "Je locatie en contacten — Disconnect vraagt er nooit om"
+      ]
+    },
+    {
+      "h2": "Wat we verzamelen en waarom"
+    },
+    {
+      "p": "<strong>Je account.</strong> Als je inlogt met Apple, deelt Apple je naam en e-mailadres met ons (of een privé-doorstuuradres, als je voor “Verberg mijn e-mailadres” hebt gekozen). Buddy’s die Disconnect op het web gebruiken, loggen in met hun e-mailadres. We gebruiken je naam om je aan je buddy te tonen, en je e-mailadres alleen voor belangrijke berichten over je account of de dienst. Je kunt Disconnect ook gebruiken zonder in te loggen; de buddyfuncties zijn dan niet beschikbaar en we maken geen account voor je aan."
+    },
+    {
+      "p": "<strong>Het buddysysteem.</strong> Om je met je buddy te verbinden, bewaren we je buddykoppelingen en de verzoeken die jullie uitwisselen — bijvoorbeeld een verzoek om een regel te ontgrendelen of te verwijderen. Een verzoek bevat wat je buddy nodig heeft om het te beantwoorden: de naam van de regel, de tijd waar je om vraagt en een eventueel bericht dat een van jullie wil toevoegen. We bewaren deze zodat jullie ze allebei kunnen zien en beantwoorden, en zodat je je geschiedenis kunt bekijken."
+    },
+    {
+      "p": "<strong>Meldingen.</strong> We bewaren een meldingstoken voor je apparaat en de taal van je app, zodat we je tijdgevoelige meldingen kunnen sturen — zoals het antwoord van je buddy — in jouw taal."
+    },
+    {
+      "p": "<strong>Abonnementen.</strong> Als je een abonnement op Disconnect Pro neemt, ontvangen we je aankoopstatus zodat we de Pro-functies kunnen ontgrendelen. Apple regelt de betaling; we zien je kaartgegevens nooit."
+    },
+    {
+      "p": "<strong>Appgebruik en diagnostiek.</strong> We verzamelen informatie over hoe de app wordt gebruikt — bijvoorbeeld welke functies worden gebruikt en wanneer er iets misgaat — samen met crashrapporten. Zo kunnen we problemen oplossen en Disconnect verbeteren. Deze gegevens zijn aan je account gekoppeld, zodat we problemen kunnen onderzoeken waar je tegenaan loopt, en ze worden nooit voor advertenties gebruikt."
+    },
+    {
+      "p": "<strong>Deze website.</strong> Als je disconnectapp.co bezoekt, verzamelen we basisgegevens over je bezoek, zoals de pagina’s die je bekijkt, om te begrijpen hoe de site wordt gebruikt."
+    },
+    {
+      "h2": "Wie ons helpt Disconnect te laten draaien"
+    },
+    {
+      "p": "We werken met een klein aantal betrouwbare dienstverleners, die gegevens alleen verwerken om hun dienst aan ons te leveren:"
+    },
+    {
+      "ul": [
+        "<strong>Google Firebase</strong> — inloggen, onze database, meldingen en crashrapportage",
+        "<strong>RevenueCat</strong> — beheer van abonnementen en abonnementsaanbiedingen",
+        "<strong>PostHog</strong> — analyse van de app en website",
+        "<strong>Resend</strong> — versturen van inlog- en service-e-mails",
+        "<strong>Apple</strong> — Log in met Apple, meldingen en betalingen via de App Store"
+      ]
+    },
+    {
+      "p": "Sommige van deze dienstverleners verwerken gegevens buiten het VK en de EU, onder meer in de Verenigde Staten. Als dat zo is, zijn er passende waarborgen getroffen, zoals modelcontractbepalingen."
+    },
+    {
+      "p": "We delen je gegevens met niemand anders, behalve als de wet dat vereist."
+    },
+    {
+      "h2": "Hoelang we gegevens bewaren"
+    },
+    {
+      "p": "We bewaren je accountgegevens zolang je een account hebt. Als je je account verwijdert, verwijderen we je account, buddykoppelingen en verzoeken uit onze systemen — normaal gesproken meteen, en altijd binnen 30 dagen. Sommige gebruiks- en diagnostische gegevens bij onze dienstverleners kunnen daarna nog blijven bestaan; die kunnen niet worden gebruikt om contact met je op te nemen, en je kunt ons vragen ze te verwijderen."
+    },
+    {
+      "h2": "Veilig bewaard"
+    },
+    {
+      "p": "Je gegevens worden versleuteld verzonden en bij onze dienstverleners opgeslagen met beveiliging volgens de industriestandaard. Alleen jij en je buddy kunnen je verzoeken zien."
+    },
+    {
+      "h2": "Je rechten"
+    },
+    {
+      "p": "Je kunt:"
+    },
+    {
+      "ul": [
+        "<strong>Je account en gegevens verwijderen</strong>, op elk moment, in de app via <strong>Instellingen → Verwijder account</strong>",
+        "<strong>Om een kopie vragen</strong> van je gegevens, of ons vragen ze te corrigeren",
+        "<strong>Bezwaar maken tegen of beperken</strong> hoe we je gegevens gebruiken"
+      ]
+    },
+    {
+      "p": "Wil je een van deze dingen doen, mail dan naar <a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>. Als je in het VK of de EU woont, kun je ook een klacht indienen bij je toezichthoudende autoriteit voor gegevensbescherming — in het VK is dat de ICO (<a href=\"https://ico.org.uk\" target=\"_blank\" rel=\"noopener\">ico.org.uk</a>)."
+    },
+    {
+      "p": "Waar Britse of EU-wetgeving van toepassing is, baseren we het gebruik van je gegevens op het leveren van de dienst waar je om hebt gevraagd, en op ons gerechtvaardigd belang om die dienst werkend te houden en te verbeteren, als rechtsgrond."
+    },
+    {
+      "h2": "Kinderen"
+    },
+    {
+      "p": "Disconnect is niet bedoeld voor kinderen jonger dan 13 jaar, en we verzamelen niet bewust hun gegevens. Denk je dat een kind ons persoonsgegevens heeft gegeven, neem dan contact met ons op en we verwijderen ze."
+    },
+    {
+      "h2": "Wijzigingen in dit beleid"
+    },
+    {
+      "p": "Als we belangrijke wijzigingen doorvoeren, laten we je dat weten in de app of per e-mail voordat ze ingaan."
+    },
+    {
+      "h2": "Contact opnemen"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

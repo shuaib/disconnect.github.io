@@ -1,0 +1,129 @@
+{
+  "_notes": "Source text for /privacy. Strings may contain inline HTML (<strong>, <a>, <br>) — keep tags and hrefs exactly as they are. App UI labels must match the app's own translations.",
+  "ui": {
+    "page_title": "Terms of Service — Disconnect",
+    "meta_description": "The terms for using Disconnect, the app that helps you spend less time on your phone, by Bytehood Ltd.",
+    "nav_how": "How it works",
+    "nav_locks": "Lock levels",
+    "nav_compare": "Compare",
+    "nav_guides": "Guides",
+    "nav_faq": "FAQ",
+    "get_app": "Get the app",
+    "home_label": "Disconnect home",
+    "footer_home": "Home",
+    "footer_guides": "Guides",
+    "footer_compare": "Compare",
+    "footer_faq": "FAQ",
+    "footer_press": "Press",
+    "footer_privacy": "Privacy",
+    "footer_terms": "Terms",
+    "footer_support": "Support",
+    "language_label": "Language",
+    "translation_note": "This is a translation of the English terms. If the two differ, the English version applies."
+  },
+  "h1": "Terms of Service",
+  "effective_date": "Effective date: 28 October 2026",
+  "blocks": [
+    {
+      "p": "These terms are an agreement between you and <strong>Bytehood Ltd</strong> (\"we\", \"us\"), the company behind Disconnect. By using Disconnect, you agree to them. We've tried to keep them short and in plain language."
+    },
+    {
+      "h2": "1. What Disconnect is"
+    },
+    {
+      "p": "Disconnect helps you spend less time on your phone by blocking apps and, if you like, handing the key to someone you trust — your buddy. Disconnect runs on iPhone, and buddies can respond in the app or on the web. We're always improving it, so features may change over time."
+    },
+    {
+      "h2": "2. Your account"
+    },
+    {
+      "p": "You can use some of Disconnect without an account. The buddy features need you to sign in. Please keep your account secure, and don't use someone else's. You need to be at least 13 to use Disconnect."
+    },
+    {
+      "h2": "3. The buddy system"
+    },
+    {
+      "p": "Having a buddy is entirely voluntary. When you choose a buddy, you're giving them the ability to approve or deny your requests — their decisions are their own, and we're not responsible for them. Buddies don't work for us, and they can't see which apps you block."
+    },
+    {
+      "p": "Either of you can end the connection at any time. If your buddy leaves or deletes their account, rules they held the key to switch to a level you can unlock yourself."
+    },
+    {
+      "h2": "4. Using Disconnect responsibly"
+    },
+    {
+      "p": "Please don't:"
+    },
+    {
+      "ul": [
+        "Use Disconnect to monitor, pressure or control anyone who hasn't genuinely agreed to it",
+        "Use it for anything unlawful, or in a way that harms others",
+        "Try to copy, reverse engineer, disrupt or misuse the app or our services",
+        "Get around Disconnect's limits, for example by creating multiple accounts"
+      ]
+    },
+    {
+      "p": "And please don't rely on Disconnect in situations where blocking an app could put anyone at risk."
+    },
+    {
+      "h2": "5. Disconnect Pro and purchases"
+    },
+    {
+      "p": "Some features are part of Disconnect Pro. What's included, the available plans, prices and any trials are shown in the app before you buy, and may change over time. Any price change applies from your next renewal, and Apple will let you know beforehand."
+    },
+    {
+      "p": "Purchases are made through Apple, and Apple's terms apply to them. Subscriptions renew automatically until you cancel them in your Apple account settings. Refunds are handled by Apple."
+    },
+    {
+      "h2": "6. Deleting your account"
+    },
+    {
+      "p": "You can delete your account at any time in the app under <strong>Settings → Delete account</strong>. This is permanent, and your data is handled as described in our <a href=\"/privacy\">Privacy Policy</a>. Deleting your account doesn't cancel an App Store subscription — please cancel that in your Apple account settings."
+    },
+    {
+      "h2": "7. Availability"
+    },
+    {
+      "p": "We work hard to keep Disconnect running well, but we can't promise it will always be available or free of bugs. Blocking relies on Apple's Screen Time technology, which is outside our control and may not work in every situation. We may change, pause or stop parts of Disconnect, and we'll try to give you notice of anything significant."
+    },
+    {
+      "h2": "8. Our responsibility to you"
+    },
+    {
+      "p": "Nothing in these terms limits our liability where the law doesn't allow it — including for death or personal injury caused by our negligence, or for fraud — or affects your statutory rights as a consumer."
+    },
+    {
+      "p": "Otherwise, we're not responsible for losses that weren't a foreseeable result of our breaking these terms, or for any business losses. Our total liability to you is limited to the amount you paid us in the 12 months before the claim, or £50, whichever is higher."
+    },
+    {
+      "h2": "9. If things don't work out"
+    },
+    {
+      "p": "You can stop using Disconnect at any time. We may suspend or close an account that seriously or repeatedly breaks these terms."
+    },
+    {
+      "h2": "10. Changes to these terms"
+    },
+    {
+      "p": "If we make significant changes, we'll let you know in the app or by email before they take effect. If you don't agree with them, you can stop using Disconnect and delete your account."
+    },
+    {
+      "h2": "11. Apple"
+    },
+    {
+      "p": "These terms are between you and us, not Apple. Apple isn't responsible for Disconnect, its content, support or maintenance, or for handling any claims about it. Apple and its subsidiaries are third-party beneficiaries of these terms and can enforce them. Apple's standard Licensed Application End User License Agreement also applies."
+    },
+    {
+      "h2": "12. Law and disputes"
+    },
+    {
+      "p": "These terms are governed by the laws of England and Wales, and disputes go to the courts of England and Wales. If you live elsewhere in the UK or in the EU, you can also bring proceedings in your local courts, and you keep the protections of your local consumer laws."
+    },
+    {
+      "h2": "13. Contact"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

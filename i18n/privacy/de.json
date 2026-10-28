@@ -1,0 +1,144 @@
+{
+  "_notes": "German translation of en.json. Keep tags and hrefs exactly as they are.",
+  "ui": {
+    "page_title": "Datenschutzerklärung — Disconnect",
+    "meta_description": "Wie Disconnect mit deinen Daten umgeht: was auf deinem Gerät bleibt, was das Buddy-System braucht und wie du dein Konto löschst.",
+    "nav_how": "So funktioniert’s",
+    "nav_locks": "Sperrstufen",
+    "nav_compare": "Vergleich",
+    "nav_guides": "Ratgeber",
+    "nav_faq": "FAQ",
+    "get_app": "App laden",
+    "home_label": "Disconnect Startseite",
+    "footer_home": "Startseite",
+    "footer_guides": "Ratgeber",
+    "footer_compare": "Vergleich",
+    "footer_faq": "FAQ",
+    "footer_press": "Presse",
+    "footer_privacy": "Datenschutz",
+    "footer_terms": "Nutzungsbedingungen",
+    "footer_support": "Support",
+    "language_label": "Sprache",
+    "translation_note": "Dies ist eine Übersetzung der englischen Datenschutzerklärung. Weichen die beiden voneinander ab, gilt die englische Fassung."
+  },
+  "h1": "Datenschutzerklärung",
+  "effective_date": "Gültig ab: 28. Oktober 2026",
+  "blocks": [
+    {
+      "p": "Disconnect wird von der <strong>Bytehood Ltd</strong> („wir“, „uns“) entwickelt. Wir haben die App gebaut, damit du weniger Zeit am Handy verbringst – nicht, um Daten über dich zu sammeln. Diese Erklärung beschreibt in einfachen Worten, mit welchen Daten wir umgehen und warum."
+    },
+    {
+      "h2": "Das Wichtigste in Kürze"
+    },
+    {
+      "ul": [
+        "<strong>Deine blockierten Apps bleiben auf deinem Handy.</strong> Welche Apps und Websites du blockierst und die Zeitpläne deiner Regeln verlassen nie dein Gerät.",
+        "<strong>Wir speichern nur, was das Buddy-System braucht</strong>, um zu funktionieren – damit du und dein Buddy Anfragen senden, sehen und beantworten könnt.",
+        "<strong>Wir verkaufen deine Daten nicht und nutzen sie nicht für Werbung.</strong>",
+        "<strong>Du kannst dein Konto und deine Daten jederzeit löschen</strong>, direkt in der App."
+      ]
+    },
+    {
+      "h2": "Was auf deinem Gerät bleibt"
+    },
+    {
+      "ul": [
+        "Die Apps, Kategorien und Websites, die du blockieren möchtest",
+        "Deine Regeln und ihre Zeitpläne",
+        "Bildschirmzeit-Informationen und wie du andere Apps nutzt",
+        "Dein Standort und deine Kontakte – Disconnect fragt nie danach"
+      ]
+    },
+    {
+      "h2": "Was wir erheben und warum"
+    },
+    {
+      "p": "<strong>Dein Konto.</strong> Wenn du dich mit „Mit Apple anmelden“ anmeldest, teilt Apple deinen Namen und deine E-Mail-Adresse mit uns (oder eine private Weiterleitungsadresse, wenn du „E-Mail-Adresse verbergen“ gewählt hast). Buddys, die Disconnect im Web nutzen, melden sich mit ihrer E-Mail-Adresse an. Deinen Namen verwenden wir, um dich deinem Buddy anzuzeigen, und deine E-Mail-Adresse nur für wichtige Nachrichten zu deinem Konto oder zum Dienst. Du kannst Disconnect auch ohne Anmeldung nutzen; die Buddy-Funktionen sind dann nicht verfügbar, und wir legen kein Konto für dich an."
+    },
+    {
+      "p": "<strong>Das Buddy-System.</strong> Um dich mit deinem Buddy zu verbinden, speichern wir deine Buddy-Verbindungen und die Anfragen, die ihr austauscht – zum Beispiel die Bitte, eine Regel zu entsperren oder zu löschen. Eine Anfrage enthält, was dein Buddy braucht, um sie zu beantworten: den Namen der Regel, die Zeit, um die du bittest, und eine Nachricht, falls einer von euch eine hinzufügt. Wir bewahren diese auf, damit ihr beide sie sehen und darauf reagieren könnt und damit du deinen Verlauf ansehen kannst."
+    },
+    {
+      "p": "<strong>Mitteilungen.</strong> Wir speichern ein Mitteilungs-Token für dein Gerät und deine App-Sprache, damit wir dir zeitkritische Hinweise – etwa die Antwort deines Buddys – in deiner Sprache senden können."
+    },
+    {
+      "p": "<strong>Abos.</strong> Wenn du Disconnect Pro abonnierst, erhalten wir deinen Kaufstatus, damit wir die Pro-Funktionen freischalten können. Die Zahlung wickelt Apple ab; deine Kartendaten sehen wir nie."
+    },
+    {
+      "p": "<strong>App-Nutzung und Diagnose.</strong> Wir erheben Informationen darüber, wie die App genutzt wird – zum Beispiel, welche Funktionen verwendet werden und wann etwas schiefgeht – sowie Absturzberichte. Das hilft uns, Probleme zu beheben und Disconnect zu verbessern. Diese Daten sind mit deinem Konto verknüpft, damit wir Problemen nachgehen können, auf die du stößt, und sie werden nie für Werbung verwendet."
+    },
+    {
+      "p": "<strong>Diese Website.</strong> Wenn du disconnectapp.co besuchst, erheben wir grundlegende Besuchsinformationen, etwa die Seiten, die du aufrufst, um zu verstehen, wie die Website genutzt wird."
+    },
+    {
+      "h2": "Wer uns beim Betrieb von Disconnect hilft"
+    },
+    {
+      "p": "Wir arbeiten mit einigen wenigen vertrauenswürdigen Dienstleistern zusammen, die Daten nur verarbeiten, um ihren Dienst für uns zu erbringen:"
+    },
+    {
+      "ul": [
+        "<strong>Google Firebase</strong> – Anmeldung, unsere Datenbank, Mitteilungen und Absturzberichte",
+        "<strong>RevenueCat</strong> – Verwaltung von Abos und Abo-Angeboten",
+        "<strong>PostHog</strong> – Analysen für App und Website",
+        "<strong>Resend</strong> – Versand von Anmelde- und Service-E-Mails",
+        "<strong>Apple</strong> – Mit Apple anmelden, Mitteilungen und Zahlungen im App Store"
+      ]
+    },
+    {
+      "p": "Einige dieser Dienstleister verarbeiten Daten außerhalb des Vereinigten Königreichs und der EU, auch in den USA. In diesen Fällen bestehen geeignete Garantien, etwa Standardvertragsklauseln."
+    },
+    {
+      "p": "Wir geben deine Daten an niemanden sonst weiter, es sei denn, das Gesetz verlangt es."
+    },
+    {
+      "h2": "Wie lange wir sie aufbewahren"
+    },
+    {
+      "p": "Wir bewahren deine Kontodaten so lange auf, wie du ein Konto hast. Wenn du dein Konto löschst, löschen wir dein Konto, deine Buddy-Verbindungen und Anfragen aus unseren Systemen – normalerweise sofort und immer innerhalb von 30 Tagen. Einige Nutzungs- und Diagnosedaten bei unseren Dienstleistern können danach noch vorhanden sein; sie können nicht verwendet werden, um dich zu kontaktieren, und du kannst uns bitten, sie zu entfernen."
+    },
+    {
+      "h2": "So schützen wir deine Daten"
+    },
+    {
+      "p": "Deine Daten werden bei der Übertragung verschlüsselt und bei unseren Dienstleistern mit branchenüblichen Sicherheitsmaßnahmen gespeichert. Nur du und dein Buddy könnt deine Anfragen sehen."
+    },
+    {
+      "h2": "Deine Rechte"
+    },
+    {
+      "p": "Du kannst:"
+    },
+    {
+      "ul": [
+        "<strong>dein Konto und deine Daten löschen</strong>, jederzeit, in der App unter <strong>Einstellungen → Account löschen</strong>",
+        "<strong>eine Kopie</strong> deiner Daten anfordern oder uns bitten, sie zu berichtigen",
+        "<strong>widersprechen oder einschränken</strong>, wie wir deine Daten nutzen"
+      ]
+    },
+    {
+      "p": "Für all das schreib einfach eine E-Mail an <a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>. Wenn du im Vereinigten Königreich oder in der EU bist, kannst du dich außerdem bei deiner Datenschutzbehörde beschweren – im Vereinigten Königreich ist das das ICO (<a href=\"https://ico.org.uk\" target=\"_blank\" rel=\"noopener\">ico.org.uk</a>)."
+    },
+    {
+      "p": "Soweit das Recht des Vereinigten Königreichs oder der EU gilt, ist die Rechtsgrundlage für die Nutzung deiner Daten die Erbringung des von dir angeforderten Dienstes sowie unser berechtigtes Interesse, ihn funktionsfähig zu halten und zu verbessern."
+    },
+    {
+      "h2": "Kinder"
+    },
+    {
+      "p": "Disconnect ist nicht für Kinder unter 13 Jahren gedacht, und wir erheben wissentlich keine Daten von ihnen. Wenn du glaubst, dass uns ein Kind personenbezogene Daten gegeben hat, kontaktiere uns, und wir löschen sie."
+    },
+    {
+      "h2": "Änderungen dieser Erklärung"
+    },
+    {
+      "p": "Wenn wir wesentliche Änderungen vornehmen, informieren wir dich in der App oder per E-Mail, bevor sie in Kraft treten."
+    },
+    {
+      "h2": "Kontakt"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}

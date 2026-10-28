@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ui.page_title}}</title>
+<link rel="canonical" href="{{url}}">
+{{hreflang}}
+<meta name="description" content="{{ui.meta_description}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{url}}">
+<meta property="og:title" content="{{ui.page_title}}">
+<meta property="og:description" content="{{ui.meta_description}}">
+<meta property="og:image" content="https://disconnectapp.co/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://disconnectapp.co/#organization",
+      "name": "Bytehood",
+      "legalName": "Bytehood Ltd.",
+      "url": "https://bytehood.com",
+      "sameAs": [
+        "https://apps.apple.com/app/id6743134572"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://disconnectapp.co/#website",
+      "url": "https://disconnectapp.co/",
+      "name": "Disconnect",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://disconnectapp.co/#app",
+      "name": "Disconnect",
+      "operatingSystem": "iOS",
+      "applicationCategory": "ProductivityApplication",
+      "url": "https://disconnectapp.co/",
+      "sameAs": [
+        "https://apps.apple.com/app/id6743134572"
+      ],
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{url}}#webpage",
+      "url": "{{url}}",
+      "name": "{{h1}}",
+      "inLanguage": "{{lang}}",
+      "isPartOf": {
+        "@id": "https://disconnectapp.co/#website"
+      },
+      "about": {
+        "@id": "https://disconnectapp.co/#app"
+      },
+      "publisher": {
+        "@id": "https://disconnectapp.co/#organization"
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#F5F4F1">
+<link rel="stylesheet" href="/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #3C3732;
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 24px 40px;
+            border-bottom: 0.5px solid rgba(11, 11, 12, 0.12);
+        }
+
+        header a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #0B0B0C;
+            font-weight: 600;
+            font-size: 17px;
+            width: fit-content;
+        }
+
+        header img {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            box-shadow: 0 0 0 1px rgba(11,11,12,0.12);
+        }
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 40px 80px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            color: #0B0B0C;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .effective-date {
+            font-size: 14px;
+            color: rgba(60, 55, 50, 0.60);
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0B0B0C;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #0B0B0C;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        a {
+            color: #0A6EE0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 0.5px solid rgba(11, 11, 12, 0.12);
+            margin: 40px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 32px 40px;
+            font-size: 13px;
+            color: rgba(60, 55, 50, 0.50);
+            border-top: 0.5px solid rgba(11, 11, 12, 0.12);
+        }
+
+        footer a {
+            color: rgba(60, 55, 50, 0.50);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 24px;
+            }
+
+            main {
+                padding: 40px 24px 60px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            footer {
+                padding: 24px;
+            }
+        }
+    </style>
+<!-- PostHog Analytics -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="du vu fu pu yu init Bu Hu Nu qu Vu Kl ju Zu Ou th eh ih nh sh rh capture getExtension zu hu uh calculateEventProperties ah register register_once register_for_session unregister unregister_for_session ph Lu hh getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync gh identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset mh shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty dh Ku createPersonProfile setInternalOrTestUser fh bu opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Qu debug Xl Os getPageViewId captureTraceFeedback captureTraceMetric Pu".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_meNigUHcXmZr8joaJwZTomvhGNwzYJ43t4NvkTikLMwV', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true,
+    })
+</script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="lockup" href="/" aria-label="{{ui.home_label}}">
+        <img src="/app-icon.svg" width="26" height="26" alt="">
+        <span class="wordmark">Disconnect</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#how">{{ui.nav_how}}</a>
+        <a href="/#locks">{{ui.nav_locks}}</a>
+        <a href="/#compare">{{ui.nav_compare}}</a>
+        <a href="/guides/">{{ui.nav_guides}}</a>
+        <a href="/#faq">{{ui.nav_faq}}</a>
+      </nav>
+      <a class="header-cta" href="https://apps.apple.com/app/id6743134572">{{ui.get_app}}</a>
+    </div>
+  </header>
+
+<main>
+{{main}}
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="footer-mark" href="/" aria-label="{{ui.home_label}}">
+      <img src="/app-icon.svg" width="44" height="44" alt="">
+    </a>
+    <nav class="links" aria-label="Footer">
+      <a href="/">{{ui.footer_home}}</a>
+      <a href="/guides/">{{ui.footer_guides}}</a>
+      <a href="/#compare">{{ui.footer_compare}}</a>
+      <a href="/#faq">{{ui.footer_faq}}</a>
+      <a href="/press">{{ui.footer_press}}</a>
+      <a href="/privacy">{{ui.footer_privacy}}</a>
+      <a href="/terms">{{ui.footer_terms}}</a>
+      <a href="mailto:support@bytehood.com">{{ui.footer_support}}</a>
+    </nav>
+    <p class="copy">&copy; 2026&ndash;present Bytehood Ltd.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var h = document.getElementById('siteHeader');
+    if (!h) return;
+    var onScroll = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
+<script>
+  // Track App Store download clicks with page + label context
+  document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      posthog.capture('app_store_click', {
+        page: window.location.pathname,
+        label: (a.textContent.trim() || a.getAttribute('aria-label') || 'badge').slice(0, 80),
+        referrer: document.referrer || null,
+        utm_source: new URLSearchParams(window.location.search).get('utm_source'),
+        utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
+        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+      });
+    });
+  });
+
+  // Track scroll depth milestones (25 / 50 / 75 / 90 %)
+  var _phScrollFired = {};
+  window.addEventListener('scroll', function() {
+    var pct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+    [25, 50, 75, 90].forEach(function(m) {
+      if (!_phScrollFired[m] && pct >= m) {
+        _phScrollFired[m] = true;
+        posthog.capture('scroll_depth', { depth: m, page: window.location.pathname });
+      }
+    });
+  }, { passive: true });
+</script>
+{{switcher_script}}
+</body>
+</html>

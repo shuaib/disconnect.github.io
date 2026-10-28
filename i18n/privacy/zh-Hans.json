@@ -1,0 +1,144 @@
+{
+  "_notes": "Source text for /privacy. Strings may contain inline HTML (<strong>, <a>, <br>) — keep tags and hrefs exactly as they are. App UI labels must match the app's own translations.",
+  "ui": {
+    "page_title": "隐私政策 — Disconnect",
+    "meta_description": "Disconnect 如何处理你的数据：哪些内容只保存在你的设备上、伙伴功能需要什么，以及如何删除你的账户。",
+    "nav_how": "使用方法",
+    "nav_locks": "锁定级别",
+    "nav_compare": "对比",
+    "nav_guides": "指南",
+    "nav_faq": "常见问题",
+    "get_app": "获取 App",
+    "home_label": "Disconnect 首页",
+    "footer_home": "首页",
+    "footer_guides": "指南",
+    "footer_compare": "对比",
+    "footer_faq": "常见问题",
+    "footer_press": "媒体",
+    "footer_privacy": "隐私",
+    "footer_terms": "条款",
+    "footer_support": "支持",
+    "language_label": "语言",
+    "translation_note": "本文是英文版政策的翻译。如两者内容不一致，以英文版为准。"
+  },
+  "h1": "隐私政策",
+  "effective_date": "生效日期：2026 年 10 月 28 日",
+  "blocks": [
+    {
+      "p": "Disconnect 由 <strong>Bytehood Ltd</strong>（下称“我们”）开发。我们做这款 App，是为了帮你少花点时间在手机上，而不是为了收集你的数据。本政策用通俗的语言说明我们会处理哪些数据，以及为什么。"
+    },
+    {
+      "h2": "简要说明"
+    },
+    {
+      "ul": [
+        "<strong>你屏蔽的 App 只保存在你的手机上。</strong>你屏蔽了哪些 App 和网站，以及规则的时间安排，都不会离开你的设备。",
+        "<strong>我们只保存伙伴功能运行所需的数据</strong>，让你和你的伙伴能够发送、查看和回应请求。",
+        "<strong>我们不出售你的数据，也不会将其用于广告。</strong>",
+        "<strong>你可以随时删除你的账户和数据</strong>，直接在 App 内操作即可。"
+      ]
+    },
+    {
+      "h2": "哪些内容只保存在你的设备上"
+    },
+    {
+      "ul": [
+        "你选择屏蔽的 App、类别和网站",
+        "你的规则及其时间安排",
+        "屏幕使用时间信息，以及你使用其他 App 的情况",
+        "你的位置和通讯录——Disconnect 从不请求获取这些信息"
+      ]
+    },
+    {
+      "h2": "我们收集什么，以及为什么"
+    },
+    {
+      "p": "<strong>你的账户。</strong>当你通过 Apple 登录时，Apple 会向我们提供你的姓名和电子邮件地址（如果你选择了“隐藏邮件地址”，则提供一个私密中转地址）。在网页上使用 Disconnect 的伙伴通过电子邮件地址登录。我们使用你的姓名向你的伙伴显示你的身份，而你的电子邮件地址只用于发送与你的账户或服务相关的重要信息。你也可以不登录直接使用 Disconnect；这种情况下无法使用伙伴功能，我们也不会为你创建账户。"
+    },
+    {
+      "p": "<strong>伙伴功能。</strong>为了将你和你的伙伴连接起来，我们会保存你的伙伴关系以及你们之间往来的请求，例如请求解锁或删除某条规则。请求中包含你的伙伴回应它所需的信息：规则名称、你申请的时长，以及你们任何一方选择添加的留言。我们保存这些内容，是为了让你们双方都能查看和回应请求，也让你可以查看历史记录。"
+    },
+    {
+      "p": "<strong>通知。</strong>我们会保存你设备的通知令牌以及你的 App 语言，以便用你的语言向你发送时效性提醒，例如你的伙伴的回复。"
+    },
+    {
+      "p": "<strong>订阅。</strong>如果你订阅了 Disconnect Pro，我们会获取你的购买状态，以便为你解锁 Pro 功能。付款由 Apple 处理；我们永远看不到你的银行卡信息。"
+    },
+    {
+      "p": "<strong>App 使用情况和诊断信息。</strong>我们会收集 App 的使用情况信息，例如使用了哪些功能、何时出现问题，以及崩溃报告。这有助于我们修复问题、改进 Disconnect。这些信息与你的账户关联，以便我们排查你遇到的问题，而且绝不会用于广告。"
+    },
+    {
+      "p": "<strong>本网站。</strong>当你访问 disconnectapp.co 时，我们会收集基本的访问信息，例如你浏览的页面，以了解网站的使用情况。"
+    },
+    {
+      "h2": "谁在帮我们运营 Disconnect"
+    },
+    {
+      "p": "我们使用少数值得信赖的服务提供商，他们处理数据仅为向我们提供服务："
+    },
+    {
+      "ul": [
+        "<strong>Google Firebase</strong>——登录、数据库、通知和崩溃报告",
+        "<strong>RevenueCat</strong>——管理订阅和订阅优惠",
+        "<strong>PostHog</strong>——App 和网站分析",
+        "<strong>Resend</strong>——发送登录邮件和服务邮件",
+        "<strong>Apple</strong>——通过 Apple 登录、通知和 App Store 付款"
+      ]
+    },
+    {
+      "p": "其中部分服务提供商会在英国和欧盟以外的地区（包括美国）处理数据。在这种情况下，我们会采取适当的保障措施，例如标准合同条款。"
+    },
+    {
+      "p": "除法律要求外，我们不会与任何其他人分享你的数据。"
+    },
+    {
+      "h2": "我们保留多久"
+    },
+    {
+      "p": "只要你的账户存在，我们就会保留你的账户数据。当你删除账户后，我们会从系统中删除你的账户、伙伴关系和请求——通常是立即删除，最迟不超过 30 天。服务提供商持有的部分使用情况和诊断记录可能会在此之后保留；这些记录无法用于联系你，你也可以要求我们删除它们。"
+    },
+    {
+      "h2": "数据安全"
+    },
+    {
+      "p": "你的数据在传输过程中经过加密，并采用行业标准的安全措施存储在我们的服务提供商处。只有你和你的伙伴能看到你的请求。"
+    },
+    {
+      "h2": "你的权利"
+    },
+    {
+      "p": "你可以："
+    },
+    {
+      "ul": [
+        "<strong>随时删除你的账户和数据</strong>，在 App 中前往<strong>设置 → 删除账户</strong>",
+        "<strong>索取</strong>你的数据副本，或要求我们更正数据",
+        "<strong>反对或限制</strong>我们使用你的数据的方式"
+      ]
+    },
+    {
+      "p": "如需行使以上任何权利，请发送邮件至 <a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>。如果你身处英国或欧盟，也可以向你所在地的数据保护机构投诉——在英国，该机构是 ICO（<a href=\"https://ico.org.uk\" target=\"_blank\" rel=\"noopener\">ico.org.uk</a>）。"
+    },
+    {
+      "p": "在适用英国或欧盟法律的情况下，我们使用你的数据的法律依据是：提供你所请求的服务，以及我们在维持服务正常运行和改进服务方面的合法利益。"
+    },
+    {
+      "h2": "儿童"
+    },
+    {
+      "p": "Disconnect 不面向 13 岁以下的儿童，我们也不会在知情的情况下收集他们的数据。如果你认为有儿童向我们提供了个人数据，请联系我们，我们会将其删除。"
+    },
+    {
+      "h2": "政策变更"
+    },
+    {
+      "p": "如果我们做出重大变更，会在变更生效前通过 App 或电子邮件告知你。"
+    },
+    {
+      "h2": "联系我们"
+    },
+    {
+      "p": "<strong>Bytehood Ltd</strong><br><a href=\"mailto:support@bytehood.com\">support@bytehood.com</a>"
+    }
+  ]
+}
